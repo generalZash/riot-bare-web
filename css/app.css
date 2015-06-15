@@ -1,0 +1,21 @@
+.group {
+  list-style: none;
+}
+
+.tab-item {
+  display: flex;
+  align-items: stretch;
+  padding: 10px 20px;
+  margin: 5px;
+  background-color: rgba(211,190,197,0.4);
+  border-radius: 3px;
+  width: 300px;
+}
+
+.editable-div {
+  flex-grow: 1;
+}
+
+.drag-handle {
+  padding-right: 10px;
+}

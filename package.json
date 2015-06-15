@@ -1,0 +1,26 @@
+{
+  "name": "riot-self-web",
+  "version": "0.0.1",
+  "description": "just testing out riot",
+  "scripts": {
+    "watch:riot": "riot -w src/ js/",
+    "build": "riot src/ js/",
+    "dev": "light-server -s . -p 9090 -w 'src/**/*.tag # npm run build'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/generalZash/riot-tasker.git"
+  },
+  "author": {
+    "name": "Gen Edwards",
+    "email": "generalZash@generalZash.com"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "riot": "2.x.x"
+  },
+  "devDependencies": {
+    "light-server": "^1.0.3"
+  },
+  "engine": "node >= 1.12.0"
+}
