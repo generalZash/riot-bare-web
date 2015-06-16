@@ -5,7 +5,7 @@
   "scripts": {
     "watch:riot": "riot -w src/ js/",
     "build": "riot src/ js/",
-    "dev": "light-server -s . -p 9090 -w 'src/**/*.tag # npm run build'"
+    "dev": "light-server -s . -p 9090 -w 'src/*.tag # npm run build' -w 'css/app.css # # reloadcss'"
   },
   "repository": {
     "type": "git",
@@ -20,6 +20,7 @@
     "riot": "2.x.x"
   },
   "devDependencies": {
+    "babel": "^5.5.8",
     "light-server": "^1.0.3"
   },
   "engine": "node >= 1.12.0"

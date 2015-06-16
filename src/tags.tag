@@ -1,10 +1,28 @@
 <tabs>
-  <h1>test</h1>
 </tabs>
 
 <r-header>
-  <div></div>
+  <div class='{ sticky: this.isSticky()}'>header area</div>
+
+  this.sticky = false;
+
+  window.addEventListener('scroll', function(event) {
+    this.toggleSticky(event);
+  }.bind(this));
+
+  toggleSticky(event) {
+    this.sticky = (this.root.getBoundingClientRect().top < 10);
+    this.update();
+  }
+
+  isSticky() {
+    return this.sticky
+  }
 </r-header>
+
+<r-backdrop class='backdrop'>
+  <div></div>
+</r-backdrop>
 
 <r-tabs>
   <ul class='group'>
@@ -16,6 +34,8 @@
   <div class='tab-content'>
     <div each={tab, i in tabs} class='tab-content-item { is-active: parent.isActiveTab(tab.ref) }'>{tab.content}</div>
   </div>
+  <div>
+  <br><br><br><br><br><br><br><br>
 
   this.tabs = [
     { title: 'Tab 1', ref: 'tab1', content: '1 content'},

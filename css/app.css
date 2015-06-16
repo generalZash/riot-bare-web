@@ -1,3 +1,29 @@
+body {
+  margin-top: 0px;
+}
+
+r-header >div {
+  width: 100%;
+  font-size: 36px;
+  height: 55px;
+  line-height: 55px;
+  background: #4D4A50;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  transition: all 0.4s ease;
+}
+
+r-header >div.sticky {
+  padding-left: 20px;
+  transition: all 0.4s ease;
+}
+
+r-backdrop {
+  background-image: url(../img/gake_new_sm.png);
+}
+
+
 .group {
   list-style: none;
 }
