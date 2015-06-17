@@ -12,6 +12,7 @@ riot.tag('r-header', '<div class="{ sticky: this.isSticky()}">header area</div>'
 
   this.toggleSticky = function(event) {
     this.sticky = (this.root.getBoundingClientRect().top < 10);
+    console.log('yolo');
     this.update();
   }.bind(this);
 
@@ -25,7 +26,7 @@ riot.tag('r-backdrop', '<div></div>', 'class=\'backdrop\'', function(opts) {
 
 });
 
-riot.tag('r-tabs', '<ul class="group"> <li each="{tab, i in tabs}" class="tab-item { is-active: parent.isActiveTab(tab.ref)}" onclick="{ parent.toggleTab }"> <span class="drag-handle">= </span> <div class="editable-div" contenteditable="true">{tab.title}</div> </li> </ul> <div class="tab-content"> <div each="{tab, i in tabs}" class="tab-content-item { is-active: parent.isActiveTab(tab.ref) }">{tab.content}</div> </div> <div> <br><br><br><br><br><br><br><br>', function(opts) {
+riot.tag('r-tabs', '<ul class="group"> <li each="{tab, i in tabs}" class="tab-item { is-active: parent.isActiveTab(tab.ref)}" onclick="{ parent.toggleTab }"> <span class="drag-handle">= </span> <div class="editable-div" contenteditable="true">{tab.title}</div> </li> </ul> <br><br><br><br><br><br><br><br> <div class="tab-content"> <div each="{tab, i in tabs}" class="tab-content-item { is-active: parent.isActiveTab(tab.ref) }">{tab.content}</div> </div> <div> <br><br><br><br><br><br><br><br>', function(opts) {
 
   this.tabs = [
     { title: 'Tab 1', ref: 'tab1', content: '1 content'},

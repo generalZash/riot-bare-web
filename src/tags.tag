@@ -12,6 +12,7 @@
 
   toggleSticky(event) {
     this.sticky = (this.root.getBoundingClientRect().top < 10);
+    console.log('yolo');
     this.update();
   }
 
@@ -31,6 +32,7 @@
       <div class='editable-div' contenteditable='true'>{tab.title}</div>
     </li>
   </ul>
+  <br><br><br><br><br><br><br><br>
   <div class='tab-content'>
     <div each={tab, i in tabs} class='tab-content-item { is-active: parent.isActiveTab(tab.ref) }'>{tab.content}</div>
   </div>

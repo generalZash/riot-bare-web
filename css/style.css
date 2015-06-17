@@ -1,0 +1,46 @@
+body {
+  margin: 0;
+  width: 100%;
+  height: 100%; }
+
+r-header > div {
+  width: 100%;
+  font-size: 36px;
+  height: 55px;
+  line-height: 55px;
+  background: #4D4A50;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  transition: all 0.4s ease; }
+
+r-header > div.sticky {
+  padding-left: 20px;
+  transition: all 0.4s ease; }
+
+body {
+  display: table;
+  background: url(../img/gake_new_lg.png) no-repeat fixed;
+  background-size: contain;
+  width: 100%;
+  /*height: 100%;*/
+  /*background-position: left bottom;*/ }
+
+.group {
+  list-style: none; }
+
+.tab-item {
+  display: flex;
+  align-items: stretch;
+  padding: 10px 20px;
+  margin: 5px;
+  background-color: rgba(211, 190, 197, 0.4);
+  border-radius: 3px;
+  width: 300px;
+  height: 400px; }
+
+.editable-div {
+  flex-grow: 1; }
+
+.drag-handle {
+  padding-right: 10px; }
