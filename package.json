@@ -4,8 +4,7 @@
   "description": "testing out riot",
   "scripts": {
     "watch:riot": "riot -w src/ js/",
-    "build": "riot src/ js/",
-    "dev": "light-server -s . -p 9090 -w 'src/*.tag # npm run build' -w 'css/app.css # # reloadcss'"
+    "build": "riot src/ js/"
   },
   "repository": {
     "type": "git",
@@ -21,9 +20,9 @@
   },
   "devDependencies": {
     "babel": "^5.5.8",
+    "browser-sync": "^2.7.11",
     "gulp": "^3.9.0",
-    "gulp-sass": "^2.0.1",
-    "light-server": "^1.0.3"
+    "gulp-sass": "^2.0.1"
   },
   "engine": "node >= 1.12.0"
 }
