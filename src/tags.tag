@@ -21,9 +21,25 @@
   }
 </r-header>
 
-<r-backdrop class='backdrop'>
-  <div></div>
+<r-backdrop>
+  <div class='backdrop'></div>
+  <star-sm each={star, i in something}></div>
+
+  // this is really stupid, isn't there a better way?
+  this.something = [];
+  for(var i=0; i<100; i++) {
+    this.something.push(0);
+  };
 </r-backdrop>
+
+<star-sm class='star-sm'>
+  rand() {
+    return Math.random() * 2000;
+  }
+
+  this.root.style.left = this.rand();
+  this.root.style.top = this.rand();
+</star-sm>
 
 <r-tabs>
   <ul class='group'>

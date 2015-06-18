@@ -10,6 +10,14 @@
     <r-tabs></r-tabs>
     <script src="node_modules/riot/riot.min.js"></script>
     <script src="app/js/tags.js"></script>
-    <script>riot.mount('*')</script>
+    <script>
+      ["r-header", "r-backdrop", "r-tabs"].forEach(function(tab) {
+        riot.mount(tab);
+      });
+
+      //for(riot.mount('r-header');
+
+    </script>
+    <script src="app/js/main.js"></script>
   </body>
 </html>
