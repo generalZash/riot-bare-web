@@ -22,7 +22,7 @@ riot.tag('r-header', '<div class="{ sticky: this.isSticky()}">header area</div>'
 
 });
 
-riot.tag('r-backdrop', '<div class="backdrop"></div> <star-md></star-md> <star-sm each="{star, i in something}"></div>', function(opts) {
+riot.tag('r-backdrop', '<div class="backdrop"></div> <star-md class="star1"></star-md> <star-md class="star2"></star-md> <star-md class="star3"></star-md> <star-md class="star4"></star-md> <star-md class="star5"></star-md> <star-md class="star6"></star-md> <star-sm each="{star, i in something}"></div>', function(opts) {
   this.something = [];
   for(var i=0; i<100; i++) {
     this.something.push(0);
@@ -40,8 +40,14 @@ riot.tag('star-sm', '', 'class=\'star-sm\'', function(opts) {
 
 });
 
-riot.tag('star-md', '', 'class=\'star-md\'', function(opts) {
-  
+riot.tag('star-md', '<star-bits direction="up"></star-bits> <star-bits direction="down"></star-bits> <star-bits direction="left"></star-bits> <star-bits direction="right"></star-bits>', function(opts) {
+  this.root.className = 'star-md ' + opts.class;
+  console.log(opts);
+
+});
+
+riot.tag('star-bits', '', function(opts) {
+  this.root.className = 'star-bits ' + opts.direction;
 
 });
 

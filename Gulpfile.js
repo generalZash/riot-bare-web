@@ -2,15 +2,12 @@ var gulp         = require('gulp');
 var sass         = require('gulp-sass');
 var browserSync  = require('browser-sync').create();
 var riot         = require('gulp-riot');
-var Notification = require('node-notifier');
 var util         = require('gulp-util');
 var jshint       = require('gulp-jshint');
+var autoprefixer = require('gulp-autoprefixer');
 
 // Standard handler
 function standardHandler(err){
-  // Notification
-  var notifier = Notification();
-  notifier.notify({ message: 'Error: ' + err.message });
   // Log to console
   util.log(util.colors.red('Error'), err.message);
 }
@@ -25,7 +22,7 @@ gulp.task('serve', ['sass'], function() {
   });
 
   gulp.watch('scss/*.scss', ['sass']);
-  gulp.watch('app/index.html').on('change', browserSync.reload);
+  gulp.watch('index.html').on('change', browserSync.reload);
   gulp.watch('src/*.tag', ['riot']);
   gulp.watch('src/*.js', ['lint']);
 });
@@ -36,6 +33,10 @@ gulp.task('sass', function () {
   return gulp.src('scss/*.scss')
     .pipe(sass({
       errLogToConsole: true
+    }))
+    .on('error', standardHandler)
+    .pipe(autoprefixer({
+      bfowsers: ['last 2 versions']
     }))
     .pipe(gulp.dest('app/css/'))
     .pipe(browserSync.stream());

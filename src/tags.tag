@@ -23,7 +23,14 @@
 
 <r-backdrop>
   <div class='backdrop'></div>
-  <star-md></star-md>
+
+  <star-md class='star1'></star-md>
+  <star-md class='star2'></star-md>
+  <star-md class='star3'></star-md>
+  <star-md class='star4'></star-md>
+  <star-md class='star5'></star-md>
+  <star-md class='star6'></star-md>
+
   <star-sm each={star, i in something}></div>
 
   // this is really stupid, isn't there a better way?
@@ -42,14 +49,20 @@
   this.root.style.top = this.rand();
 </star-sm>
 
-<star-md class='star-md'>
-  /*setInterval(function() {
-    this.root.className = 'star-md hidden';
-    setTimeout(function() {
-      this.root.className = 'star-md shooting-star';
-    }.bind(this), Math.random() * 2000);
-  }.bind(this), Math.random() * 5000 + 5000);*/
+<star-md>
+  <star-bits direction='up'></star-bits>
+  <star-bits direction='down'></star-bits>
+  <star-bits direction='left'></star-bits>
+  <star-bits direction='right'></star-bits>
+
+  // The root node can't access `opts`, which is really stupid, so we need to use this.root.className
+  this.root.className = 'star-md ' + opts.class;
+  console.log(opts);
 </star-md>
+
+<star-bits>
+  this.root.className = 'star-bits ' + opts.direction;
+</star-bits>
 
 <r-tabs>
   <ul class='group'>
