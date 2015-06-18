@@ -23,6 +23,7 @@
 
 <r-backdrop>
   <div class='backdrop'></div>
+  <star-md></star-md>
   <star-sm each={star, i in something}></div>
 
   // this is really stupid, isn't there a better way?
@@ -40,6 +41,15 @@
   this.root.style.left = this.rand();
   this.root.style.top = this.rand();
 </star-sm>
+
+<star-md class='star-md'>
+  /*setInterval(function() {
+    this.root.className = 'star-md hidden';
+    setTimeout(function() {
+      this.root.className = 'star-md shooting-star';
+    }.bind(this), Math.random() * 2000);
+  }.bind(this), Math.random() * 5000 + 5000);*/
+</star-md>
 
 <r-tabs>
   <ul class='group'>

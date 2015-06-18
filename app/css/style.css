@@ -42,6 +42,25 @@ r-backdrop {
   background-color: blue;
   z-index: -200; }
 
+.star-md {
+  position: fixed;
+  height: 8px;
+  width: 8px;
+  background-color: blue;
+  z-index: -200;
+  background-color: #cc5522;
+  left: 100px;
+  top: 100px;
+  animation: shooting-star 3s linear 0s infinite;
+  /*animation-property: left, top;
+    animation-duration: 5s, 5s;
+    animation-timing-function: linear;
+    animation-delay: 0s;
+    animation-*/ }
+  .star-md.shooting-star {
+    left: 1000px;
+    top: 1000px; }
+
 .group {
   list-style: none; }
 
@@ -65,3 +84,6 @@ r-backdrop {
   .content {
     float: left;
     width: 60%; } }
+
+.hidden {
+  display: none; }

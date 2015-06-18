@@ -22,7 +22,7 @@ riot.tag('r-header', '<div class="{ sticky: this.isSticky()}">header area</div>'
 
 });
 
-riot.tag('r-backdrop', '<div class="backdrop"></div> <star-sm each="{star, i in something}"></div>', function(opts) {
+riot.tag('r-backdrop', '<div class="backdrop"></div> <star-md></star-md> <star-sm each="{star, i in something}"></div>', function(opts) {
   this.something = [];
   for(var i=0; i<100; i++) {
     this.something.push(0);
@@ -37,6 +37,11 @@ riot.tag('star-sm', '', 'class=\'star-sm\'', function(opts) {
 
   this.root.style.left = this.rand();
   this.root.style.top = this.rand();
+
+});
+
+riot.tag('star-md', '', 'class=\'star-md\'', function(opts) {
+  
 
 });
 
