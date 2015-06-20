@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "description": "testing out riot",
   "scripts": {
+    "setup": "cp ./nodemodules/riot/riot.min.js ./app/js",
     "watch:riot": "riot -w src/ js/",
     "build": "riot src/ js/"
   },

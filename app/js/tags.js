@@ -40,14 +40,10 @@ riot.tag('star-sm', '', 'class=\'star-sm\'', function(opts) {
 
 });
 
-riot.tag('star-md', '<star-bits direction="up"></star-bits> <star-bits direction="down"></star-bits> <star-bits direction="left"></star-bits> <star-bits direction="right"></star-bits>', function(opts) {
+riot.tag('star-md', '', function(opts) {
+
   this.root.className = 'star-md ' + opts.class;
   console.log(opts);
-
-});
-
-riot.tag('star-bits', '', function(opts) {
-  this.root.className = 'star-bits ' + opts.direction;
 
 });
 

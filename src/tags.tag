@@ -50,19 +50,11 @@
 </star-sm>
 
 <star-md>
-  <star-bits direction='up'></star-bits>
-  <star-bits direction='down'></star-bits>
-  <star-bits direction='left'></star-bits>
-  <star-bits direction='right'></star-bits>
-
-  // The root node can't access `opts`, which is really stupid, so we need to use this.root.className
+  // The root node can't access `opts`, which is really stupid, riot should change it
+  // for now, we need to use this.root.className
   this.root.className = 'star-md ' + opts.class;
   console.log(opts);
 </star-md>
-
-<star-bits>
-  this.root.className = 'star-bits ' + opts.direction;
-</star-bits>
 
 <r-tabs>
   <ul class='group'>

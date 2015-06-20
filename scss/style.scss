@@ -44,8 +44,8 @@ r-backdrop {
 
 star {
   position: fixed;
-  height: 12px;
-  width: 12px;
+  height: 8px;
+  width: 8px;
   z-index: -200;
   background-color: #CFEEF0;
 }
@@ -58,27 +58,16 @@ star {
   animation: $name $duration linear 0s infinite;
 }
 
-@mixin star-bits($name) {
-  animation: $name 2s linear 0s infinite alternate;
-}
-
 .star-md {
   @extend star;
-  &.star1 { @include shooting-star(shooting-star1, 19s)}
-  &.star2 { @include shooting-star(shooting-star2, 22s)}
-  &.star3 { @include shooting-star(shooting-star3, 19s)}
-  &.star4 { @include shooting-star(shooting-star4, 20s)}
-  &.star5 { @include shooting-star(shooting-star4, 13s)}
-  &.star6 { @include shooting-star(shooting-star3, 16s)}
-}
-
-.star-bits {
-  @extend star;
-  position: absolute;
-  &.up    { @include star-bits(star-bits-up)}
-  &.down  { @include star-bits(star-bits-down)}
-  &.left  { @include star-bits(star-bits-left)}
-  &.right { @include star-bits(star-bits-right)}
+  height: 12px;
+  width: 12px;
+  &.star1 { @include shooting-star(shooting-star1, 15s)}
+  &.star2 { @include shooting-star(shooting-star2, 18s)}
+  &.star3 { @include shooting-star(shooting-star3, 17s)}
+  &.star4 { @include shooting-star(shooting-star1, 21s)}
+  &.star5 { @include shooting-star(shooting-star2, 11s)}
+  &.star6 { @include shooting-star(shooting-star3, 11s)}
 }
 
 @keyframes shooting-star1 {
@@ -92,30 +81,8 @@ star {
 }
 
 @keyframes shooting-star3 {
-    0% { top: -300%; left: -350%;}
-    100% { top: 150%; left: 200%;}
-}
-
-@keyframes shooting-star4 {
     0% { top: -70%; left: -50%;}
-    100% { top: 400%; left: 300%;}
-}
-
-@keyframes star-bits-up {
-    0% { top: 0px; left: 0px;}
-    100% { top: -22px; left: 0px;}
-}
-@keyframes star-bits-down {
-    0% { top: 0px; left: 0px;}
-    100% { top: 22px; left: 0px;}
-}
-@keyframes star-bits-left {
-    0% { top: 0px; left: 0px;}
-    100% { top: 0px; left: -22px;}
-}
-@keyframes star-bits-right {
-    0% { top: 0px; left: 0px;}
-    100% { top: 0px; left: 22px;}
+    100% { top: 400%; left: 250%;}
 }
 
 .group {

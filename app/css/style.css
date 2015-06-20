@@ -38,51 +38,34 @@ r-backdrop {
   z-index: -100;
   overflow: hidden; }
 
-star, .star-sm, .star-md, .star-bits {
+star, .star-sm, .star-md {
   position: fixed;
-  height: 12px;
-  width: 12px;
+  height: 8px;
+  width: 8px;
   z-index: -200;
   background-color: #CFEEF0; }
 
-.star-md.star1 {
-  -webkit-animation: shooting-star1 19s linear 0s infinite;
-          animation: shooting-star1 19s linear 0s infinite; }
-
-.star-md.star2 {
-  -webkit-animation: shooting-star2 22s linear 0s infinite;
-          animation: shooting-star2 22s linear 0s infinite; }
-
-.star-md.star3 {
-  -webkit-animation: shooting-star3 19s linear 0s infinite;
-          animation: shooting-star3 19s linear 0s infinite; }
-
-.star-md.star4 {
-  -webkit-animation: shooting-star4 20s linear 0s infinite;
-          animation: shooting-star4 20s linear 0s infinite; }
-
-.star-md.star5 {
-  -webkit-animation: shooting-star4 13s linear 0s infinite;
-          animation: shooting-star4 13s linear 0s infinite; }
-
-.star-md.star6 {
-  -webkit-animation: shooting-star3 16s linear 0s infinite;
-          animation: shooting-star3 16s linear 0s infinite; }
-
-.star-bits {
-  position: absolute; }
-  .star-bits.up {
-    -webkit-animation: star-bits-up 2s linear 0s infinite alternate;
-            animation: star-bits-up 2s linear 0s infinite alternate; }
-  .star-bits.down {
-    -webkit-animation: star-bits-down 2s linear 0s infinite alternate;
-            animation: star-bits-down 2s linear 0s infinite alternate; }
-  .star-bits.left {
-    -webkit-animation: star-bits-left 2s linear 0s infinite alternate;
-            animation: star-bits-left 2s linear 0s infinite alternate; }
-  .star-bits.right {
-    -webkit-animation: star-bits-right 2s linear 0s infinite alternate;
-            animation: star-bits-right 2s linear 0s infinite alternate; }
+.star-md {
+  height: 12px;
+  width: 12px; }
+  .star-md.star1 {
+    -webkit-animation: shooting-star1 15s linear 0s infinite;
+            animation: shooting-star1 15s linear 0s infinite; }
+  .star-md.star2 {
+    -webkit-animation: shooting-star2 18s linear 0s infinite;
+            animation: shooting-star2 18s linear 0s infinite; }
+  .star-md.star3 {
+    -webkit-animation: shooting-star3 17s linear 0s infinite;
+            animation: shooting-star3 17s linear 0s infinite; }
+  .star-md.star4 {
+    -webkit-animation: shooting-star1 21s linear 0s infinite;
+            animation: shooting-star1 21s linear 0s infinite; }
+  .star-md.star5 {
+    -webkit-animation: shooting-star2 11s linear 0s infinite;
+            animation: shooting-star2 11s linear 0s infinite; }
+  .star-md.star6 {
+    -webkit-animation: shooting-star3 11s linear 0s infinite;
+            animation: shooting-star3 11s linear 0s infinite; }
 
 @-webkit-keyframes shooting-star1 {
   0% {
@@ -118,99 +101,19 @@ star, .star-sm, .star-md, .star-bits {
 
 @-webkit-keyframes shooting-star3 {
   0% {
-    top: -300%;
-    left: -350%; }
+    top: -70%;
+    left: -50%; }
   100% {
-    top: 150%;
-    left: 200%; } }
+    top: 400%;
+    left: 250%; } }
 
 @keyframes shooting-star3 {
   0% {
-    top: -300%;
-    left: -350%; }
-  100% {
-    top: 150%;
-    left: 200%; } }
-
-@-webkit-keyframes shooting-star4 {
-  0% {
     top: -70%;
     left: -50%; }
   100% {
     top: 400%;
-    left: 300%; } }
-
-@keyframes shooting-star4 {
-  0% {
-    top: -70%;
-    left: -50%; }
-  100% {
-    top: 400%;
-    left: 300%; } }
-
-@-webkit-keyframes star-bits-up {
-  0% {
-    top: 0px;
-    left: 0px; }
-  100% {
-    top: -22px;
-    left: 0px; } }
-
-@keyframes star-bits-up {
-  0% {
-    top: 0px;
-    left: 0px; }
-  100% {
-    top: -22px;
-    left: 0px; } }
-
-@-webkit-keyframes star-bits-down {
-  0% {
-    top: 0px;
-    left: 0px; }
-  100% {
-    top: 22px;
-    left: 0px; } }
-
-@keyframes star-bits-down {
-  0% {
-    top: 0px;
-    left: 0px; }
-  100% {
-    top: 22px;
-    left: 0px; } }
-
-@-webkit-keyframes star-bits-left {
-  0% {
-    top: 0px;
-    left: 0px; }
-  100% {
-    top: 0px;
-    left: -22px; } }
-
-@keyframes star-bits-left {
-  0% {
-    top: 0px;
-    left: 0px; }
-  100% {
-    top: 0px;
-    left: -22px; } }
-
-@-webkit-keyframes star-bits-right {
-  0% {
-    top: 0px;
-    left: 0px; }
-  100% {
-    top: 0px;
-    left: 22px; } }
-
-@keyframes star-bits-right {
-  0% {
-    top: 0px;
-    left: 0px; }
-  100% {
-    top: 0px;
-    left: 22px; } }
+    left: 250%; } }
 
 .group {
   list-style: none; }
