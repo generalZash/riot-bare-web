@@ -12,7 +12,6 @@
 
   toggleSticky(event) {
     this.sticky = (this.root.getBoundingClientRect().top < 10);
-    console.log('yolo');
     this.update();
   }
 
@@ -21,9 +20,7 @@
   }
 </r-header>
 
-<r-backdrop>
-  <div class='backdrop'></div>
-
+<r-bg>
   <star-md class='star1'></star-md>
   <star-md class='star2'></star-md>
   <star-md class='star3'></star-md>
@@ -31,21 +28,43 @@
   <star-md class='star5'></star-md>
   <star-md class='star6'></star-md>
 
-  <star-sm each={star, i in something}></div>
+  rand() {
+    return Math.random() * 300 + 100;
+  }
 
-  // this is really stupid, isn't there a better way?
-  this.something = [];
-  for(var i=0; i<100; i++) {
-    this.something.push(0);
-  };
-</r-backdrop>
+  // grab the starting time, and we'll generate a bunch of stars for 20seconds
+  this.startTime = new Date().getTime();
+
+  starTimer() {
+    setTimeout( function () {
+      if (new Date().getTime() < this.startTime + 20000) {
+        var newStar = document.createElement('star-sm');
+        this.root.appendChild(newStar);
+        riot.mount(newStar, 'star-sm', {test: "3000"});
+        this.starTimer();
+      }
+    }.bind(this), this.rand());
+  }
+
+/*  fakeStars() {
+      for (var i=0; i<50; i++) {
+        var newStar = document.createElement('star-sm');
+        this.root.appendChild(newStar);
+        riot.mount(newStar, 'star-sm');
+      }
+  }*/
+
+  this.starTimer();
+  //this.fakeStars();
+</r-bg>
+
 
 <star-sm class='star-sm'>
   rand() {
     return Math.random() * 2000;
   }
 
-  this.root.style.left = this.rand();
+  this.root.style.left = '-200';
   this.root.style.top = this.rand();
 </star-sm>
 
@@ -53,8 +72,10 @@
   // The root node can't access `opts`, which is really stupid, riot should change it
   // for now, we need to use this.root.className
   this.root.className = 'star-md ' + opts.class;
-  console.log(opts);
 </star-md>
+
+<r-bg-image class='bg-image'>
+</r-bg-image>
 
 <r-tabs>
   <ul class='group'>

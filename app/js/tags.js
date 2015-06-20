@@ -12,7 +12,6 @@ riot.tag('r-header', '<div class="{ sticky: this.isSticky()}">header area</div>'
 
   this.toggleSticky = function(event) {
     this.sticky = (this.root.getBoundingClientRect().top < 10);
-    console.log('yolo');
     this.update();
   }.bind(this);
 
@@ -22,20 +21,39 @@ riot.tag('r-header', '<div class="{ sticky: this.isSticky()}">header area</div>'
 
 });
 
-riot.tag('r-backdrop', '<div class="backdrop"></div> <star-md class="star1"></star-md> <star-md class="star2"></star-md> <star-md class="star3"></star-md> <star-md class="star4"></star-md> <star-md class="star5"></star-md> <star-md class="star6"></star-md> <star-sm each="{star, i in something}"></div>', function(opts) {
-  this.something = [];
-  for(var i=0; i<100; i++) {
-    this.something.push(0);
-  };
+riot.tag('r-bg', '<star-md class="star1"></star-md> <star-md class="star2"></star-md> <star-md class="star3"></star-md> <star-md class="star4"></star-md> <star-md class="star5"></star-md> <star-md class="star6"></star-md>', function(opts) {
+
+  this.rand = function() {
+    return Math.random() * 300 + 100;
+  }.bind(this);
+
+  this.startTime = new Date().getTime();
+
+  this.starTimer = function() {
+    setTimeout( function () {
+      if (new Date().getTime() < this.startTime + 20000) {
+        var newStar = document.createElement('star-sm');
+        this.root.appendChild(newStar);
+        riot.mount(newStar, 'star-sm', {test: "3000"});
+        this.starTimer();
+      }
+    }.bind(this), this.rand());
+  }.bind(this);
+
+
+
+  this.starTimer();
+
 
 });
+
 
 riot.tag('star-sm', '', 'class=\'star-sm\'', function(opts) {
   this.rand = function() {
     return Math.random() * 2000;
   }.bind(this);
 
-  this.root.style.left = this.rand();
+  this.root.style.left = '-200';
   this.root.style.top = this.rand();
 
 });
@@ -43,7 +61,10 @@ riot.tag('star-sm', '', 'class=\'star-sm\'', function(opts) {
 riot.tag('star-md', '', function(opts) {
 
   this.root.className = 'star-md ' + opts.class;
-  console.log(opts);
+
+});
+
+riot.tag('r-bg-image', '', 'class=\'bg-image\'', function(opts) {
 
 });
 

@@ -2,22 +2,18 @@
   <head>
     <title>riot test</title>
     <link rel="stylesheet" href="app/css/style.css">
+    <meta name="viewport" content="width=500, initial-scale=1">
   </head>
   
   <body>
     <r-header></r-header>
-    <r-backdrop></r-backdrop>
+    <r-bg></r-bg>
+    <r-bg-stars></r-bg-stars>
+    <r-bg-image></r-bg-image>
     <r-tabs></r-tabs>
     <script src="node_modules/riot/riot.min.js"></script>
     <script src="app/js/tags.js"></script>
-    <script>
-      ["r-header", "r-backdrop", "r-tabs"].forEach(function(tab) {
-        riot.mount(tab);
-      });
-
-      //for(riot.mount('r-header');
-
-    </script>
+    <script>riot.mount('*');</script>
     <script src="app/js/main.js"></script>
   </body>
 </html>

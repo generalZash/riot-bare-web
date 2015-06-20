@@ -20,18 +20,38 @@ r-header > div.sticky {
   -webkit-transition: all 0.4s ease;
           transition: all 0.4s ease; }
 
-r-backdrop {
+r-bg {
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  display: block;
+  z-index: -300;
+  background-color: #02336F; }
+
+.bg-stars {
   height: 100%;
   width: 100%;
   position: fixed;
   display: block;
-  z-index: -100;
-  background-color: #02336F; }
+  z-index: -200; }
 
-.backdrop {
+@-webkit-keyframes scroll {
+  0% {
+    left: -100px; }
+  100% {
+    left: 3000px; } }
+
+@keyframes scroll {
+  0% {
+    left: -100px; }
+  100% {
+    left: 3000px; } }
+
+.bg-image {
   display: block;
-  background: url(../img/gake_new_lg.png) no-repeat fixed;
+  background: url(../img/gake_new_lg.png) 50% 100% no-repeat fixed;
   background-size: contain;
+  background-position-x: 0;
   width: 100%;
   height: 100%;
   position: fixed;
@@ -39,30 +59,34 @@ r-backdrop {
   overflow: hidden; }
 
 star, .star-sm, .star-md {
-  position: fixed;
+  position: absolute;
   height: 8px;
   width: 8px;
-  z-index: -200;
   background-color: #CFEEF0; }
+
+.star-sm {
+  -webkit-animation: scroll 20s linear 0s infinite;
+          animation: scroll 20s linear 0s infinite; }
 
 .star-md {
   height: 12px;
-  width: 12px; }
+  width: 12px;
+  background-color: #FF8F05; }
   .star-md.star1 {
-    -webkit-animation: shooting-star1 15s linear 0s infinite;
-            animation: shooting-star1 15s linear 0s infinite; }
+    -webkit-animation: shooting-star1 9s linear 0s infinite;
+            animation: shooting-star1 9s linear 0s infinite; }
   .star-md.star2 {
-    -webkit-animation: shooting-star2 18s linear 0s infinite;
-            animation: shooting-star2 18s linear 0s infinite; }
+    -webkit-animation: shooting-star2 17s linear 0s infinite;
+            animation: shooting-star2 17s linear 0s infinite; }
   .star-md.star3 {
-    -webkit-animation: shooting-star3 17s linear 0s infinite;
-            animation: shooting-star3 17s linear 0s infinite; }
+    -webkit-animation: shooting-star3 16s linear 0s infinite;
+            animation: shooting-star3 16s linear 0s infinite; }
   .star-md.star4 {
-    -webkit-animation: shooting-star1 21s linear 0s infinite;
-            animation: shooting-star1 21s linear 0s infinite; }
+    -webkit-animation: shooting-star1 16s linear 0s infinite;
+            animation: shooting-star1 16s linear 0s infinite; }
   .star-md.star5 {
-    -webkit-animation: shooting-star2 11s linear 0s infinite;
-            animation: shooting-star2 11s linear 0s infinite; }
+    -webkit-animation: shooting-star2 10s linear 0s infinite;
+            animation: shooting-star2 10s linear 0s infinite; }
   .star-md.star6 {
     -webkit-animation: shooting-star3 11s linear 0s infinite;
             animation: shooting-star3 11s linear 0s infinite; }
@@ -131,7 +155,7 @@ star, .star-sm, .star-md {
   margin: 5px;
   background-color: rgba(211, 190, 197, 0.4);
   border-radius: 3px;
-  width: 300px;
+  width: 100px;
   height: 400px; }
 
 .editable-div {
