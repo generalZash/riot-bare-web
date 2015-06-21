@@ -1,7 +1,3 @@
-riot.tag('tabs', '', function(opts) {
-
-});
-
 riot.tag('r-header', '<div class="{ sticky: this.isSticky()}">header area</div>', function(opts) {
 
   this.sticky = false;
@@ -21,40 +17,25 @@ riot.tag('r-header', '<div class="{ sticky: this.isSticky()}">header area</div>'
 
 });
 
-riot.tag('r-bg', '<star-md class="star1"></star-md> <star-md class="star2"></star-md> <star-md class="star3"></star-md> <star-md class="star4"></star-md> <star-md class="star5"></star-md> <star-md class="star6"></star-md>', function(opts) {
-
-  this.rand = function() {
-    return Math.random() * 300 + 100;
+riot.tag('r-bg', '<star-md class="star1"></star-md> <star-md class="star2"></star-md> <star-md class="star3"></star-md> <star-md class="star4"></star-md> <star-md class="star5"></star-md> <star-md class="star6"></star-md> <star-sm each="{star, i in smallStars}" width="{ parent.rand(window.screen.width)}" height="{ parent.rand(window.screen.height)}">', function(opts) {
+  this.rand = function(max) {
+    return Math.random() * max;
   }.bind(this);
 
-  this.startTime = new Date().getTime();
+  screenArea = window.screen.width * window.screen.height;
+  starsNeeded = screenArea / 75000;//one star per 100px*100px area
 
-  this.starTimer = function() {
-    setTimeout( function () {
-      if (new Date().getTime() < this.startTime + 20000) {
-        var newStar = document.createElement('star-sm');
-        this.root.appendChild(newStar);
-        riot.mount(newStar, 'star-sm', {test: "3000"});
-        this.starTimer();
-      }
-    }.bind(this), this.rand());
-  }.bind(this);
-
-
-
-  this.starTimer();
-
+  this.smallStars = [];
+  for (var i=0; i<starsNeeded; i++) {
+    this.smallStars.push(i);
+  }
 
 });
 
 
 riot.tag('star-sm', '', 'class=\'star-sm\'', function(opts) {
-  this.rand = function() {
-    return Math.random() * 2000;
-  }.bind(this);
-
-  this.root.style.left = '-200';
-  this.root.style.top = this.rand();
+  this.root.style.left = opts.width;
+  this.root.style.top = opts.height;
 
 });
 

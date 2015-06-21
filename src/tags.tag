@@ -1,6 +1,3 @@
-<tabs>
-</tabs>
-
 <r-header>
   <div class='{ sticky: this.isSticky()}'>header area</div>
 
@@ -28,44 +25,31 @@
   <star-md class='star5'></star-md>
   <star-md class='star6'></star-md>
 
-  rand() {
-    return Math.random() * 300 + 100;
+  <star-sm each={star, i in smallStars} width='{ parent.rand(window.screen.width)}' height='{ parent.rand(window.screen.height)}'>
+  rand(max) {
+    return Math.random() * max;
   }
 
-  // grab the starting time, and we'll generate a bunch of stars for 20seconds
-  this.startTime = new Date().getTime();
+  screenArea = window.screen.width * window.screen.height;
+  starsNeeded = screenArea / 75000;//one star per 100px*100px area
 
-  starTimer() {
-    setTimeout( function () {
-      if (new Date().getTime() < this.startTime + 20000) {
-        var newStar = document.createElement('star-sm');
+  this.smallStars = [];
+  for (var i=0; i<starsNeeded; i++) {
+    this.smallStars.push(i);
+  }/*
+    var newStar = document.createElement('star-sm');
         this.root.appendChild(newStar);
         riot.mount(newStar, 'star-sm', {test: "3000"});
         this.starTimer();
       }
     }.bind(this), this.rand());
-  }
-
-/*  fakeStars() {
-      for (var i=0; i<50; i++) {
-        var newStar = document.createElement('star-sm');
-        this.root.appendChild(newStar);
-        riot.mount(newStar, 'star-sm');
-      }
   }*/
-
-  this.starTimer();
-  //this.fakeStars();
 </r-bg>
 
 
 <star-sm class='star-sm'>
-  rand() {
-    return Math.random() * 2000;
-  }
-
-  this.root.style.left = '-200';
-  this.root.style.top = this.rand();
+  this.root.style.left = opts.width;
+  this.root.style.top = opts.height;
 </star-sm>
 
 <star-md>
