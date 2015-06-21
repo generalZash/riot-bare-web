@@ -17,18 +17,7 @@ riot.tag('r-header', '<div class="{ sticky: this.isSticky()}">header area</div>'
 
 });
 
-riot.tag('r-bg', '<star-md class="star1"></star-md> <star-md class="star2"></star-md> <star-md class="star3"></star-md> <star-md class="star4"></star-md> <star-md class="star5"></star-md> <star-md class="star6"></star-md> <star-sm each="{star, i in smallStars}" width="{ parent.rand(window.screen.width)}" height="{ parent.rand(window.screen.height)}">', function(opts) {
-  this.rand = function(max) {
-    return Math.random() * max;
-  }.bind(this);
-
-  screenArea = window.screen.width * window.screen.height;
-  starsNeeded = screenArea / 75000;//one star per 100px*100px area
-
-  this.smallStars = [];
-  for (var i=0; i<starsNeeded; i++) {
-    this.smallStars.push(i);
-  }
+riot.tag('r-bg', '<star-md class="star1"></star-md> <star-md class="star2"></star-md> <star-md class="star3"></star-md> <star-md class="star4"></star-md> <star-md class="star5"></star-md> <star-md class="star6"></star-md>', function(opts) {
 
 });
 
@@ -53,7 +42,7 @@ riot.tag('r-tabs', '<ul class="group"> <li each="{tab, i in tabs}" class="tab-it
 
   this.tabs = [
     { title: 'Tab 1', ref: 'tab1', content: '1 content'},
-    { title: 'Tab 2', ref: 'tab2', content: 'some other'},
+    { title: 'blah', ref: 'tab2', content: 'some other'},
     { title: 'Tab 3', ref: 'tab3', content: 'and some tagggs'}
   ];
 

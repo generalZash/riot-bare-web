@@ -26,7 +26,10 @@ r-bg {
   position: fixed;
   display: block;
   z-index: -300;
-  background-color: #02336F; }
+  background-color: #02336F;
+  background: url(../img/background_star.png);
+  -webkit-animation: scroll 20s linear 0s infinite;
+          animation: scroll 20s linear 0s infinite; }
 
 .bg-stars {
   height: 100%;
@@ -37,15 +40,15 @@ r-bg {
 
 @-webkit-keyframes scroll {
   0% {
-    left: -100px; }
+    background-position: 0 0; }
   100% {
-    left: 3000px; } }
+    background-position: 600px 0; } }
 
 @keyframes scroll {
   0% {
-    left: -100px; }
+    background-position: 0 0; }
   100% {
-    left: 3000px; } }
+    background-position: 600px 0; } }
 
 .bg-image {
   display: block;
@@ -57,7 +60,7 @@ r-bg {
   z-index: -100;
   overflow: hidden; }
 
-star, .star-sm, .star-md {
+star, .star-md {
   position: absolute;
   height: 8px;
   width: 8px;

@@ -31,6 +31,8 @@ r-bg {
   display: block;
   z-index: -300;
   background-color: #02336F;
+  background: url(../img/background_star.png);
+  animation: scroll 20s linear 0s infinite;
 }
 
 .bg-stars {
@@ -42,8 +44,8 @@ r-bg {
 }
 
 @keyframes scroll {
-  0% { left: -100px; }
-  100% { left: 3000px;}
+  0% {background-position:0 0;}
+  100% {background-position:600px 0;}
 }
 
 .bg-image {
@@ -63,11 +65,6 @@ star {
   height: 8px;
   width: 8px;
   background-color: #CFEEF0;
-}
-
-.star-sm {
-  @extend star;
-  //animation: scroll 40s linear 0s infinite;
 }
 
 @mixin shooting-star($name, $duration) {

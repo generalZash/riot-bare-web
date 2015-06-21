@@ -24,26 +24,7 @@
   <star-md class='star4'></star-md>
   <star-md class='star5'></star-md>
   <star-md class='star6'></star-md>
-
-  <star-sm each={star, i in smallStars} width='{ parent.rand(window.screen.width)}' height='{ parent.rand(window.screen.height)}'>
-  rand(max) {
-    return Math.random() * max;
-  }
-
-  screenArea = window.screen.width * window.screen.height;
-  starsNeeded = screenArea / 75000;//one star per 100px*100px area
-
-  this.smallStars = [];
-  for (var i=0; i<starsNeeded; i++) {
-    this.smallStars.push(i);
-  }/*
-    var newStar = document.createElement('star-sm');
-        this.root.appendChild(newStar);
-        riot.mount(newStar, 'star-sm', {test: "3000"});
-        this.starTimer();
-      }
-    }.bind(this), this.rand());
-  }*/
+  //screenArea = window.screen.width * window.screen.height;
 </r-bg>
 
 
@@ -77,7 +58,7 @@
 
   this.tabs = [
     { title: 'Tab 1', ref: 'tab1', content: '1 content'},
-    { title: 'Tab 2', ref: 'tab2', content: 'some other'},
+    { title: 'blah', ref: 'tab2', content: 'some other'},
     { title: 'Tab 3', ref: 'tab3', content: 'and some tagggs'}
   ];
 
