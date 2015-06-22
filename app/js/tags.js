@@ -1,3 +1,23 @@
+/**
+ * Mixins
+ */
+var pageMixin = {
+  init: function() {
+    riot.route(function(page) {
+      if (page === this.pageId)
+        this.showPage();
+      else
+        //this.hidePage();
+        ;
+    }.bind(this))
+  },
+
+  showPage: function() {
+    this.root.className = 'test';
+  }
+}
+
+
 riot.tag('r-header', '<div class="{ sticky: this.isSticky()}">header area</div>', function(opts) {
 
   this.sticky = false;
@@ -38,7 +58,14 @@ riot.tag('r-bg-image', '', 'class=\'bg-image\'', function(opts) {
 
 });
 
+riot.tag('page-home', '', function(opts) {
+
+
+});
+
 riot.tag('r-tabs', '<ul class="group"> <li each="{tab, i in tabs}" class="tab-item { is-active: parent.isActiveTab(tab.ref)}" onclick="{ parent.toggleTab }"> <span class="drag-handle">= </span> <div class="editable-div" contenteditable="true">{tab.title}</div> </li> </ul> <br><br><br><br><br><br><br><br> <div class="tab-content"> <div each="{tab, i in tabs}" class="tab-content-item { is-active: parent.isActiveTab(tab.ref) }">{tab.content}</div> </div> <div> <br><br><br><br><br><br><br><br>', function(opts) {
+
+  this.mixin(pageMixin);
 
   this.tabs = [
     { title: 'Tab 1', ref: 'tab1', content: '1 content'},

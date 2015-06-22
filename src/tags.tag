@@ -1,3 +1,23 @@
+/**
+ * Mixins
+ */
+var pageMixin = {
+  init: function() {
+    riot.route(function(page) {
+      if (page === this.pageId)
+        this.showPage();
+      else
+        //this.hidePage();
+        ;
+    }.bind(this))
+  },
+
+  showPage: function() {
+    this.root.className = 'test';
+  }
+}
+
+
 <r-header>
   <div class='{ sticky: this.isSticky()}'>header area</div>
 
@@ -42,6 +62,10 @@
 <r-bg-image class='bg-image'>
 </r-bg-image>
 
+<page-home>
+
+</page-home>
+
 <r-tabs>
   <ul class='group'>
     <li each={tab, i in tabs} class='tab-item { is-active: parent.isActiveTab(tab.ref)}' onclick='{ parent.toggleTab }'>
@@ -55,6 +79,8 @@
   </div>
   <div>
   <br><br><br><br><br><br><br><br>
+
+  this.mixin(pageMixin);
 
   this.tabs = [
     { title: 'Tab 1', ref: 'tab1', content: '1 content'},

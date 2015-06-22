@@ -27,9 +27,7 @@ r-bg {
   display: block;
   z-index: -300;
   background-color: #02336F;
-  background: url(../img/background_star.png);
-  -webkit-animation: scroll 20s linear 0s infinite;
-          animation: scroll 20s linear 0s infinite; }
+  background: url(../img/background_star.png); }
 
 .bg-stars {
   height: 100%;
