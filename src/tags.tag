@@ -7,16 +7,20 @@ var pageMixin = {
       if (page === this.pageId)
         this.showPage();
       else
-        //this.hidePage();
-        ;
+        this.hidePage();
     }.bind(this))
   },
 
   showPage: function() {
-    this.root.className = 'test';
+    this.show = true;
+    this.update();
+  },
+
+  hidePage: function() {
+    this.show = false;
+    this.update();
   }
 }
-
 
 <r-header>
   <div class='{ sticky: this.isSticky()}'>header area</div>
@@ -62,7 +66,19 @@ var pageMixin = {
 <r-bg-image class='bg-image'>
 </r-bg-image>
 
+// the main container
+<r-main>
+  <page-home></page-home>
+</r-main>
+
 <page-home>
+  <div class='page-home page {blurb: this.show}'></div>
+  this.mixin(pageMixin);
+  this.pageId = 'page-home';
+  
+  isShowing() {
+    return this.show;
+  }
 
 </page-home>
 

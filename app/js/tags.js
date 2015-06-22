@@ -7,16 +7,20 @@ var pageMixin = {
       if (page === this.pageId)
         this.showPage();
       else
-        //this.hidePage();
-        ;
+        this.hidePage();
     }.bind(this))
   },
 
   showPage: function() {
-    this.root.className = 'test';
+    this.show = true;
+    this.update();
+  },
+
+  hidePage: function() {
+    this.show = false;
+    this.update();
   }
 }
-
 
 riot.tag('r-header', '<div class="{ sticky: this.isSticky()}">header area</div>', function(opts) {
 
@@ -58,7 +62,18 @@ riot.tag('r-bg-image', '', 'class=\'bg-image\'', function(opts) {
 
 });
 
-riot.tag('page-home', '', function(opts) {
+// the main container
+riot.tag('r-main', '<page-home></page-home>', function(opts) {
+
+});
+
+riot.tag('page-home', '<div class="page-home page {blurb: this.show}"></div>', function(opts) {
+  this.mixin(pageMixin);
+  this.pageId = 'page-home';
+  
+  this.isShowing = function() {
+    return this.show;
+  }.bind(this);
 
 
 });
