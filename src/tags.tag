@@ -12,13 +12,17 @@ var pageMixin = {
   },
 
   showPage: function() {
-    this.show = true;
+    this.hidden = false;
     this.update();
   },
 
   hidePage: function() {
-    this.show = false;
+    this.hidden = true;
     this.update();
+  },
+
+  isHidden: function() {
+    return this.hidden;
   }
 }
 
@@ -69,18 +73,24 @@ var pageMixin = {
 // the main container
 <r-main>
   <page-home></page-home>
+  <page-likes></page-likes>
 </r-main>
 
 <page-home>
-  <div class='page-home page {blurb: this.show}'></div>
+  <div class='page-home page {hidden: this.isHidden()}'></div>
   this.mixin(pageMixin);
-  this.pageId = 'page-home';
+  this.pageId = 'home';
   
-  isShowing() {
-    return this.show;
-  }
-
+  this.hidden = false;
 </page-home>
+
+<page-likes>
+  <div class='page-likes page {hidden: this.isHidden()}'></div>
+  this.mixin(pageMixin);
+  this.pageId = 'likes';
+  
+  this.hidden = true;
+</page-likes>
 
 <r-tabs>
   <ul class='group'>

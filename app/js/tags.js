@@ -12,13 +12,17 @@ var pageMixin = {
   },
 
   showPage: function() {
-    this.show = true;
+    this.hidden = false;
     this.update();
   },
 
   hidePage: function() {
-    this.show = false;
+    this.hidden = true;
     this.update();
+  },
+
+  isHidden: function() {
+    return this.hidden;
   }
 }
 
@@ -63,18 +67,23 @@ riot.tag('r-bg-image', '', 'class=\'bg-image\'', function(opts) {
 });
 
 // the main container
-riot.tag('r-main', '<page-home></page-home>', function(opts) {
+riot.tag('r-main', '<page-home></page-home> <page-likes></page-likes>', function(opts) {
 
 });
 
-riot.tag('page-home', '<div class="page-home page {blurb: this.show}"></div>', function(opts) {
+riot.tag('page-home', '<div class="page-home page {hidden: this.isHidden()}"></div>', function(opts) {
   this.mixin(pageMixin);
-  this.pageId = 'page-home';
+  this.pageId = 'home';
   
-  this.isShowing = function() {
-    return this.show;
-  }.bind(this);
+  this.hidden = false;
 
+});
+
+riot.tag('page-likes', '<div class="page-likes page {hidden: this.isHidden()}"></div>', function(opts) {
+  this.mixin(pageMixin);
+  this.pageId = 'likes';
+  
+  this.hidden = true;
 
 });
 
