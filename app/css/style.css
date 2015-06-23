@@ -1,24 +1,67 @@
 body {
   margin: 0;
   width: 100%;
-  height: 100%; }
+  height: 100%;
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 16px; }
 
-r-header > div {
+.header-container {
+  display: inline-block;
   width: 100%;
-  font-size: 36px;
-  height: 55px;
-  line-height: 55px;
-  background: #4D4A50;
   position: fixed;
-  top: 0px;
-  left: 0px;
-  -webkit-transition: all 0.4s ease;
-          transition: all 0.4s ease; }
-
-r-header > div.sticky {
-  padding-left: 20px;
-  -webkit-transition: all 0.4s ease;
-          transition: all 0.4s ease; }
+  left: 0;
+  top: 0;
+  height: 55px; }
+  .header-container .container {
+    margin: 0 auto; }
+  .header-container .header {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 100%;
+    height: 55px;
+    line-height: 55px;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    -webkit-transition: all 0.4s ease;
+            transition: all 0.4s ease;
+    /*&.sticky {
+      padding-left: 20px;
+      transition: all 0.4s ease;
+    }*/ }
+  @media (min-width: 800px) {
+    .header-container .header {
+      width: 750px; } }
+  @media (min-width: 1000px) {
+    .header-container .header {
+      width: 950px; } }
+  @media (min-width: 1200px) {
+    .header-container .header {
+      width: 1150px; } }
+  .header-container .header {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto; }
+  .header-container .whatsMahName {
+    -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1; }
+  .header-container .header-right {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    list-style: none; }
+  .header-container .section-link {
+    padding: 20px; }
 
 r-bg {
   height: 100vh;
@@ -134,6 +177,12 @@ star, .star-md {
   100% {
     top: 400%;
     left: 250%; } }
+
+r-main {
+  margin-top: 55px;
+  padding: 5%;
+  display: block;
+  height: 1000px; }
 
 .group {
   list-style: none; }

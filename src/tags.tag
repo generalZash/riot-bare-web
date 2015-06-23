@@ -1,7 +1,7 @@
 /**
  * Mixins
  */
-var pageMixin = {
+/*var pageMixin = {
   init: function() {
     riot.route(function(page) {
       if (page === this.pageId)
@@ -24,10 +24,30 @@ var pageMixin = {
   isHidden: function() {
     return this.hidden;
   }
-}
+}*/
 
-<r-header>
-  <div class='{ sticky: this.isSticky()}'>header area</div>
+<r-header class='header-container'>
+  <div class='container'>
+    <div class='header { sticky: this.isSticky()}'>
+      <div class='whatsMahName'>Gen Edwards</div>
+      <ul class='header-right'>
+        <li each={link, i in links} class='section-link { active: parent.isActive(link.id)}'>
+          <a href='{link.linkAddr}'>{link.title}</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  this.links = [
+    { title:'about',   class:'about',   id:'about',   linkAddr:'#about'  },
+    { title:'skills',  class:'skills',  id:'skills',  linkAddr:'#skills' },
+    { title:'likes',   class:'likes',   id:'likes',   linkAddr:'#likes'  },
+    { title:'contact', class:'contact', id:'contact', linkAddr:'#contact'}
+  ];
+
+  isActive(id) {
+    return this.activeLinkId === id;
+  }
 
   this.sticky = false;
 
@@ -72,25 +92,21 @@ var pageMixin = {
 
 // the main container
 <r-main>
-  <page-home></page-home>
-  <page-likes></page-likes>
+  <pane-home></pane-home>
+  <pane-likes></pane-likes>
 </r-main>
 
-<page-home>
-  <div class='page-home page {hidden: this.isHidden()}'></div>
-  this.mixin(pageMixin);
-  this.pageId = 'home';
-  
-  this.hidden = false;
-</page-home>
+<pane-home>
+  <section id='pane-home' class='pane-home pane {hidden: this.isHidden()}'>
+    <h1>Hi, I'm Gen</h1>
+    <p>I like to do stuff</p>
+  </div>
+</pane-home>
 
-<page-likes>
-  <div class='page-likes page {hidden: this.isHidden()}'></div>
-  this.mixin(pageMixin);
-  this.pageId = 'likes';
-  
-  this.hidden = true;
-</page-likes>
+<pane-likes>
+  <div class='pane-likes pane {hidden: this.isHidden()}'>
+  </div>
+</pane-likes>
 
 <r-tabs>
   <ul class='group'>

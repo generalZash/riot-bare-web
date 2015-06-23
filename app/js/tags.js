@@ -1,7 +1,7 @@
 /**
  * Mixins
  */
-var pageMixin = {
+/*var pageMixin = {
   init: function() {
     riot.route(function(page) {
       if (page === this.pageId)
@@ -24,9 +24,20 @@ var pageMixin = {
   isHidden: function() {
     return this.hidden;
   }
-}
+}*/
 
-riot.tag('r-header', '<div class="{ sticky: this.isSticky()}">header area</div>', function(opts) {
+riot.tag('r-header', '<div class="container"> <div class="header { sticky: this.isSticky()}"> <div class="whatsMahName">Gen Edwards</div> <ul class="header-right"> <li each="{link, i in links}" class="section-link { active: parent.isActive(link.id)}"> <a href="{link.linkAddr}">{link.title}</a> </li> </ul> </div> </div>', 'class=\'header-container\'', function(opts) {
+
+  this.links = [
+    { title:'about',   class:'about',   id:'about',   linkAddr:'#about'  },
+    { title:'skills',  class:'skills',  id:'skills',  linkAddr:'#skills' },
+    { title:'likes',   class:'likes',   id:'likes',   linkAddr:'#likes'  },
+    { title:'contact', class:'contact', id:'contact', linkAddr:'#contact'}
+  ];
+
+  this.isActive = function(id) {
+    return this.activeLinkId === id;
+  }.bind(this);
 
   this.sticky = false;
 
@@ -67,23 +78,15 @@ riot.tag('r-bg-image', '', 'class=\'bg-image\'', function(opts) {
 });
 
 // the main container
-riot.tag('r-main', '<page-home></page-home> <page-likes></page-likes>', function(opts) {
+riot.tag('r-main', '<pane-home></pane-home> <pane-likes></pane-likes>', function(opts) {
 
 });
 
-riot.tag('page-home', '<div class="page-home page {hidden: this.isHidden()}"></div>', function(opts) {
-  this.mixin(pageMixin);
-  this.pageId = 'home';
-  
-  this.hidden = false;
+riot.tag('pane-home', '<section id="pane-home" class="pane-home pane {hidden: this.isHidden()}"> <h1>Hi, I\'m Gen</h1> <p>I like to do stuff</p> </div>', function(opts) {
 
 });
 
-riot.tag('page-likes', '<div class="page-likes page {hidden: this.isHidden()}"></div>', function(opts) {
-  this.mixin(pageMixin);
-  this.pageId = 'likes';
-  
-  this.hidden = true;
+riot.tag('pane-likes', '<div class="pane-likes pane {hidden: this.isHidden()}"> </div>', function(opts) {
 
 });
 
