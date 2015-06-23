@@ -1,22 +1,22 @@
 /**
  * Mixins
  */
-/*var pageMixin = {
+var paneMixin = {
   init: function() {
     riot.route(function(page) {
       if (page === this.pageId)
-        this.showPage();
+        this.showPane();
       else
-        this.hidePage();
+        this.hidePane();
     }.bind(this))
   },
 
-  showPage: function() {
+  showPane: function() {
     this.hidden = false;
     this.update();
   },
 
-  hidePage: function() {
+  hidePane: function() {
     this.hidden = true;
     this.update();
   },
@@ -24,7 +24,7 @@
   isHidden: function() {
     return this.hidden;
   }
-}*/
+}
 
 riot.tag('r-header', '<div class="container"> <div class="header { sticky: this.isSticky()}"> <div class="whatsMahName">Gen Edwards</div> <ul class="header-right"> <li each="{link, i in links}" class="section-link { active: parent.isActive(link.id)}"> <a href="{link.linkAddr}">{link.title}</a> </li> </ul> </div> </div>', 'class=\'r-header\'', function(opts) {
 
@@ -82,7 +82,7 @@ riot.tag('r-main', '<section class="container"> <pane-home></pane-home> <pane-li
 
 });
 
-riot.tag('pane-home', '<div id="pane-home" class="pane-home pane {hidden: this.isHidden()}"> <h1>Hi, I\'m Gen</h1> <p>I like to do stuff</p> <p>{this.screen()}</p> <p>{this.viewport()}</p> </section>', function(opts) {
+riot.tag('pane-home', '<div id="pane-home" class="pane-home pane {hidden: this.isHidden()}"> <h1>Hi, I\'m Gen</h1> <p>I\'m a code guy who fell into a fron-end dev position (and I\'m loving it). My day to day work involves lots of Javascript, HTML5, CSS3, and some Java for running Selenium. I love solving problems by thinking out loud (around other people).</p> <p>I\'m a perpetual hobby collecter, that is, I collect new hobbies. My current obsessions include:</p> <ul> <li>Aeropress - the best damn coffee</li> <li>Javascript MVC - currently Riot.js; I feel this will be replaced with React.js soon...</li> <li>Rubik\'s cube - 3x3 Best avg of 5: 24.32s</li> </ul> <p>{this.screen()}</p> <p>{this.viewport()}</p> </section>', function(opts) {
   console.log(opts);
 
   this.screen = function() {
