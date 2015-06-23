@@ -26,7 +26,7 @@
   }
 }*/
 
-<r-header class='header-container'>
+<r-header class='r-header'>
   <div class='container'>
     <div class='header { sticky: this.isSticky()}'>
       <div class='whatsMahName'>Gen Edwards</div>
@@ -92,15 +92,18 @@
 
 // the main container
 <r-main>
-  <pane-home></pane-home>
-  <pane-likes></pane-likes>
+  <section class='container'>
+    <pane-home></pane-home>
+    <pane-likes></pane-likes>
+  </section>
 </r-main>
 
 <pane-home>
-  <section id='pane-home' class='pane-home pane {hidden: this.isHidden()}'>
+  <div id='pane-home' class='pane-home pane {hidden: this.isHidden()}'>
     <h1>Hi, I'm Gen</h1>
     <p>I like to do stuff</p>
-  </div>
+  </section>
+  console.log(opts);
 </pane-home>
 
 <pane-likes>

@@ -26,7 +26,7 @@
   }
 }*/
 
-riot.tag('r-header', '<div class="container"> <div class="header { sticky: this.isSticky()}"> <div class="whatsMahName">Gen Edwards</div> <ul class="header-right"> <li each="{link, i in links}" class="section-link { active: parent.isActive(link.id)}"> <a href="{link.linkAddr}">{link.title}</a> </li> </ul> </div> </div>', 'class=\'header-container\'', function(opts) {
+riot.tag('r-header', '<div class="container"> <div class="header { sticky: this.isSticky()}"> <div class="whatsMahName">Gen Edwards</div> <ul class="header-right"> <li each="{link, i in links}" class="section-link { active: parent.isActive(link.id)}"> <a href="{link.linkAddr}">{link.title}</a> </li> </ul> </div> </div>', 'class=\'r-header\'', function(opts) {
 
   this.links = [
     { title:'about',   class:'about',   id:'about',   linkAddr:'#about'  },
@@ -78,11 +78,12 @@ riot.tag('r-bg-image', '', 'class=\'bg-image\'', function(opts) {
 });
 
 // the main container
-riot.tag('r-main', '<pane-home></pane-home> <pane-likes></pane-likes>', function(opts) {
+riot.tag('r-main', '<section class="container"> <pane-home></pane-home> <pane-likes></pane-likes> </section>', function(opts) {
 
 });
 
-riot.tag('pane-home', '<section id="pane-home" class="pane-home pane {hidden: this.isHidden()}"> <h1>Hi, I\'m Gen</h1> <p>I like to do stuff</p> </div>', function(opts) {
+riot.tag('pane-home', '<div id="pane-home" class="pane-home pane {hidden: this.isHidden()}"> <h1>Hi, I\'m Gen</h1> <p>I like to do stuff</p> </section>', function(opts) {
+  console.log(opts);
 
 });
 
