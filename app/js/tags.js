@@ -82,8 +82,16 @@ riot.tag('r-main', '<section class="container"> <pane-home></pane-home> <pane-li
 
 });
 
-riot.tag('pane-home', '<div id="pane-home" class="pane-home pane {hidden: this.isHidden()}"> <h1>Hi, I\'m Gen</h1> <p>I like to do stuff</p> </section>', function(opts) {
+riot.tag('pane-home', '<div id="pane-home" class="pane-home pane {hidden: this.isHidden()}"> <h1>Hi, I\'m Gen</h1> <p>I like to do stuff</p> <p>{this.screen()}</p> <p>{this.viewport()}</p> </section>', function(opts) {
   console.log(opts);
+
+  this.screen = function() {
+    return window.screen.width + ', ' + window.screen.height;
+  }.bind(this);
+
+  this.viewport = function() {
+    return document.documentElement.clientWidth + ', ' + document.documentElement.clientHeight;
+  }.bind(this);
 
 });
 

@@ -1,0 +1,154 @@
+{
+  "name": "gen_fonts",
+  "css_prefix_text": "icon-",
+  "css_use_suffix": false,
+  "hinting": true,
+  "units_per_em": 1000,
+  "ascent": 850,
+  "glyphs": [
+    {
+      "uid": "48cc210e59ff4bc56b6c8fba6eb384b8",
+      "css": "emo-coffee",
+      "code": 59402,
+      "src": "fontelico"
+    },
+    {
+      "uid": "9c2b737b16ae2c8d66b7bfd29ba5ecd8",
+      "css": "chrome",
+      "code": 59409,
+      "src": "fontelico"
+    },
+    {
+      "uid": "d7271d490b71df4311e32cdacae8b331",
+      "css": "home",
+      "code": 59396,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "ecb97add13804c190456025e43ec003b",
+      "css": "keyboard",
+      "code": 59397,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "0133387f2069a1b3168942b84d81dd3a",
+      "css": "gamepad",
+      "code": 59392,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "500fc1f109021e4b1de4deda2f7ed399",
+      "css": "laptop",
+      "code": 59410,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "19e7b342a5e6bd0cd86de6d6208486a4",
+      "css": "leaf-1",
+      "code": 59415,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "3a26448b711645ba1abfc86c1a6e2f30",
+      "css": "coffee",
+      "code": 59401,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "30b79160618d99ce798e4bd11cafe3fe",
+      "css": "food",
+      "code": 59393,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "fbede3c5584282a0e9b131926dff71da",
+      "css": "cube",
+      "code": 59414,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "01c946ce2ed5500e0a918f2b3a7d1923",
+      "css": "css3",
+      "code": 59395,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "c75b7d61b0bce6aeb54292e3952a1568",
+      "css": "git-squared",
+      "code": 59398,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "0ece9a12de796b8411f868d582bee678",
+      "css": "github-squared",
+      "code": 59400,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "0f6a2573a7b6df911ed199bb63717e27",
+      "css": "github-circled",
+      "code": 59399,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "ff44f01f60948555026580eedf1e39bb",
+      "css": "html5",
+      "code": 59394,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "47a35af762c8e06f3d152750134c8750",
+      "css": "linux",
+      "code": 59413,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "9121e3eb89863f67c8bda378eea01a93",
+      "css": "reddit",
+      "code": 59405,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "727544621cb891115c99b4a4cfed01df",
+      "css": "steam-squared",
+      "code": 59404,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "6341ebcbe1ed1f6777c1b9527ead368e",
+      "css": "video",
+      "code": 59408,
+      "src": "entypo"
+    },
+    {
+      "uid": "ddecf5ad7935e3fb1b70dac6ed00d06a",
+      "css": "language",
+      "code": 59407,
+      "src": "entypo"
+    },
+    {
+      "uid": "e5297b06d9300be7e7c347f78a9b8b61",
+      "css": "headphones",
+      "code": 59406,
+      "src": "typicons"
+    },
+    {
+      "uid": "8f73806c205d38d9412c340f93ed0c7a",
+      "css": "coffee-1",
+      "code": 59403,
+      "src": "typicons"
+    },
+    {
+      "uid": "bf819a687a180e0e02ef319600c99d3b",
+      "css": "houzz",
+      "code": 59412,
+      "src": "brandico"
+    },
+    {
+      "uid": "a904215f9fea569335d2a8addb4356b4",
+      "css": "leaf",
+      "code": 59411,
+      "src": "elusive"
+    }
+  ]
+}

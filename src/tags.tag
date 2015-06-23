@@ -102,8 +102,18 @@
   <div id='pane-home' class='pane-home pane {hidden: this.isHidden()}'>
     <h1>Hi, I'm Gen</h1>
     <p>I like to do stuff</p>
+    <p>{this.screen()}</p>
+    <p>{this.viewport()}</p>
   </section>
   console.log(opts);
+
+  screen() {
+    return window.screen.width + ', ' + window.screen.height;
+  }
+
+  viewport() {
+    return document.documentElement.clientWidth + ', ' + document.documentElement.clientHeight;
+  }
 </pane-home>
 
 <pane-likes>
