@@ -1,8 +1,8 @@
 html {
-  font-size: 19px;
+  font-size: 18px;
   font-family: Roboto, Arial, Verdana, Geneva, sans-serif;
   font-weight: 300;
-  letter-spacing: 0.035em;
+  letter-spacing: 0.02em;
   line-height: 1.4em;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased; }
@@ -14,11 +14,16 @@ html {
     font-weight: 100; }
   html h2 {
     font-size: 2em;
-    font-weight: 100; }
+    font-weight: 100;
+    line-height: 1.4em; }
   html h3 {
     font-size: 1.3em;
     font-weight: 300;
     opacity: 0.7; }
+  @media (min-width: 600px) {
+    html {
+      line-spacing: 0.035em;
+      font-size: 19px; } }
   @media (min-width: 1100px) {
     html {
       font-size: 20px; } }
@@ -149,7 +154,7 @@ r-main {
     r-main .pane-home .side-image img {
       width: 100%; }
   r-main .pane-skills .content {
-    width: 700px; }
+    width: 100%; }
   r-main .pane-skills ul {
     list-style: none; }
   r-main .pane-skills li {
@@ -176,6 +181,9 @@ r-main {
       r-main .pane-home .side-image img {
         width: initial;
         min-width: 360px; } }
+  @media (min-width: 700px) {
+    r-main .pane-skills .content {
+      width: 600px; } }
   @media (min-width: 900px) {
     r-main .pane-home {
       display: -webkit-box;
