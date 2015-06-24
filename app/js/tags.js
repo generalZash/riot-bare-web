@@ -99,7 +99,7 @@ riot.tag('pane-home', '<div id="pane-home" class="pane-home pane {hidden: !this.
 
 });
 
-riot.tag('pane-skills', '<div class="pane-skills pane {hidden: !this.isActive()}"> <div class="content"> <h2>Things I can do (that matter for work)</h1> <p>Assessment standards:</p> <ul> <li><icon class="icon-emo-displeased"></icon><span>: Meh - I know what it is</span></li> <li><icon class="icon-emo-happy"></icon><span>: I\'m alright - I\'ve used this</span></li> <li><icon class="icon-emo-grin"></icon><span>: I know my way around it</span></li> <li><icon class="icon-emo-thumbsup"></icon><span>: Other people ask me questions about it</span></li> <li><icon class="icon-emo-sunglasses"></icon><span>: Master (please slap me if I ever claim to have "Mastered" a skill)</span></li> </ul> <div class="nb">*NB: It\'s sad that I have to state this: I\'m honest about my skills. For example, I built this website from scratch so I know what I\'m doing but I rate myself 3.5 for HTML5/CSS3. I would never be able to claim "100% Mastah!" of any popular modern programming language.</div> <section class="skill-list"> <r-skill each="{skill, i in skills}" name="{skill.name}" level="{skill.level}" skillicon="{skill.skillIcon}"></r-skill> </section> </div> </div>', function(opts) {
+riot.tag('pane-skills', '<div class="pane-skills pane {hidden: !this.isActive()}"> <div class="content"> <h2>Things I can do (that matter for work)</h1> <p>Assessment standards:</p> <ul> <li><icon class="icon-emo-displeased"></icon><span>: Meh - I know what it is</span></li> <li><icon class="icon-emo-happy"></icon><span>: I\'m alright - I\'ve used this</span></li> <li><icon class="icon-emo-grin"></icon><span>: I know my way around it</span></li> <li><icon class="icon-emo-thumbsup"></icon><span>: Other people ask me questions about it</span></li> <li><icon class="icon-emo-sunglasses"></icon><span>: Master (please slap me if I ever claim to have "Mastered" a skill)</span></li> </ul> <div class="nb">*NB: It\'s sad that I have to state this: I\'m honest about my skills. For example, I built this responsive website from scratch so I seem to know what I\'m doing but I rate myself 3/5 for HTML5/CSS3. I would never be able to claim "100% Mastah!" of any popular modern programming language.</div> <section class="skill-list"> <r-skill each="{skill, i in skills}" name="{skill.name}" level="{skill.level}" skillicon="{skill.skillIcon}"></r-skill> </section> </div> </div>', function(opts) {
 
   this.mixin(ActivatableMixin);
   this.paneId = 'skills';
@@ -120,8 +120,6 @@ riot.tag('pane-skills', '<div class="pane-skills pane {hidden: !this.isActive()}
 });
 
 riot.tag('r-skill', '<div class="skill-name"> <icon class="{opts.skillicon}"> </icon> {opts.name} </div> <div class="skill-level"> <icon each="{icon, i in fullIcons}" class="{parent.getIcon(parent.opts.level-1)}"></icon> <icon each="{icon, i in emptyIcons}" class="icon-dot"></icon> </div>', 'class=\'skill-container\'', function(opts) {
-  console.log(opts);
-
   var arr = [0,0,0,0,0];
   this.fullIcons=arr.splice(0, opts.level);
   this.emptyIcons=arr;

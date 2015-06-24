@@ -150,9 +150,9 @@ var ActivatableMixin = {
         <li><icon class='icon-emo-sunglasses'></icon><span>: Master (please slap me if I ever claim to have "Mastered" a skill)</span></li>
       </ul>
       <div class='nb'>*NB: It's sad that I have to state this: I'm honest about my skills. For 
-        example, I built this website from scratch so I know what I'm doing but I rate myself 3.5
-        for HTML5/CSS3. I would never be able to claim "100% Mastah!" of any popular modern 
-        programming language.</div>
+        example, I built this responsive website from scratch so I seem to know what I'm doing but 
+        I rate myself 3/5 for HTML5/CSS3. I would never be able to claim "100% Mastah!" of any 
+        popular modern programming language.</div>
       
       <section class='skill-list'>
         <r-skill each='{skill, i in skills}' name='{skill.name}' level='{skill.level}' skillIcon='{skill.skillIcon}'></r-skill>
@@ -186,8 +186,6 @@ var ActivatableMixin = {
     <icon each='{icon, i in fullIcons}' class='{parent.getIcon(parent.opts.level-1)}'></icon>
     <icon each='{icon, i in emptyIcons}' class='icon-dot'></icon>
   </div>
-  console.log(opts);
-
   // split this array of length 5 between fullIcons and emptryIcons
   var arr = [0,0,0,0,0];
   this.fullIcons=arr.splice(0, opts.level);
