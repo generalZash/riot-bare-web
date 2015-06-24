@@ -224,5 +224,5 @@ var ActivatableMixin = {
 </pane-contact>
 
 <r-footer class='footer'>
-  <span>© Gen Edwards 2015</span>
+  <span>&copy; Gen Edwards 2015</span>
 </r-footer>

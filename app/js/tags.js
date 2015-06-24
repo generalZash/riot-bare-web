@@ -149,6 +149,6 @@ riot.tag('pane-contact', '<div class="pane-contact pane {hidden: !this.isActive(
 
 });
 
-riot.tag('r-footer', '<span>© Gen Edwards 2015</span>', 'class=\'footer\'', function(opts) {
+riot.tag('r-footer', '<span>&copy; Gen Edwards 2015</span>', 'class=\'footer\'', function(opts) {
 
 });
