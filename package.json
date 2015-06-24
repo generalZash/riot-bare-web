@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "testing out riot",
   "scripts": {
-    "setup": "cp ./nodemodules/riot/riot.min.js ./app/js",
+    "setup": "cp ./node_modules/riot/riot.min.js ./app/js && cp ./src/font/font/* ./app/font/ && cp ./src/font/css/fonts.css ./app/css/",
     "watch:riot": "riot -w src/ js/",
     "build": "riot src/ js/"
   },

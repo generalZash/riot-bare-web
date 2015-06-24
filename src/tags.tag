@@ -94,6 +94,7 @@ var paneMixin = {
 <r-main>
   <section class='container'>
     <pane-home></pane-home>
+    <pane-skills></pane-skills>
     <pane-likes></pane-likes>
   </section>
 </r-main>
@@ -134,6 +135,57 @@ var paneMixin = {
     return document.documentElement.clientWidth + ', ' + document.documentElement.clientHeight;
   }
 </pane-home>
+
+<pane-skills>
+  <div class='pane-skills pane {hidden: this.isHidden()}'>
+    <div class='content'>
+      <h2>Things I can do (that matter for work)</h1>
+      
+      <r-skill each='{skill, i in skills}' name='{skill.name}' level='{skill.level}'></r-skill>
+      
+
+
+
+      <p>I'm a code guy who fell into a fron-end dev position (and I'm loving it). My day to day work 
+        involves lots of Javascript, HTML5, CSS3, and some Java for running Selenium. I love solving 
+        problems by thinking out loud (around other people).</p>
+
+      <p>I'm a perpetual hobby collecter, that is, I collect new hobbies. My current obsessions include:</p>
+      <ul>
+        <li>Aeropress - the best damn coffee</li>
+        <li>Javascript MVC - currently Riot.js; I feel this will be replaced with React.js soon...</li>
+        <li>Rubik's cube - 3x3 Best avg of 5: 24.32s</li>
+      </ul>
+
+      <p>{this.screen()}</p>
+      <p>{this.viewport()}</p>
+    </div>
+  </div>
+
+  this.mixin(paneMixin);
+  this.paneId = 'skills';
+  this.hidden = true;
+
+  this.skills = [
+    { name:'Javascript',            level:3},
+    { name:'Java',                  level:3}
+  ];
+</pane-skills>
+
+<r-skill class='skill-container'>
+  <div class='skill-name'>{opts.name}</div>
+  <div class='skill-level'>
+    <icon each='{icon, i in [0,0,0,0]}' class='{parent.getIcon(parent.opts.level)}'></icon>
+  </div>
+  console.log(opts);
+  this.iconLevel = ['icon-emo-displeased', 'icon-emo-grin', 'icon-emo-thumbsup', 'icon-emo-sunglasses'];
+
+  getIcon(level){
+    return this.iconLevel[level];
+  }
+
+
+</r-skill>
 
 <pane-likes>
   <div class='pane-likes pane {hidden: this.isHidden()}'>

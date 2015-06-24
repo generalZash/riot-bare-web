@@ -1,5 +1,5 @@
 {
-  "name": "gen_fonts",
+  "name": "fonts",
   "css_prefix_text": "icon-",
   "css_use_suffix": false,
   "hinting": true,
@@ -7,9 +7,33 @@
   "ascent": 850,
   "glyphs": [
     {
+      "uid": "142263941b9f4cd4b2b84f1f4cd13b1d",
+      "css": "emo-thumbsup",
+      "code": 59418,
+      "src": "fontelico"
+    },
+    {
       "uid": "48cc210e59ff4bc56b6c8fba6eb384b8",
       "css": "emo-coffee",
       "code": 59402,
+      "src": "fontelico"
+    },
+    {
+      "uid": "078fec38562c3f83a1201a908040c141",
+      "css": "emo-sunglasses",
+      "code": 59419,
+      "src": "fontelico"
+    },
+    {
+      "uid": "043b585886018be7408f4c77c1a3759c",
+      "css": "emo-displeased",
+      "code": 59416,
+      "src": "fontelico"
+    },
+    {
+      "uid": "cbc328d1c779a2b9e3b1199d904199a5",
+      "css": "emo-grin",
+      "code": 59417,
       "src": "fontelico"
     },
     {
@@ -43,9 +67,21 @@
       "src": "fontawesome"
     },
     {
+      "uid": "0357f7abbc0babf43509669f332e41e6",
+      "css": "mobile",
+      "code": 59420,
+      "src": "fontawesome"
+    },
+    {
       "uid": "19e7b342a5e6bd0cd86de6d6208486a4",
       "css": "leaf-1",
       "code": 59415,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "130380e481a7defc690dfb24123a1f0c",
+      "css": "circle",
+      "code": 59421,
       "src": "fontawesome"
     },
     {
@@ -118,6 +154,12 @@
       "uid": "6341ebcbe1ed1f6777c1b9527ead368e",
       "css": "video",
       "code": 59408,
+      "src": "entypo"
+    },
+    {
+      "uid": "d2c6b59d9a239140cb76be0627480855",
+      "css": "dot",
+      "code": 59422,
       "src": "entypo"
     },
     {
