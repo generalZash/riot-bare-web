@@ -11,7 +11,8 @@ html {
     font-weight: 300; }
   html h1 {
     font-size: 2.7em;
-    font-weight: 100; }
+    font-weight: 100;
+    line-height: 1.4em; }
   html h2 {
     font-size: 2em;
     font-weight: 100;
@@ -31,7 +32,6 @@ html {
 body {
   margin: 0;
   width: 100%;
-  height: 100%;
   background-color: #f3f3f3; }
 
 .r-header {
@@ -45,23 +45,7 @@ body {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
   z-index: 1000;
   font-size: 1.1em;
-  font-family: Roboto, Arial, sans-serif;
-  /*   @media (min-width: 800px) {
-    .header {
-      width: 80%;
-    }
-  }
- */
-  /*@media (min-width: 1000px) {
-    .header {
-      width: 900px;
-    }
-  }
-  @media (min-width: 1200px) {
-    .header {
-      width: 1100px;
-    }
-  }*/ }
+  font-family: Roboto, Arial, sans-serif; }
   .r-header .container {
     margin: 0 auto; }
   .r-header .header {
@@ -144,7 +128,8 @@ r-main {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  background-color: #f3f3f3; }
+  background-color: #f3f3f3;
+  min-height: 50%; }
   r-main .container {
     width: 100%;
     margin: 0 auto; }
@@ -196,6 +181,9 @@ r-main {
   r-main .pane-skills icon[class^="icon-"]:before {
     width: 1.4em;
     font-size: 0.8em; }
+  r-main .pane-contact {
+    display: block;
+    text-align: center; }
   @media (min-width: 400px) {
     r-main .pane-home .side-image {
       min-width: 360px; }
@@ -218,33 +206,19 @@ r-main {
     r-main .container {
       width: 1300px; } }
 
-.group {
-  list-style: none; }
-
-.tab-item {
+.footer {
+  position: relative;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: stretch;
-  -webkit-align-items: stretch;
-      -ms-flex-align: stretch;
-          align-items: stretch;
-  padding: 10px 20px;
-  margin: 5px;
-  background-color: rgba(211, 190, 197, 0.4);
-  border-radius: 3px;
-  width: 100px;
-  height: 400px; }
-
-.editable-div {
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1; }
-
-.drag-handle {
-  padding-right: 10px; }
+  bottom: -60px;
+  width: 100%;
+  height: 2em; }
+  .footer span {
+    margin: 0 auto;
+    font-size: 0.8em;
+    opacity: 0.7; }
 
 icon[class^="icon-"]:before {
   width: 1.5em;

@@ -78,7 +78,7 @@ riot.tag('r-bg-image', '', 'class=\'bg-image\'', function(opts) {
 });
 
 // the main container
-riot.tag('r-main', '<section class="container"> <pane-home></pane-home> <pane-skills></pane-skills> <pane-likes></pane-likes> </section>', function(opts) {
+riot.tag('r-main', '<section class="container"> <pane-home></pane-home> <pane-skills></pane-skills> <pane-likes></pane-likes> <pane-contact> </section>', function(opts) {
 
 });
 
@@ -141,25 +141,14 @@ riot.tag('pane-likes', '<div class="pane-likes pane {hidden: !this.isActive()}">
 
 });
 
-riot.tag('r-tabs', '<ul class="group"> <li each="{tab, i in tabs}" class="tab-item { is-active: parent.isActiveTab(tab.ref)}" onclick="{ parent.toggleTab }"> <span class="drag-handle">= </span> <div class="editable-div" contenteditable="true">{tab.title}</div> </li> </ul> <br><br><br><br><br><br><br><br> <div class="tab-content"> <div each="{tab, i in tabs}" class="tab-content-item { is-active: parent.isActiveTab(tab.ref) }">{tab.content}</div> </div> <div> <br><br><br><br><br><br><br><br>', function(opts) {
+riot.tag('pane-contact', '<div class="pane-contact pane {hidden: !this.isActive()}"> <h1>Wanna connect?</h1> <p> Shoot me an email: thedude (at) generalzash (dot) com </br></br> Connect via <a href="https://www.linkedin.com/in/genedwards">LinkedIn</a> </p> </div>', function(opts) {
 
   this.mixin(ActivatableMixin);
+  this.paneId = 'contact';
+  this.active = false;
 
-  this.tabs = [
-    { title: 'Tab 1', ref: 'tab1', content: '1 content'},
-    { title: 'blah', ref: 'tab2', content: 'some other'},
-    { title: 'Tab 3', ref: 'tab3', content: 'and some tagggs'}
-  ];
+});
 
-  this.activeTab = 'tab1';
-
-  this.isActiveTab = function(tab) {
-    return this.activeTab === tab;
-  }.bind(this);
-
-  this.toggleTab = function(event) {
-    this.activeTab = event.item.tab.ref;
-
-  }.bind(this);
+riot.tag('r-footer', '<span>© Gen Edwards 2015</span>', 'class=\'footer\'', function(opts) {
 
 });
