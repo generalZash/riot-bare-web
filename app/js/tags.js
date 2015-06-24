@@ -99,26 +99,27 @@ riot.tag('pane-home', '<div id="pane-home" class="pane-home pane {hidden: !this.
 
 });
 
-riot.tag('pane-skills', '<div class="pane-skills pane {hidden: !this.isActive()}"> <div class="content"> <h2>Things I can do (that matter for work)</h1> <p>Assessment standards:</p> <ul> <li><icon class="icon-emo-displeased"></icon><span>: Meh - I know what it is</span></li> <li><icon class="icon-emo-happy"></icon><span>: I\'m alright - I\'ve used this</span></li> <li><icon class="icon-emo-grin"></icon><span>: I know my way around it</span></li> <li><icon class="icon-emo-thumbsup"></icon><span>: Other people ask me questions about it</span></li> <li><icon class="icon-emo-sunglasses"></icon><span>: Master (please slap me if I ever claim to have "Mastered" a skill)</span></li> </ul> <div class="nb">*NB: It\'s sad that I have to state this: I\'m honest about my skills. For example, I built this website from scratch so I know what I\'m doing but I rate myself 3.5~4 for HTML5/CSS3. I would never be able to claim "100% Mastah!" of any popular modern programming language.</div> <r-skill each="{skill, i in skills}" name="{skill.name}" level="{skill.level}"></r-skill> </div> </div>', function(opts) {
+riot.tag('pane-skills', '<div class="pane-skills pane {hidden: !this.isActive()}"> <div class="content"> <h2>Things I can do (that matter for work)</h1> <p>Assessment standards:</p> <ul> <li><icon class="icon-emo-displeased"></icon><span>: Meh - I know what it is</span></li> <li><icon class="icon-emo-happy"></icon><span>: I\'m alright - I\'ve used this</span></li> <li><icon class="icon-emo-grin"></icon><span>: I know my way around it</span></li> <li><icon class="icon-emo-thumbsup"></icon><span>: Other people ask me questions about it</span></li> <li><icon class="icon-emo-sunglasses"></icon><span>: Master (please slap me if I ever claim to have "Mastered" a skill)</span></li> </ul> <div class="nb">*NB: It\'s sad that I have to state this: I\'m honest about my skills. For example, I built this website from scratch so I know what I\'m doing but I rate myself 3.5 for HTML5/CSS3. I would never be able to claim "100% Mastah!" of any popular modern programming language.</div> <section class="skill-list"> <r-skill each="{skill, i in skills}" name="{skill.name}" level="{skill.level}" skillicon="{skill.skillIcon}"></r-skill> </section> </div> </div>', function(opts) {
 
   this.mixin(ActivatableMixin);
   this.paneId = 'skills';
   this.active = false;
 
   this.skills = [
-    { name:'Javascript',              level:4},
-    { name:'Java',                    level:3},
-    { name:'HTML5/CSS3(Less, Sass)',  level:4},
-    { name:'Selenium',                level:3},
-    { name:'Jenkins',                 level:2},
-    { name:'Python',                  level:3},
-    { name:'Linux',                   level:4},
-    { name:'Databases',               level:1}
+    { name:'Javascript',              level:4, skillIcon:''},
+    { name:'Java',                    level:3, skillIcon:'icon-coffee-1'},
+    { name:'HTML5/CSS3 (Less, Sass)', level:3, skillIcon:'icon-html5'},
+    { name:'Selenium',                level:3, skillIcon:''},
+    { name:'Jenkins',                 level:2, skillIcon:''},
+    { name:'Python',                  level:3, skillIcon:''},
+    { name:'Linux',                   level:4, skillIcon:'icon-linux'},
+    { name:'git',                     level:3, skillIcon:'icon-git-squared'},
+    { name:'Databases',               level:1, skillIcon:''}
   ];
 
 });
 
-riot.tag('r-skill', '<div class="skill-name">{opts.name}</div> <div class="skill-level"> <icon each="{icon, i in fullIcons}" class="{parent.getIcon(parent.opts.level-1)}"></icon> <icon each="{icon, i in emptyIcons}" class="icon-dot"></icon> </div>', 'class=\'skill-container\'', function(opts) {
+riot.tag('r-skill', '<div class="skill-name"> <icon class="{opts.skillicon}"> </icon> {opts.name} </div> <div class="skill-level"> <icon each="{icon, i in fullIcons}" class="{parent.getIcon(parent.opts.level-1)}"></icon> <icon each="{icon, i in emptyIcons}" class="icon-dot"></icon> </div>', 'class=\'skill-container\'', function(opts) {
   console.log(opts);
 
   var arr = [0,0,0,0,0];

@@ -150,11 +150,13 @@ var ActivatableMixin = {
         <li><icon class='icon-emo-sunglasses'></icon><span>: Master (please slap me if I ever claim to have "Mastered" a skill)</span></li>
       </ul>
       <div class='nb'>*NB: It's sad that I have to state this: I'm honest about my skills. For 
-        example, I built this website from scratch so I know what I'm doing but I rate myself 3.5~4 
+        example, I built this website from scratch so I know what I'm doing but I rate myself 3.5
         for HTML5/CSS3. I would never be able to claim "100% Mastah!" of any popular modern 
         programming language.</div>
       
-      <r-skill each='{skill, i in skills}' name='{skill.name}' level='{skill.level}'></r-skill>
+      <section class='skill-list'>
+        <r-skill each='{skill, i in skills}' name='{skill.name}' level='{skill.level}' skillIcon='{skill.skillIcon}'></r-skill>
+      </section>
     </div>
   </div>
 
@@ -163,19 +165,23 @@ var ActivatableMixin = {
   this.active = false;
 
   this.skills = [
-    { name:'Javascript',              level:4},
-    { name:'Java',                    level:3},
-    { name:'HTML5/CSS3(Less, Sass)',  level:4},
-    { name:'Selenium',                level:3},
-    { name:'Jenkins',                 level:2},
-    { name:'Python',                  level:3},
-    { name:'Linux',                   level:4},
-    { name:'Databases',               level:1}
+    { name:'Javascript',              level:4, skillIcon:''},
+    { name:'Java',                    level:3, skillIcon:'icon-coffee-1'},
+    { name:'HTML5/CSS3 (Less, Sass)', level:3, skillIcon:'icon-html5'},
+    { name:'Selenium',                level:3, skillIcon:''},
+    { name:'Jenkins',                 level:2, skillIcon:''},
+    { name:'Python',                  level:3, skillIcon:''},
+    { name:'Linux',                   level:4, skillIcon:'icon-linux'},
+    { name:'git',                     level:3, skillIcon:'icon-git-squared'},
+    { name:'Databases',               level:1, skillIcon:''}
   ];
 </pane-skills>
 
 <r-skill class='skill-container'>
-  <div class='skill-name'>{opts.name}</div>
+  <div class='skill-name'>
+    <icon class='{opts.skillicon}'> </icon>
+    {opts.name}
+  </div>
   <div class='skill-level'>
     <icon each='{icon, i in fullIcons}' class='{parent.getIcon(parent.opts.level-1)}'></icon>
     <icon each='{icon, i in emptyIcons}' class='icon-dot'></icon>

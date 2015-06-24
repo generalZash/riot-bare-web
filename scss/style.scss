@@ -30,7 +30,7 @@ html{
   }
 
   @media (min-width: 600px) {
-    line-spacing: 0.035em;
+    letter-spacing: 0.035em;
     font-size: 19px;
   }
   @media (min-width: 1100px) {
@@ -197,9 +197,20 @@ r-main {
     }
     .skill-container {
       display: flex;
+      flex-wrap: wrap;
+      padding: 10px 5px;
     }
-    .skill-name {
+    .skill-name{
       flex-grow: 1;
+    }
+    .skill-level {
+      margin: 0 0 0 auto;
+    }
+
+    // icons
+    icon[class^="icon-"]:before{
+      width: 1.4em;
+      font-size: 0.8em;
     }
   }
 
@@ -213,13 +224,17 @@ r-main {
     }
   }
   @media (min-width: 700px) {
-    .pane-skills .content {
-        width: 600px;
+    .pane-skills .skill-list{
+      width: 500px;
+      margin: 0 auto;
     }
   }
   @media (min-width: 900px) {
     .pane-home {
       display: flex;
+    }
+    .pane-skills .content{
+      width: 900px;
     }
   }
   @media (min-width: 1400px) {

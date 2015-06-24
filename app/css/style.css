@@ -22,7 +22,7 @@ html {
     opacity: 0.7; }
   @media (min-width: 600px) {
     html {
-      line-spacing: 0.035em;
+      letter-spacing: 0.035em;
       font-size: 19px; } }
   @media (min-width: 1100px) {
     html {
@@ -169,12 +169,21 @@ r-main {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
-    display: flex; }
+    display: flex;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+    padding: 10px 5px; }
   r-main .pane-skills .skill-name {
     -webkit-box-flex: 1;
     -webkit-flex-grow: 1;
         -ms-flex-positive: 1;
             flex-grow: 1; }
+  r-main .pane-skills .skill-level {
+    margin: 0 0 0 auto; }
+  r-main .pane-skills icon[class^="icon-"]:before {
+    width: 1.4em;
+    font-size: 0.8em; }
   @media (min-width: 400px) {
     r-main .pane-home .side-image {
       min-width: 360px; }
@@ -182,14 +191,17 @@ r-main {
         width: initial;
         min-width: 360px; } }
   @media (min-width: 700px) {
-    r-main .pane-skills .content {
-      width: 600px; } }
+    r-main .pane-skills .skill-list {
+      width: 500px;
+      margin: 0 auto; } }
   @media (min-width: 900px) {
     r-main .pane-home {
       display: -webkit-box;
       display: -webkit-flex;
       display: -ms-flexbox;
-      display: flex; } }
+      display: flex; }
+    r-main .pane-skills .content {
+      width: 900px; } }
   @media (min-width: 1400px) {
     r-main .container {
       width: 1300px; } }
