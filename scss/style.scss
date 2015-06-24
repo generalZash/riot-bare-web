@@ -9,7 +9,7 @@ html{
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
 
-  p{
+  p, li{
     opacity: 0.8;
     font-weight: 300;
   }
@@ -144,7 +144,7 @@ body {
 r-main {
   margin-top: 75px;
   padding: 5%;
-  display: block;
+  display: flex;
   background-color: #f3f3f3;
 
   .container {
@@ -152,6 +152,10 @@ r-main {
     margin: 0 auto;
   }
 
+  .pane {
+    display: flex;
+    justify-content: center;
+  }
   .pane-home {
     display: block;
     li{
@@ -166,7 +170,31 @@ r-main {
   }
 
   .pane-skills {
-
+    .content {
+      width: 700px;
+    }
+    // explanation at top
+    ul {
+      list-style: none;
+    }
+    li {
+      line-height: 1.8em;
+    }
+    .nb {
+      font-size: 0.8em;
+      opacity: 0.8;
+      padding: 0 20px 30px 20px;
+    }
+    // skill list
+    r-skill div {
+      opacity: 0.8;
+    }
+    .skill-container {
+      display: flex;
+    }
+    .skill-name {
+      flex-grow: 1;
+    }
   }
 
   @media (min-width: 400px) {
@@ -212,8 +240,9 @@ r-main {
   padding-right: 10px;
 }
 
-icon {
-  opacity: 0.7;
+icon[class^="icon-"]:before{
+  width: 1.5em;
+  font-size: 0.97em;
 }
 
 .hidden {

@@ -6,7 +6,7 @@ html {
   line-height: 1.4em;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased; }
-  html p {
+  html p, html li {
     opacity: 0.8;
     font-weight: 300; }
   html h1 {
@@ -123,11 +123,23 @@ body {
 r-main {
   margin-top: 75px;
   padding: 5%;
-  display: block;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   background-color: #f3f3f3; }
   r-main .container {
     width: 100%;
     margin: 0 auto; }
+  r-main .pane {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center; }
   r-main .pane-home {
     display: block; }
     r-main .pane-home li {
@@ -136,6 +148,28 @@ r-main {
       width: 100%; }
     r-main .pane-home .side-image img {
       width: 100%; }
+  r-main .pane-skills .content {
+    width: 700px; }
+  r-main .pane-skills ul {
+    list-style: none; }
+  r-main .pane-skills li {
+    line-height: 1.8em; }
+  r-main .pane-skills .nb {
+    font-size: 0.8em;
+    opacity: 0.8;
+    padding: 0 20px 30px 20px; }
+  r-main .pane-skills r-skill div {
+    opacity: 0.8; }
+  r-main .pane-skills .skill-container {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex; }
+  r-main .pane-skills .skill-name {
+    -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1; }
   @media (min-width: 400px) {
     r-main .pane-home .side-image {
       min-width: 360px; }
@@ -180,8 +214,9 @@ r-main {
 .drag-handle {
   padding-right: 10px; }
 
-icon {
-  opacity: 0.7; }
+icon[class^="icon-"]:before {
+  width: 1.5em;
+  font-size: 0.97em; }
 
 .hidden {
   display: none !important; }

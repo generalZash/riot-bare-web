@@ -7,9 +7,27 @@
   "ascent": 850,
   "glyphs": [
     {
+      "uid": "c64623255a4a7c72436b199b05296c4f",
+      "css": "emo-happy",
+      "code": 59423,
+      "src": "fontelico"
+    },
+    {
+      "uid": "4bb2045a2aca451705fe8a23c4a576ab",
+      "css": "emo-wink2",
+      "code": 59424,
+      "src": "fontelico"
+    },
+    {
       "uid": "142263941b9f4cd4b2b84f1f4cd13b1d",
       "css": "emo-thumbsup",
       "code": 59418,
+      "src": "fontelico"
+    },
+    {
+      "uid": "bb68a13a3574b087d4350eff0b8d48e3",
+      "css": "emo-tongue",
+      "code": 59425,
       "src": "fontelico"
     },
     {
