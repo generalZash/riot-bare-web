@@ -32,7 +32,7 @@ html {
 body {
   margin: 0;
   width: 100%;
-  background-color: #f3f3f3; }
+  background-color: #F6FBFB; }
 
 .r-header {
   display: inline-block;
@@ -128,7 +128,6 @@ r-main {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  background-color: #f3f3f3;
   min-height: 50%; }
   r-main .container {
     width: 100%;
@@ -184,16 +183,25 @@ r-main {
   r-main .pane-contact {
     display: block;
     text-align: center; }
+    r-main .pane-contact img.self {
+      width: 100%; }
   @media (min-width: 400px) {
     r-main .pane-home .side-image {
       min-width: 360px; }
       r-main .pane-home .side-image img {
         width: initial;
-        min-width: 360px; } }
+        min-width: 360px; }
+    r-main .pane-contact img.self {
+      max-width: 300px; } }
   @media (min-width: 700px) {
     r-main .pane-skills .skill-list {
       width: 500px;
-      margin: 0 auto; } }
+      margin: 0 auto; }
+    r-main .pane-contact {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex; } }
   @media (min-width: 900px) {
     r-main .pane-home {
       display: -webkit-box;
@@ -207,16 +215,15 @@ r-main {
       width: 1300px; } }
 
 .footer {
-  position: relative;
+  position: static;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  bottom: -60px;
-  width: 100%;
-  height: 2em; }
+  bottom: 0;
+  width: 100%; }
   .footer span {
-    margin: 0 auto;
+    margin: 0 20px 0 auto;
     font-size: 0.8em;
     opacity: 0.7; }
 

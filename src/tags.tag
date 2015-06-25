@@ -211,11 +211,16 @@ var ActivatableMixin = {
 
 <pane-contact>
   <div class='pane-contact pane {hidden: !this.isActive()}'>
+    <div class='content'>
       <h1>Wanna connect?</h1>
       <p>
-        Shoot me an email: thedude (at) generalzash (dot) com </br></br>
+        Shoot me an email: thedude(at)generalzash(dot)com </br></br>
         Connect via <a href='https://www.linkedin.com/in/genedwards'>LinkedIn</a>
       </p>
+    </div>
+    <div class='side-image'>
+      <img class='self' src='app/img/all_your_low_polys_are_belong_to_mine.png'></img>
+    </div>
   </div>
 
   this.mixin(ActivatableMixin);
