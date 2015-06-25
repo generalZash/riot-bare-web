@@ -7,7 +7,7 @@ html {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased; }
   html p, html li {
-    opacity: 0.8;
+    color: #474747;
     font-weight: 300; }
   html h1 {
     font-size: 2.7em;
@@ -19,8 +19,7 @@ html {
     line-height: 1.4em; }
   html h3 {
     font-size: 1.3em;
-    font-weight: 300;
-    opacity: 0.7; }
+    font-weight: 300; }
   @media (min-width: 600px) {
     html {
       letter-spacing: 0.035em;
@@ -143,8 +142,6 @@ r-main {
             justify-content: center; }
   r-main .pane-home {
     display: block; }
-    r-main .pane-home li {
-      opacity: 0.8; }
     r-main .pane-home .content {
       width: 100%; }
     r-main .pane-home .side-image img {
@@ -157,7 +154,7 @@ r-main {
     line-height: 1.8em; }
   r-main .pane-skills .nb {
     font-size: 0.8em;
-    opacity: 0.8;
+    color: #565656;
     padding: 0 20px 30px 20px; }
   r-main .pane-skills r-skill div {
     opacity: 0.8; }
@@ -229,7 +226,8 @@ r-main {
 
 icon[class^="icon-"]:before {
   width: 1.5em;
-  font-size: 0.97em; }
+  font-size: 0.97em;
+  color: #191919; }
 
 .hidden {
   display: none !important; }

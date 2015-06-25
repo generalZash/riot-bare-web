@@ -11,7 +11,7 @@ html{
 
 
   p, li{
-    opacity: 0.8;
+    color: #474747;
     font-weight: 300;
   }
   h1 {
@@ -27,7 +27,6 @@ html{
   h3 {
     font-size: 1.3em;
     font-weight: 300;
-    opacity: 0.7;
   }
 
   @media (min-width: 600px) {
@@ -165,9 +164,7 @@ r-main {
   }
   .pane-home {
     display: block;
-    li{
-      opacity: 0.8;
-    }
+
     .content {
       width: 100%;
     }
@@ -189,7 +186,7 @@ r-main {
     }
     .nb {
       font-size: 0.8em;
-      opacity: 0.8;
+      color: #565656;
       padding: 0 20px 30px 20px;
     }
     // skill list
@@ -276,6 +273,7 @@ r-main {
 icon[class^="icon-"]:before{
   width: 1.5em;
   font-size: 0.97em;
+  color: #191919;
 }
 
 .hidden {

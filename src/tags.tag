@@ -153,7 +153,7 @@ var ActivatableMixin = {
       <div class='nb'>*NB: It's sad that I have to state this: I'm honest about my skills. For 
         example, I built this responsive website from scratch so I seem to know what I'm doing but 
         I rate myself 3/5 for HTML5/CSS3. I would never be able to claim "100% Mastah!" of any 
-        popular modern programming language.</div>
+        reasonable programming language.</div>
       
       <section class='skill-list'>
         <r-skill each='{skill, i in skills}' name='{skill.name}' level='{skill.level}' skillIcon='{skill.skillIcon}'></r-skill>
