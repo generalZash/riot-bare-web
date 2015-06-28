@@ -177,6 +177,35 @@ r-main {
   r-main .pane-skills icon[class^="icon-"]:before {
     width: 1.4em;
     font-size: 0.8em; }
+  r-main .pane-likes {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    /*    &:hover {
+      .scroll-container {
+          //box-shadow: inset 0px 0px 82px -9px rgba(0,0,0,0.66);
+      transform: rotate3d(1,0,0,60deg);
+      transition: all cubic-bezier(0, 1, 0.5, 1) 0.4s;
+      transform-origin: bottom;
+    }
+    }
+        transition-duration: 0.5s;
+    }*/ }
+    r-main .pane-likes .scroll-container {
+      width: 100px;
+      overflow: hidden;
+      -webkit-transition-duration: 0.5s;
+              transition-duration: 0.5s; }
+    r-main .pane-likes .scrollable {
+      width: 300px; }
+    r-main .pane-likes .scrollable {
+      width: 300px; }
   r-main .pane-contact {
     display: block;
     text-align: center; }

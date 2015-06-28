@@ -157,7 +157,10 @@ var ActivatableMixin = {
         reasonable programming language.</div>
       
       <section class='skill-list'>
-        <r-skill each='{skill, i in skills}' name='{skill.name}' level='{skill.level}' skillIcon='{skill.skillIcon}'></r-skill>
+        <r-skill each='{skill, i in skills}' 
+          name     ='{skill.name}' 
+          level    ='{skill.level}' 
+          skillIcon='{skill.skillIcon}'></r-skill>
       </section>
     </div>
   </div>
@@ -202,13 +205,42 @@ var ActivatableMixin = {
 
 <pane-likes>
   <div class='pane-likes pane {hidden: !this.isActive()}'>
+    <p>some text here</p>
+    <div class='scroll-container'>
+      <div class='scrollable'>
+        
+        <r-likey each='{thing, i in likedThings}'
+          class='{thing.class}' 
+          title='{thing.title}' 
+          text ='{thing.text}'></r-likey>
+      </div>
+    </div>
   </div>
 
   this.mixin(ActivatableMixin);
   this.paneId = 'likes';
   
   this.active = false;
+
+  //todo: 
+  // make container
+  // make inner pane
+  // remove overflow with hidden
+  // css boxshadow
+  // icon
+  // text
+  // dragify
+
+  this.likedThings = [
+    {iconName:'', title:'test', text:'test stuff'},
+    {iconName:'', title:'something', text:'more'}
+  ];
 </pane-likes>
+
+<r-likey>
+  <img></img>
+  <span>{opts.title}</span>
+</r-likey>
 
 <pane-contact>
   <div class='pane-contact pane {hidden: !this.isActive()}'>
