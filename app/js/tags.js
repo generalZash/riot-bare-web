@@ -147,9 +147,14 @@ riot.tag('pane-likes', '<div class="pane-likes pane {hidden: !this.isActive()}">
 
 
 
+
+
+
   this.likedThings = [
     {iconName:'', title:'test', text:'test stuff'},
-    {iconName:'', title:'something', text:'more'}
+    {iconName:'', title:'something', text:'more'},
+    {iconName:'', title:'more yo', text:'yeah'},
+    {iconName:'', title:'okok', text:'ummmm'}
   ];
 
 });

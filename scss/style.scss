@@ -1,5 +1,7 @@
 //using scss
 html{
+/*********************************************************
+  //default font styling declared in index.html
   font-size: 18px;
   font-family: Roboto, Arial, Verdana, Geneva, sans-serif;
   font-weight: 300;
@@ -8,7 +10,7 @@ html{
   line-height: 1.4em;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
-
+**********************************************************/
 
   p, li{
     color: #474747;
@@ -148,7 +150,7 @@ body {
 
 r-main {
   margin-top: 75px;
-  padding: 5%;
+  padding: 7%;
   display: flex;
   min-height: 50%;
 
@@ -218,7 +220,18 @@ r-main {
     .scroll-container {
       width: 100px;
       overflow: hidden;
-    transition-duration: 0.5s;
+
+      &.scroll-left {
+        box-shadow: inset 10px 0px 5px -5px rgba(0,0,0,0.2);  
+      }
+      
+      &.scroll-middle {
+
+      }
+
+      &.scroll-right {
+
+      }
     }
     .scrollable {
       width: 300px;
@@ -233,8 +246,10 @@ r-main {
     }
         transition-duration: 0.5s;
     }*/
-    .scrollable {
-      width: 300px;
+
+    r-likey {
+      width: 100px;
+      height: 100px;
     }
   }
 

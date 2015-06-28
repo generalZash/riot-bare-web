@@ -231,9 +231,16 @@ var ActivatableMixin = {
   // text
   // dragify
 
+  // maybe stagger load, watch something until the pane-likes.active==true
+  // then, mount domNodes
+
+  //#####http://www.smashingmagazine.com/2014/09/04/animating-without-jquery/
+
   this.likedThings = [
     {iconName:'', title:'test', text:'test stuff'},
-    {iconName:'', title:'something', text:'more'}
+    {iconName:'', title:'something', text:'more'},
+    {iconName:'', title:'more yo', text:'yeah'},
+    {iconName:'', title:'okok', text:'ummmm'}
   ];
 </pane-likes>
 
