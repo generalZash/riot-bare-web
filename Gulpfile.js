@@ -5,7 +5,8 @@ var riot          = require('gulp-riot');
 var util          = require('gulp-util');
 var jshint        = require('gulp-jshint');
 var autoprefixer  = require('gulp-autoprefixer');
-var imagemin      = require('gulp-imagemin');
+var pngquant      = require('imagemin-pngquant');
+var optipng       = require('imagemin-optipng');
 
 // Standard handler
 function standardHandler(err){
@@ -63,10 +64,17 @@ gulp.task('lint', function() {
 
 // image optimization
 gulp.task('imagemin', function() {
-  return gulp.src('src/img/**.*')
-    .pipe(imagemin({
-      progressive: true
-    }))
+  return gulp.src('src/img/*.png')
+    // lossy compression
+    .pipe(pngquant({ 
+      quality: '65-80', //Min and max are numbers in range 0 (worst) to 100 (perfect)
+      speed: 3 //1 (brute-force) to 10 (fastest). Speed 10 has 5% lower quality, but is 8 times faster than 3
+    })())
+    // lossless optimization, optimizationLevel 1~7
+    // 1: 1 trial, 2: 8 trials, 3: 16 trials, 4: 24 trials, 5: 48 trials, 6: 120 trials 7: 240 trials
+    .pipe(optipng({ 
+      optimizationLevel: 4 
+    })())
     .pipe(gulp.dest('app/img/'))
 });
 
