@@ -5,6 +5,7 @@ var riot          = require('gulp-riot');
 var util          = require('gulp-util');
 var jshint        = require('gulp-jshint');
 var autoprefixer  = require('gulp-autoprefixer');
+var imagemin      = require('gulp-imagemin');
 
 // Standard handler
 function standardHandler(err){
@@ -58,6 +59,15 @@ gulp.task('lint', function() {
     .pipe(jshint.reporter('default'))
     .pipe(gulp.dest('app/js/'))
     .pipe(browserSync.stream());
+});
+
+// image optimization
+gulp.task('imagemin', function() {
+  return gulp.src('src/img/**.*')
+    .pipe(imagemin({
+      progressive: true
+    }))
+    .pipe(gulp.dest('app/img/'))
 });
 
 gulp.task('default', ['serve']);
