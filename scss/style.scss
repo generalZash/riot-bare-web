@@ -1,8 +1,8 @@
 //using scss
 html{
-/*********************************************************
+/*********************************************************/
   //default font styling declared in index.html
-  font-size: 18px;
+  font-size: 17px;
   font-family: Roboto, Arial, Verdana, Geneva, sans-serif;
   font-weight: 300;
 
@@ -10,7 +10,7 @@ html{
   line-height: 1.4em;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
-**********************************************************/
+/**********************************************************/
 
   p, li{
     color: #474747;
@@ -33,11 +33,11 @@ html{
 
   @media (min-width: 600px) {
     letter-spacing: 0.035em;
-    font-size: 19px;
+    font-size: 18px;
   }
-  @media (min-width: 1100px) {
+  /*@media (min-width: 1100px) {
     font-size: 20px;
-  }
+  }*/
 }
 
 body {
@@ -100,7 +100,7 @@ body {
     flex-wrap: wrap;
     list-style: none;
     margin: 0 0 0 auto;
-    font-size: 0.9em;
+    font-size: 0.87em;
   }
 
   .section-link {
@@ -118,11 +118,11 @@ body {
   }
   @media (min-width: 800px) {
     .whatsMahName {
-      fond-size: 1.05em;
+      //font-size: 1.00em;
     }
 
     .header-right {
-      font-size: 1.05em;
+      font-size: 0.95em;
     }
     .section-link {
       padding: 20px;
@@ -218,8 +218,11 @@ r-main {
     align-items: center;
 
     .scroll-container {
-      width: 100px;
-      overflow: hidden;
+      width: 300px;
+      height: 200px;
+      overflow-x: scroll;
+      overflow-y: hidden;
+      //overflow: hidden;
 
       &.scroll-left {
         box-shadow: inset 10px 0px 5px -5px rgba(0,0,0,0.2);  
@@ -234,7 +237,8 @@ r-main {
       }
     }
     .scrollable {
-      width: 300px;
+      width: auto;
+      white-space: nowrap;
     }
 /*    &:hover {
       .scroll-container {
@@ -248,8 +252,17 @@ r-main {
     }*/
 
     r-likey {
-      width: 100px;
-      height: 100px;
+      display: inline-block;
+      width: 200px;
+      height: 200px;
+      padding: 15px;
+      img {
+        width: auto;
+        height: auto;
+      }
+      span {
+        display: none;
+      }
     }
   }
 

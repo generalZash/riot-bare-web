@@ -56,23 +56,6 @@ riot.tag('r-header', '<div class="container"> <div class="header { sticky: this.
 
 });
 
-riot.tag('r-bg', '<star-md class="star1"></star-md> <star-md class="star2"></star-md> <star-md class="star3"></star-md> <star-md class="star4"></star-md> <star-md class="star5"></star-md> <star-md class="star6"></star-md>', function(opts) {
-
-});
-
-
-riot.tag('star-sm', '', 'class=\'star-sm\'', function(opts) {
-  this.root.style.left = opts.width;
-  this.root.style.top = opts.height;
-
-});
-
-riot.tag('star-md', '', function(opts) {
-
-  this.root.className = 'star-md ' + opts.class;
-
-});
-
 riot.tag('r-bg-image', '', 'class=\'bg-image\'', function(opts) {
 
 });
@@ -132,7 +115,7 @@ riot.tag('r-skill', '<div class="skill-name"> <icon class="{opts.skillicon}"> </
 
 });
 
-riot.tag('pane-likes', '<div class="pane-likes pane {hidden: !this.isActive()}"> <p>some text here</p> <div class="scroll-container"> <div class="scrollable"> <r-likey each="{thing, i in likedThings}" class="{thing.class}" title="{thing.title}" text =\'{thing.text}\'></r-likey> </div> </div> </div>', function(opts) {
+riot.tag('pane-likes', '<div class="pane-likes pane {hidden: !this.isActive()}"> <p>some text here</p> <div class="scroll-container"> <div class="scrollable"> <r-likey each="{thing, i in likedThings}" class = \'{thing.class}\' imgsrc = \'{thing.imgsrc}\' title = \'{thing.title}\' text = \'{thing.text}\'></r-likey> </div> </div> </div>', function(opts) {
 
   this.mixin(ActivatableMixin);
   this.paneId = 'likes';
@@ -151,15 +134,16 @@ riot.tag('pane-likes', '<div class="pane-likes pane {hidden: !this.isActive()}">
 
 
   this.likedThings = [
-    {iconName:'', title:'test', text:'test stuff'},
-    {iconName:'', title:'something', text:'more'},
-    {iconName:'', title:'more yo', text:'yeah'},
-    {iconName:'', title:'okok', text:'ummmm'}
+    {imgsrc:'app/img/sushi.png', title:'test', text:'test stuff'},
+    {imgsrc:'app/img/sushi.png', title:'something', text:'more'},
+    {imgsrc:'app/img/sushi.png', title:'more yo', text:'yeah'},
+    {imgsrc:'', title:'okok', text:'ummmm'}
   ];
 
 });
 
-riot.tag('r-likey', '<img></img> <span>{opts.title}</span>', function(opts) {
+riot.tag('r-likey', '<div class="img-container"> <img riot-src="{opts.imgsrc}"></img> <span>{opts.title}</span> </div>', function(opts) {
+  console.log(opts);
 
 });
 

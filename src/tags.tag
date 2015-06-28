@@ -65,28 +65,6 @@ var ActivatableMixin = {
   }
 </r-header>
 
-<r-bg>
-  <star-md class='star1'></star-md>
-  <star-md class='star2'></star-md>
-  <star-md class='star3'></star-md>
-  <star-md class='star4'></star-md>
-  <star-md class='star5'></star-md>
-  <star-md class='star6'></star-md>
-  //screenArea = window.screen.width * window.screen.height;
-</r-bg>
-
-
-<star-sm class='star-sm'>
-  this.root.style.left = opts.width;
-  this.root.style.top = opts.height;
-</star-sm>
-
-<star-md>
-  // The root node can't access `opts`, which is really stupid, riot should change it
-  // for now, we need to use this.root.className
-  this.root.className = 'star-md ' + opts.class;
-</star-md>
-
 <r-bg-image class='bg-image'>
 </r-bg-image>
 
@@ -210,9 +188,10 @@ var ActivatableMixin = {
       <div class='scrollable'>
         
         <r-likey each='{thing, i in likedThings}'
-          class='{thing.class}' 
-          title='{thing.title}' 
-          text ='{thing.text}'></r-likey>
+          class  = '{thing.class}' 
+          imgsrc = '{thing.imgsrc}'
+          title  = '{thing.title}' 
+          text   = '{thing.text}'></r-likey>
       </div>
     </div>
   </div>
@@ -237,16 +216,19 @@ var ActivatableMixin = {
   //#####http://www.smashingmagazine.com/2014/09/04/animating-without-jquery/
 
   this.likedThings = [
-    {iconName:'', title:'test', text:'test stuff'},
-    {iconName:'', title:'something', text:'more'},
-    {iconName:'', title:'more yo', text:'yeah'},
-    {iconName:'', title:'okok', text:'ummmm'}
+    {imgsrc:'app/img/sushi.png', title:'test', text:'test stuff'},
+    {imgsrc:'app/img/sushi.png', title:'something', text:'more'},
+    {imgsrc:'app/img/sushi.png', title:'more yo', text:'yeah'},
+    {imgsrc:'', title:'okok', text:'ummmm'}
   ];
 </pane-likes>
 
 <r-likey>
-  <img></img>
-  <span>{opts.title}</span>
+  <div class='img-container'>
+    <img src='{opts.imgsrc}'></img>
+    <span>{opts.title}</span>
+  </div>
+  console.log(opts);
 </r-likey>
 
 <pane-contact>
