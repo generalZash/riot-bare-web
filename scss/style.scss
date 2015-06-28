@@ -215,53 +215,60 @@ r-main {
 
   .pane-likes {
     flex-direction: column;
+    width: 100%;
     align-items: center;
 
-    .scroll-container {
-      width: 300px;
-      height: 200px;
-      overflow-x: scroll;
-      overflow-y: hidden;
-      //overflow: hidden;
-
-      &.scroll-left {
-        box-shadow: inset 10px 0px 5px -5px rgba(0,0,0,0.2);  
-      }
-      
-      &.scroll-middle {
-
-      }
-
-      &.scroll-right {
-
-      }
+    .grid-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
     }
-    .scrollable {
-      width: auto;
-      white-space: nowrap;
-    }
-/*    &:hover {
-      .scroll-container {
-          //box-shadow: inset 0px 0px 82px -9px rgba(0,0,0,0.66);
-      transform: rotate3d(1,0,0,60deg);
-      transition: all cubic-bezier(0, 1, 0.5, 1) 0.4s;
-      transform-origin: bottom;
-    }
-    }
-        transition-duration: 0.5s;
-    }*/
 
+  //TODO: I really don't like how deeply nested these css rules are, need to flatten
     r-likey {
       display: inline-block;
+      position: relative;
       width: 200px;
       height: 200px;
       padding: 15px;
+
+      transition: all linear 0.2s;
       img {
         width: auto;
         height: auto;
+        position: absolute;
+        opacity: 1;
+        transition: transform linear 0.1s;
       }
-      span {
-        display: none;
+      .floating-text {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+
+        opacity: 0;
+        transform: translate3d(0, 30px, 0);
+
+        .description {
+          flex-grow: 4;
+        }
+        .title {
+          flex-grow: 1;
+        }
+      }
+      &:hover{
+        img {
+          opacity: 0.7;
+          //background-color: rgba(33, 33, 88, 0.3);
+          //transform: perspective(1000px) translate3d(0, 0, 150px);
+          transform: scale(1.2);
+          transition: transform cubic-bezier(0.20, 0.90, 0.30, 1.25) 0.2s;
+        }
+        .floating-text{
+        transform: translate3d(0,0,0);
+        opacity: 1;
+        }
       }
     }
   }

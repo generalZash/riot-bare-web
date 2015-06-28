@@ -183,40 +183,75 @@ r-main {
     -webkit-flex-direction: column;
         -ms-flex-direction: column;
             flex-direction: column;
+    width: 100%;
     -webkit-box-align: center;
     -webkit-align-items: center;
         -ms-flex-align: center;
-            align-items: center;
-    /*    &:hover {
-      .scroll-container {
-          //box-shadow: inset 0px 0px 82px -9px rgba(0,0,0,0.66);
-      transform: rotate3d(1,0,0,60deg);
-      transition: all cubic-bezier(0, 1, 0.5, 1) 0.4s;
-      transform-origin: bottom;
-    }
-    }
-        transition-duration: 0.5s;
-    }*/ }
-    r-main .pane-likes .scroll-container {
-      width: 300px;
-      height: 200px;
-      overflow-x: scroll;
-      overflow-y: hidden; }
-      r-main .pane-likes .scroll-container.scroll-left {
-        box-shadow: inset 10px 0px 5px -5px rgba(0, 0, 0, 0.2); }
-    r-main .pane-likes .scrollable {
-      width: auto;
-      white-space: nowrap; }
+            align-items: center; }
+    r-main .pane-likes .grid-container {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-flex-wrap: wrap;
+          -ms-flex-wrap: wrap;
+              flex-wrap: wrap;
+      -webkit-box-pack: center;
+      -webkit-justify-content: center;
+          -ms-flex-pack: center;
+              justify-content: center; }
     r-main .pane-likes r-likey {
       display: inline-block;
+      position: relative;
       width: 200px;
       height: 200px;
-      padding: 15px; }
+      padding: 15px;
+      -webkit-transition: all linear 0.2s;
+              transition: all linear 0.2s; }
       r-main .pane-likes r-likey img {
         width: auto;
-        height: auto; }
-      r-main .pane-likes r-likey span {
-        display: none; }
+        height: auto;
+        position: absolute;
+        opacity: 1;
+        -webkit-transition: -webkit-transform linear 0.1s;
+                transition: transform linear 0.1s; }
+      r-main .pane-likes r-likey .floating-text {
+        position: absolute;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -webkit-flex-direction: column;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        -webkit-transform: translate3d(0, 30px, 0);
+                transform: translate3d(0, 30px, 0); }
+        r-main .pane-likes r-likey .floating-text .description {
+          -webkit-box-flex: 4;
+          -webkit-flex-grow: 4;
+              -ms-flex-positive: 4;
+                  flex-grow: 4; }
+        r-main .pane-likes r-likey .floating-text .title {
+          -webkit-box-flex: 1;
+          -webkit-flex-grow: 1;
+              -ms-flex-positive: 1;
+                  flex-grow: 1; }
+      r-main .pane-likes r-likey:hover img {
+        opacity: 0.7;
+        -webkit-transform: scale(1.2);
+            -ms-transform: scale(1.2);
+                transform: scale(1.2);
+        -webkit-transition: -webkit-transform cubic-bezier(0.2, 0.9, 0.3, 1.25) 0.2s;
+                transition: transform cubic-bezier(0.2, 0.9, 0.3, 1.25) 0.2s; }
+      r-main .pane-likes r-likey:hover .floating-text {
+        -webkit-transform: translate3d(0, 0, 0);
+                transform: translate3d(0, 0, 0);
+        opacity: 1; }
   r-main .pane-contact {
     display: block;
     text-align: center; }

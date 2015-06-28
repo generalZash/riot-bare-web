@@ -184,15 +184,12 @@ var ActivatableMixin = {
 <pane-likes>
   <div class='pane-likes pane {hidden: !this.isActive()}'>
     <p>some text here</p>
-    <div class='scroll-container'>
-      <div class='scrollable'>
-        
-        <r-likey each='{thing, i in likedThings}'
-          class  = '{thing.class}' 
-          imgsrc = '{thing.imgsrc}'
-          title  = '{thing.title}' 
-          text   = '{thing.text}'></r-likey>
-      </div>
+    <div class='grid-container'>
+      <r-likey each='{thing, i in likedThings}'
+        class       = '{thing.class}' 
+        imgsrc      = '{thing.imgsrc}'
+        title       = '{thing.title}' 
+        description = '{thing.description}'></r-likey>
     </div>
   </div>
 
@@ -207,7 +204,7 @@ var ActivatableMixin = {
   // remove overflow with hidden
   // css boxshadow
   // icon
-  // text
+  // description
   // dragify
 
   // maybe stagger load, watch something until the pane-likes.active==true
@@ -216,17 +213,25 @@ var ActivatableMixin = {
   //#####http://www.smashingmagazine.com/2014/09/04/animating-without-jquery/
 
   this.likedThings = [
-    {imgsrc:'app/img/sushi.png', title:'test', text:'test stuff'},
-    {imgsrc:'app/img/sushi.png', title:'something', text:'more'},
-    {imgsrc:'app/img/sushi.png', title:'more yo', text:'yeah'},
-    {imgsrc:'', title:'okok', text:'ummmm'}
+    {imgsrc:'app/img/sushi.png', title:'test', description:'test stuff'},
+    {imgsrc:'app/img/sushi.png', title:'something', description:'more'},
+    {imgsrc:'app/img/sushi.png', title:'more yo', description:'yeah'},
+    {imgsrc:'app/img/sushi.png', title:'test', description:'test stuff'},
+    {imgsrc:'app/img/sushi.png', title:'something', description:'more'},
+    {imgsrc:'app/img/sushi.png', title:'more yo', description:'yeah'},
+    {imgsrc:'app/img/sushi.png', title:'test', description:'test stuff'},
+    {imgsrc:'app/img/sushi.png', title:'something', description:'more'},
+    {imgsrc:'app/img/sushi.png', title:'more yo', description:'yeah'},
+    {imgsrc:'', title:'okok', description:'ummmm'}
   ];
 </pane-likes>
 
 <r-likey>
-  <div class='img-container'>
-    <img src='{opts.imgsrc}'></img>
-    <span>{opts.title}</span>
+  <img src='{opts.imgsrc}'></img>
+    
+  <div class='floating-text'>
+    <span class='description'>{opts.description}</span>
+    <span class='title'>{opts.title}</span>
   </div>
   console.log(opts);
 </r-likey>
