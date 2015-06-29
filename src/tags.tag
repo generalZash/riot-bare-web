@@ -188,8 +188,9 @@ var ActivatableMixin = {
       <r-likey each='{thing, i in likedThings}'
         class       = '{thing.class}' 
         imgsrc      = '{thing.imgsrc}'
-        title       = '{thing.title}' 
-        description = '{thing.description}'></r-likey>
+        name        = '{thing.name}' 
+        description = '{thing.description}'
+        onclick     = '{}'></r-likey>
     </div>
   </div>
 
@@ -199,39 +200,32 @@ var ActivatableMixin = {
   this.active = false;
 
   //todo: 
-  // make container
-  // make inner pane
-  // remove overflow with hidden
-  // css boxshadow
   // icon
   // description
-  // dragify
 
   // maybe stagger load, watch something until the pane-likes.active==true
   // then, mount domNodes
 
-  //#####http://www.smashingmagazine.com/2014/09/04/animating-without-jquery/
-
   this.likedThings = [
-    {imgsrc:'app/img/sushi.png', title:'test', description:'test stuff'},
-    {imgsrc:'app/img/sushi.png', title:'something', description:'more'},
-    {imgsrc:'app/img/sushi.png', title:'more yo', description:'yeah'},
-    {imgsrc:'app/img/sushi.png', title:'test', description:'test stuff'},
-    {imgsrc:'app/img/sushi.png', title:'something', description:'more'},
-    {imgsrc:'app/img/sushi.png', title:'more yo', description:'yeah'},
-    {imgsrc:'app/img/sushi.png', title:'test', description:'test stuff'},
-    {imgsrc:'app/img/sushi.png', title:'something', description:'more'},
-    {imgsrc:'app/img/sushi.png', title:'more yo', description:'yeah'},
-    {imgsrc:'', title:'okok', description:'ummmm'}
+    {imgsrc:'app/img/sushi.png', name:'test', description:'test stuff'},
+    {imgsrc:'app/img/sushi.png', name:'something', description:'more'},
+    {imgsrc:'app/img/sushi.png', name:'more yo', description:'yeah'},
+    {imgsrc:'app/img/sushi.png', name:'test', description:'test stuff'},
+    {imgsrc:'app/img/sushi.png', name:'something', description:'more'},
+    {imgsrc:'app/img/sushi.png', name:'more yo', description:'yeah'},
+    {imgsrc:'app/img/sushi.png', name:'test', description:'test stuff'},
+    {imgsrc:'app/img/sushi.png', name:'something', description:'more'},
+    {imgsrc:'app/img/sushi.png', name:'more yo', description:'yeah'},
+    {imgsrc:'', name:'okok', description:'ummmm'}
   ];
 </pane-likes>
 
 <r-likey>
   <img src='{opts.imgsrc}'></img>
-    
   <div class='floating-text'>
     <span class='description'>{opts.description}</span>
-    <span class='title'>{opts.title}</span>
+    <hr></hr>
+    <span class='name'>{opts.name}</span>
   </div>
   console.log(opts);
 </r-likey>
