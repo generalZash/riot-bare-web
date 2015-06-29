@@ -200,7 +200,7 @@ r-main {
       -webkit-justify-content: center;
           -ms-flex-pack: center;
               justify-content: center; }
-    r-main .pane-likes r-likey {
+    r-main .pane-likes r-thing {
       display: -webkit-box;
       display: -webkit-flex;
       display: -ms-flexbox;
@@ -218,14 +218,14 @@ r-main {
       padding: 15px;
       -webkit-transition: all linear 0.2s;
               transition: all linear 0.2s; }
-      r-main .pane-likes r-likey img {
+      r-main .pane-likes r-thing img {
         width: auto;
         height: auto;
         position: relative;
         opacity: 1;
         -webkit-transition: -webkit-transform linear 0.1s;
                 transition: transform linear 0.1s; }
-      r-main .pane-likes r-likey .floating-text {
+      r-main .pane-likes r-thing .floating-text {
         position: absolute;
         left: 0;
         top: 2em;
@@ -245,15 +245,15 @@ r-main {
         opacity: 0;
         color: #FFF;
         font-family: 'Roboto Condensed'; }
-      r-main .pane-likes r-likey span, r-main .pane-likes r-likey p {
+      r-main .pane-likes r-thing span, r-main .pane-likes r-thing p {
         padding: 5px 10px;
         margin: 0;
         font-weight: 400; }
-      r-main .pane-likes r-likey h3 {
+      r-main .pane-likes r-thing h3 {
         padding: 10px 30px;
         margin: 0 auto;
         font-weight: 400; }
-      r-main .pane-likes r-likey hr {
+      r-main .pane-likes r-thing hr {
         border-style: solid;
         border-width: 1px;
         width: 90%;
@@ -261,14 +261,14 @@ r-main {
         -webkit-transform: scale(0, 1);
             -ms-transform: scale(0, 1);
                 transform: scale(0, 1); }
-      r-main .pane-likes r-likey:hover img, r-main .pane-likes r-likey.selected img {
+      r-main .pane-likes r-thing:hover img, r-main .pane-likes r-thing.selected img {
         opacity: 0.7;
         -webkit-transform: scale(1.2);
             -ms-transform: scale(1.2);
                 transform: scale(1.2);
         -webkit-transition: -webkit-transform cubic-bezier(0.2, 0.9, 0.3, 1.25) 0.2s;
                 transition: transform cubic-bezier(0.2, 0.9, 0.3, 1.25) 0.2s; }
-      r-main .pane-likes r-likey:hover .floating-text, r-main .pane-likes r-likey.selected .floating-text {
+      r-main .pane-likes r-thing:hover .floating-text, r-main .pane-likes r-thing.selected .floating-text {
         -webkit-transform: translate3d(0, 0, 0);
                 transform: translate3d(0, 0, 0);
         opacity: 1;
@@ -276,7 +276,7 @@ r-main {
                 transition: transform cubic-bezier(0.2, 0.9, 0.3, 1.25) 0.2s;
         -webkit-transition: opacity linear 0.3s;
                 transition: opacity linear 0.3s; }
-      r-main .pane-likes r-likey:hover hr, r-main .pane-likes r-likey.selected hr {
+      r-main .pane-likes r-thing:hover hr, r-main .pane-likes r-thing.selected hr {
         -webkit-transform: scale(1, 1);
             -ms-transform: scale(1, 1);
                 transform: scale(1, 1);

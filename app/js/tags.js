@@ -115,7 +115,7 @@ riot.tag('r-skill', '<div class="skill-name"> <icon class="{opts.skillicon}"> </
 
 });
 
-riot.tag('pane-likes', '<div class="pane-likes pane {hidden: !this.isActive()}"> <p>Things I like in no particular order.</p> <div class="grid-container"> <r-likey each="{thing, i in likedThings}" class = \'{thing.class} {selected: parent.isSelectedThing(thing.name)}\' imgsrc = \'{thing.imgsrc}\' name = \'{thing.name}\' description = \'{thing.description}\' onclick = \'{parent.select}\'></r-likey> </div> </div>', function(opts) {
+riot.tag('pane-likes', '<div class="pane-likes pane {hidden: !this.isActive()}"> <p>Things I like in no particular order.</p> <div class="grid-container"> <r-thing each="{thing, i in likedThings}" class = \'{thing.class} {selected: parent.isSelectedThing(thing.name)}\' imgsrc = \'{thing.imgsrc}\' name = \'{thing.name}\' description = \'{thing.description}\' onclick = \'{parent.select}\'></r-thing> </div> </div>', function(opts) {
   this.mixin(ActivatableMixin);
   this.paneId = 'likes';
   this.active = false;
@@ -181,7 +181,7 @@ riot.tag('pane-likes', '<div class="pane-likes pane {hidden: !this.isActive()}">
 
 });
 
-riot.tag('r-likey', '<img riot-src="{opts.imgsrc}"></img> <div class="floating-text"> <h3 class="name">{opts.name}</h3> <hr></hr> <span class="description">{opts.description}</span> </div>', function(opts) {
+riot.tag('r-thing', '<img riot-src="{opts.imgsrc}"></img> <div class="floating-text"> <h3 class="name">{opts.name}</h3> <hr></hr> <span class="description">{opts.description}</span> </div>', function(opts) {
 
 });
 

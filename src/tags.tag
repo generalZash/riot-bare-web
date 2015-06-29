@@ -185,12 +185,12 @@ var ActivatableMixin = {
   <div class='pane-likes pane {hidden: !this.isActive()}'>
     <p>Things I like in no particular order.</p>
     <div class='grid-container'>
-      <r-likey each='{thing, i in likedThings}'
+      <r-thing each='{thing, i in likedThings}'
         class       = '{thing.class} {selected: parent.isSelectedThing(thing.name)}' 
         imgsrc      = '{thing.imgsrc}'
         name        = '{thing.name}' 
         description = '{thing.description}'
-        onclick     = '{parent.select}'></r-likey>
+        onclick     = '{parent.select}'></r-thing>
     </div>
   </div>
 
@@ -261,14 +261,14 @@ var ActivatableMixin = {
   }
 </pane-likes>
 
-<r-likey>
+<r-thing>
   <img src='{opts.imgsrc}'></img>
   <div class='floating-text'>
     <h3 class='name'>{opts.name}</h3>
     <hr></hr>
     <span class='description'>{opts.description}</span>
   </div>
-</r-likey>
+</r-thing>
 
 <pane-contact>
   <div class='pane-contact pane {hidden: !this.isActive()}'>
