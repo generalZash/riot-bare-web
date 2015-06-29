@@ -183,14 +183,22 @@ var ActivatableMixin = {
 
 <pane-likes>
   <div class='pane-likes pane {hidden: !this.isActive()}'>
-    <p>Things I like in no particular order.</p>
+    <h2>Things I like in no particular order.</h2>
     <div class='grid-container'>
       <r-thing each='{thing, i in likedThings}'
-        class       = '{thing.class} {selected: parent.isSelectedThing(thing.name)}' 
+        class       = '{thing.class}' 
         imgsrc      = '{thing.imgsrc}'
         name        = '{thing.name}' 
-        description = '{thing.description}'
-        onclick     = '{parent.select}'></r-thing>
+        description = '{thing.description}'></r-thing>
+    </div>
+
+    <h2>Things I dislike in no particular order.</h2>
+    <div class='grid-container'>
+      <r-thing each='{thing, i in dislikedThings}'
+        class       = '{thing.class}' 
+        imgsrc      = '{thing.imgsrc}'
+        name        = '{thing.name}' 
+        description = '{thing.description}'></r-thing>
     </div>
   </div>
 
@@ -198,8 +206,6 @@ var ActivatableMixin = {
   this.mixin(ActivatableMixin);
   this.paneId = 'likes';
   this.active = false;
-
-  this.selectedThing = undefined;
 
   //todo: 
   // icon
@@ -210,55 +216,87 @@ var ActivatableMixin = {
 
   this.likedThings = [
     { name        :'Sushi',
-      description :'I was a Sushi Chef for 8 years in Seattle...mmm, love sushi',
+      description :'I was a Sushi Chef for 8 years in Seattle...mmm, delicious',
       imgsrc      :'app/img/sushi.png'},
     { name        :'Japanese Knives',
       description :'High carbon steel is the way of the Samurai!',
       imgsrc:'app/img/knife.png'},
-    { name        :'Final Fantasy VII',
-      description :'Like, seriously, the BEST RPG EVAH! (or very close to it)',
-      imgsrc      :'app/img/ff7.png'},
     { name        :'Javascript',
       description :'Array(16).join("wat" - 1) + " Batman!"',
       imgsrc:'app/img/.png'},
+    { name        :'Aeropress',
+      description :'Best damn drip-style coffee!<br> "So, guys, here\'s an idea. Let\'s make frisbees and coffee dispensers.',
+      imgsrc:'app/img/.png'},
+    { name        :'Gelato',
+      description :'Don\'t call it icecream! Italians be mad!',
+      imgsrc:'app/img/.png'},
+    { name        :'Comfy Pajamas',
+      description :'Doubles as work outfit (on days when you telecommute)',
+      imgsrc:'app/img/.png'},
+    { name        :'Final Fantasy VII',
+      description :'Like, seriously, the BEST RPG EVAH! (subject to subjective opinion)',
+      imgsrc      :'app/img/ff7.png'},
+    { name        :'My Dog',
+      description :'My embarrassingly cute (and often unfriendly) dog: part-time floor cleaner',
+      imgsrc:'app/img/.png'},
     { name        :'Linux',
+      description :'sudo !!',
+      imgsrc:'app/img/.png'},
+    { name        :'Mechanical Keyboards',
+      description :'Hardware programmable Vortex 61 key keyboard with blank keycaps (Cherry Brown)',
+      imgsrc:'app/img/.png'},
+    { name        :'Rubik\'s Cube',
+      description :'best Avg of 5: 24.32s (Moyu Weilong v2)',
+      imgsrc:'app/img/.png'},
+    { name        :'Flexbox',
+      description :'What a life saver',
+      imgsrc:'app/img/.png'},
+    { name        :'Chrome Devtools',
+      description :'As legend has it, the original source code was passed down from Merlin [citation needed]. Can\'t imagine writing Javascript without it',
+      imgsrc:'app/img/.png'},
+    { name        :'Portal',
+      description :'The cake is a lie!',
+      imgsrc:'app/img/.png'},
+    { name        :'Minecraft',
+      description :'A video game that I can actually play with my kids',
+      imgsrc:'app/img/.png'},
+    { name        :'Small Homes',
       description :'',
       imgsrc:'app/img/.png'},
-    { name        :'',
-      description :'',
+    { name        :'Brazilian Jiu Jitsu',
+      description :'The art of joint locks and gently choking people. And NO, Keanu Reeves, you don\'t know Jiu Jitsu',
       imgsrc:'app/img/.png'},
-    { name        :'',
-      description :'',
+    { name        :'Git',
+      description :'Provides sanity. Pretty damn good for a "stupid content tracker" -man page',
       imgsrc:'app/img/.png'},
-    { name        :'',
-      description :'',
-      imgsrc:'app/img/.png'},
-    { name        :'',
-      description :'',
-      imgsrc:'app/img/.png'},
-      { name        :'',
-      description :'',
-      imgsrc:'app/img/.png'},
-    { name        :'',
-      description :'',
-      imgsrc:'app/img/.png'},
-    { name        :'',
-      description :'',
-      imgsrc:'app/img/.png'},
-    { name        :'',
-      description :'',
-      imgsrc:'app/img/.png'},
-    {imgsrc:'', name:'okok', description:'ummmm'}
+    { name        :'Tactics Ogre Battle',
+      description :'I still can\'t believe that was originally on SNES... insanely ahead of its time',
+      imgsrc:'app/img/.png'}
   ];
 
-  select(event) {
-    this.selectedThing = (this.selectedThing === event.item.thing.name) ?
-      undefined : event.item.thing.name;
-  }
-
-  isSelectedThing(name) {
-    return this.selectedThing === name;
-  }
+  this.dislikedThings = [
+    { name        :'Mixed Tabs',
+      description :'<monospace>》》》••》》•••¶</monospace>',
+      imgsrc:'app/img/.png'},
+    { name        :'',
+      description :'',
+      imgsrc:'app/img/.png'},
+    { name        :'',
+      description :'',
+      imgsrc:'app/img/.png'},
+    { name        :'',
+      description :'',
+      imgsrc:'app/img/.png'},
+    { name        :'',
+      description :'',
+      imgsrc:'app/img/.png'},
+    { name        :'',
+      description :'',
+      imgsrc:'app/img/.png'},
+    { name        :'',
+      description :'',
+      imgsrc:'app/img/.png'},
+  ];
 </pane-likes>
 
 <r-thing>
@@ -266,9 +304,13 @@ var ActivatableMixin = {
   <div class='floating-text'>
     <h3 class='name'>{opts.name}</h3>
     <hr></hr>
-    <span class='description'>{opts.description}</span>
+    <span class='description'><r-raw content='{opts.description}'></r-raw></span>
   </div>
 </r-thing>
+
+<r-raw>
+  this.root.innerHTML = opts.content
+</r-raw>
 
 <pane-contact>
   <div class='pane-contact pane {hidden: !this.isActive()}'>

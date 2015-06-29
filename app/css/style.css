@@ -250,7 +250,7 @@ r-main {
         margin: 0;
         font-weight: 400; }
       r-main .pane-likes r-thing h3 {
-        padding: 10px 30px;
+        padding: 10px 7px;
         margin: 0 auto;
         font-weight: 400; }
       r-main .pane-likes r-thing hr {
@@ -336,3 +336,6 @@ icon[class^="icon-"]:before {
 
 .hidden {
   display: none !important; }
+
+monospace {
+  font-family: "Lucida Console", Monaco, monospace, Courier, "Courier New" !important; }
