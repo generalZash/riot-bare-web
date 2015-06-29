@@ -27,7 +27,7 @@ html{
     line-height: 1.4em;
   }
   h3 {
-    font-size: 1.3em;
+    font-size: 1.2em;
     font-weight: 300;
   }
 
@@ -254,12 +254,18 @@ r-main {
         height: auto;
 
         opacity: 0;
-        transform: translate3d(0, 30px, 0);
-        font-weight: 400;
         color: #FFF;
+        font-family: 'Roboto Condensed';
       }
       span, p {
+        padding: 5px 10px;
+        margin: 0;
+        font-weight: 400;
+      }
+      h3 {
         padding: 10px 30px;
+        margin: 0 auto;
+        font-weight: 400;
       }
       hr {
         border-style: solid;

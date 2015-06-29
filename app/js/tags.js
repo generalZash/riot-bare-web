@@ -115,7 +115,7 @@ riot.tag('r-skill', '<div class="skill-name"> <icon class="{opts.skillicon}"> </
 
 });
 
-riot.tag('pane-likes', '<div class="pane-likes pane {hidden: !this.isActive()}"> <p>some text here</p> <div class="grid-container"> <r-likey each="{thing, i in likedThings}" class = \'{thing.class} {selected: parent.isSelectedThing(thing.name)}\' imgsrc = \'{thing.imgsrc}\' name = \'{thing.name}\' description = \'{thing.description}\' onclick = \'{parent.select}\'></r-likey> </div> </div>', function(opts) {
+riot.tag('pane-likes', '<div class="pane-likes pane {hidden: !this.isActive()}"> <p>Things I like in no particular order.</p> <div class="grid-container"> <r-likey each="{thing, i in likedThings}" class = \'{thing.class} {selected: parent.isSelectedThing(thing.name)}\' imgsrc = \'{thing.imgsrc}\' name = \'{thing.name}\' description = \'{thing.description}\' onclick = \'{parent.select}\'></r-likey> </div> </div>', function(opts) {
   this.mixin(ActivatableMixin);
   this.paneId = 'likes';
   this.active = false;
@@ -128,15 +128,45 @@ riot.tag('pane-likes', '<div class="pane-likes pane {hidden: !this.isActive()}">
 
 
   this.likedThings = [
-    {imgsrc:'app/img/sushi.png', name:'test', description:'test stuff'},
-    {imgsrc:'app/img/sushi.png', name:'something', description:'more'},
-    {imgsrc:'app/img/sushi.png', name:'more yo', description:'yeah'},
-    {imgsrc:'app/img/sushi.png', name:'test', description:'test stuff'},
-    {imgsrc:'app/img/sushi.png', name:'something', description:'more'},
-    {imgsrc:'app/img/sushi.png', name:'more yo', description:'yeah'},
-    {imgsrc:'app/img/sushi.png', name:'test', description:'test stuff'},
-    {imgsrc:'app/img/sushi.png', name:'something', description:'more'},
-    {imgsrc:'app/img/sushi.png', name:'more yo', description:'yeah'},
+    { name        :'Sushi',
+      description :'I was a Sushi Chef for 8 years in Seattle...mmm, love sushi',
+      imgsrc      :'app/img/sushi.png'},
+    { name        :'Japanese Knives',
+      description :'High carbon steel is the way of the Samurai!',
+      imgsrc:'app/img/knife.png'},
+    { name        :'Final Fantasy VII',
+      description :'Like, seriously, the BEST RPG EVAH! (or very close to it)',
+      imgsrc      :'app/img/ff7.png'},
+    { name        :'Javascript',
+      description :'Array(16).join("wat" - 1) + " Batman!"',
+      imgsrc:'app/img/.png'},
+    { name        :'Linux',
+      description :'',
+      imgsrc:'app/img/.png'},
+    { name        :'',
+      description :'',
+      imgsrc:'app/img/.png'},
+    { name        :'',
+      description :'',
+      imgsrc:'app/img/.png'},
+    { name        :'',
+      description :'',
+      imgsrc:'app/img/.png'},
+    { name        :'',
+      description :'',
+      imgsrc:'app/img/.png'},
+      { name        :'',
+      description :'',
+      imgsrc:'app/img/.png'},
+    { name        :'',
+      description :'',
+      imgsrc:'app/img/.png'},
+    { name        :'',
+      description :'',
+      imgsrc:'app/img/.png'},
+    { name        :'',
+      description :'',
+      imgsrc:'app/img/.png'},
     {imgsrc:'', name:'okok', description:'ummmm'}
   ];
 
@@ -151,7 +181,7 @@ riot.tag('pane-likes', '<div class="pane-likes pane {hidden: !this.isActive()}">
 
 });
 
-riot.tag('r-likey', '<img riot-src="{opts.imgsrc}"></img> <div class="floating-text"> <span class="description">{opts.description}</span> <hr></hr> <span class="name">{opts.name}</span> </div>', function(opts) {
+riot.tag('r-likey', '<img riot-src="{opts.imgsrc}"></img> <div class="floating-text"> <h3 class="name">{opts.name}</h3> <hr></hr> <span class="description">{opts.description}</span> </div>', function(opts) {
 
 });
 

@@ -183,7 +183,7 @@ var ActivatableMixin = {
 
 <pane-likes>
   <div class='pane-likes pane {hidden: !this.isActive()}'>
-    <p>some text here</p>
+    <p>Things I like in no particular order.</p>
     <div class='grid-container'>
       <r-likey each='{thing, i in likedThings}'
         class       = '{thing.class} {selected: parent.isSelectedThing(thing.name)}' 
@@ -205,19 +205,49 @@ var ActivatableMixin = {
   // icon
   // description
 
-  // maybe stagger load, watch something until the pane-likes.active==true
+  // maybe stagger loading of images, watch something until the pane-likes.active==true
   // then, mount domNodes
 
   this.likedThings = [
-    {imgsrc:'app/img/sushi.png', name:'test', description:'test stuff'},
-    {imgsrc:'app/img/sushi.png', name:'something', description:'more'},
-    {imgsrc:'app/img/sushi.png', name:'more yo', description:'yeah'},
-    {imgsrc:'app/img/sushi.png', name:'test', description:'test stuff'},
-    {imgsrc:'app/img/sushi.png', name:'something', description:'more'},
-    {imgsrc:'app/img/sushi.png', name:'more yo', description:'yeah'},
-    {imgsrc:'app/img/sushi.png', name:'test', description:'test stuff'},
-    {imgsrc:'app/img/sushi.png', name:'something', description:'more'},
-    {imgsrc:'app/img/sushi.png', name:'more yo', description:'yeah'},
+    { name        :'Sushi',
+      description :'I was a Sushi Chef for 8 years in Seattle...mmm, love sushi',
+      imgsrc      :'app/img/sushi.png'},
+    { name        :'Japanese Knives',
+      description :'High carbon steel is the way of the Samurai!',
+      imgsrc:'app/img/knife.png'},
+    { name        :'Final Fantasy VII',
+      description :'Like, seriously, the BEST RPG EVAH! (or very close to it)',
+      imgsrc      :'app/img/ff7.png'},
+    { name        :'Javascript',
+      description :'Array(16).join("wat" - 1) + " Batman!"',
+      imgsrc:'app/img/.png'},
+    { name        :'Linux',
+      description :'',
+      imgsrc:'app/img/.png'},
+    { name        :'',
+      description :'',
+      imgsrc:'app/img/.png'},
+    { name        :'',
+      description :'',
+      imgsrc:'app/img/.png'},
+    { name        :'',
+      description :'',
+      imgsrc:'app/img/.png'},
+    { name        :'',
+      description :'',
+      imgsrc:'app/img/.png'},
+      { name        :'',
+      description :'',
+      imgsrc:'app/img/.png'},
+    { name        :'',
+      description :'',
+      imgsrc:'app/img/.png'},
+    { name        :'',
+      description :'',
+      imgsrc:'app/img/.png'},
+    { name        :'',
+      description :'',
+      imgsrc:'app/img/.png'},
     {imgsrc:'', name:'okok', description:'ummmm'}
   ];
 
@@ -234,9 +264,9 @@ var ActivatableMixin = {
 <r-likey>
   <img src='{opts.imgsrc}'></img>
   <div class='floating-text'>
-    <span class='description'>{opts.description}</span>
+    <h3 class='name'>{opts.name}</h3>
     <hr></hr>
-    <span class='name'>{opts.name}</span>
+    <span class='description'>{opts.description}</span>
   </div>
 </r-likey>
 
