@@ -115,12 +115,12 @@ riot.tag('r-skill', '<div class="skill-name"> <icon class="{opts.skillicon}"> </
 
 });
 
-riot.tag('pane-likes', '<div class="pane-likes pane {hidden: !this.isActive()}"> <p>some text here</p> <div class="grid-container"> <r-likey each="{thing, i in likedThings}" class = \'{thing.class}\' imgsrc = \'{thing.imgsrc}\' name = \'{thing.name}\' description = \'{thing.description}\' onclick = \'{}\'></r-likey> </div> </div>', function(opts) {
-
+riot.tag('pane-likes', '<div class="pane-likes pane {hidden: !this.isActive()}"> <p>some text here</p> <div class="grid-container"> <r-likey each="{thing, i in likedThings}" class = \'{thing.class} {selected: parent.isSelectedThing(thing.name)}\' imgsrc = \'{thing.imgsrc}\' name = \'{thing.name}\' description = \'{thing.description}\' onclick = \'{parent.select}\'></r-likey> </div> </div>', function(opts) {
   this.mixin(ActivatableMixin);
   this.paneId = 'likes';
-  
   this.active = false;
+
+  this.selectedThing = undefined;
 
 
 
@@ -140,10 +140,18 @@ riot.tag('pane-likes', '<div class="pane-likes pane {hidden: !this.isActive()}">
     {imgsrc:'', name:'okok', description:'ummmm'}
   ];
 
+  this.select = function(event) {
+    this.selectedThing = (this.selectedThing === event.item.thing.name) ?
+      undefined : event.item.thing.name;
+  }.bind(this);
+
+  this.isSelectedThing = function(name) {
+    return this.selectedThing === name;
+  }.bind(this);
+
 });
 
 riot.tag('r-likey', '<img riot-src="{opts.imgsrc}"></img> <div class="floating-text"> <span class="description">{opts.description}</span> <hr></hr> <span class="name">{opts.name}</span> </div>', function(opts) {
-  console.log(opts);
 
 });
 

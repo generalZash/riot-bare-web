@@ -186,18 +186,20 @@ var ActivatableMixin = {
     <p>some text here</p>
     <div class='grid-container'>
       <r-likey each='{thing, i in likedThings}'
-        class       = '{thing.class}' 
+        class       = '{thing.class} {selected: parent.isSelectedThing(thing.name)}' 
         imgsrc      = '{thing.imgsrc}'
         name        = '{thing.name}' 
         description = '{thing.description}'
-        onclick     = '{}'></r-likey>
+        onclick     = '{parent.select}'></r-likey>
     </div>
   </div>
 
+  // mixin and mixed in properties
   this.mixin(ActivatableMixin);
   this.paneId = 'likes';
-  
   this.active = false;
+
+  this.selectedThing = undefined;
 
   //todo: 
   // icon
@@ -218,6 +220,15 @@ var ActivatableMixin = {
     {imgsrc:'app/img/sushi.png', name:'more yo', description:'yeah'},
     {imgsrc:'', name:'okok', description:'ummmm'}
   ];
+
+  select(event) {
+    this.selectedThing = (this.selectedThing === event.item.thing.name) ?
+      undefined : event.item.thing.name;
+  }
+
+  isSelectedThing(name) {
+    return this.selectedThing === name;
+  }
 </pane-likes>
 
 <r-likey>
@@ -227,7 +238,6 @@ var ActivatableMixin = {
     <hr></hr>
     <span class='name'>{opts.name}</span>
   </div>
-  console.log(opts);
 </r-likey>
 
 <pane-contact>
