@@ -231,13 +231,16 @@ r-main {
       align-content: center;
       position: relative;
       width: 200px;
-      height: 200px;
+      height: 180px;
       padding: 15px;
 
       transition: all linear 0.2s;
+      .img-container {
+        display: inline-block;
+        margin: auto;
+      }
       img {
-        width: auto;
-        height: auto;
+        width: 100%;
         position: relative;
         opacity: 1;
         transition: transform linear 0.1s;
@@ -369,4 +372,5 @@ icon[class^="icon-"]:before{
 
 monospace {
   font-family: "Lucida Console", Monaco, monospace, Courier, "Courier New" !important;
+  font-size: 0.8em;
 }

@@ -214,13 +214,15 @@ r-main {
               align-content: center;
       position: relative;
       width: 200px;
-      height: 200px;
+      height: 180px;
       padding: 15px;
       -webkit-transition: all linear 0.2s;
               transition: all linear 0.2s; }
+      r-main .pane-likes r-thing .img-container {
+        display: inline-block;
+        margin: auto; }
       r-main .pane-likes r-thing img {
-        width: auto;
-        height: auto;
+        width: 100%;
         position: relative;
         opacity: 1;
         -webkit-transition: -webkit-transform linear 0.1s;
@@ -338,4 +340,5 @@ icon[class^="icon-"]:before {
   display: none !important; }
 
 monospace {
-  font-family: "Lucida Console", Monaco, monospace, Courier, "Courier New" !important; }
+  font-family: "Lucida Console", Monaco, monospace, Courier, "Courier New" !important;
+  font-size: 0.8em; }

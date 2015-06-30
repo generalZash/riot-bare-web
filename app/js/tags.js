@@ -133,17 +133,17 @@ riot.tag('pane-likes', '<div class="pane-likes pane {hidden: !this.isActive()}">
       description :'High carbon steel is the way of the Samurai!',
       imgsrc:'app/img/knife.png'},
     { name        :'Javascript',
-      description :'Array(16).join("wat" - 1) + " Batman!"',
-      imgsrc:'app/img/.png'},
+      description :'<monospace>Array(16).join("wat"-1) + " Batman!"</monospace>',
+      imgsrc:'app/img/javascript-logo.png'},
     { name        :'Aeropress',
       description :'Best damn drip-style coffee!<br> "So, guys, here\'s an idea. Let\'s make frisbees and coffee dispensers.',
-      imgsrc:'app/img/.png'},
+      imgsrc:'app/img/aeropress.png'},
     { name        :'Gelato',
       description :'Don\'t call it icecream! Italians be mad!',
-      imgsrc:'app/img/.png'},
+      imgsrc:'app/img/gelato.png'},
     { name        :'Comfy Pajamas',
       description :'Doubles as work outfit (on days when you telecommute)',
-      imgsrc:'app/img/.png'},
+      imgsrc:'app/img/pajama.png'},
     { name        :'Final Fantasy VII',
       description :'Like, seriously, the BEST RPG EVAH! (subject to subjective opinion)',
       imgsrc      :'app/img/ff7.png'},
@@ -179,7 +179,7 @@ riot.tag('pane-likes', '<div class="pane-likes pane {hidden: !this.isActive()}">
       imgsrc:'app/img/.png'},
     { name        :'Git',
       description :'Provides sanity. Pretty damn good for a "stupid content tracker" -man page',
-      imgsrc:'app/img/.png'},
+      imgsrc:'app/img/git.png'},
     { name        :'Tactics Ogre Battle',
       description :'I still can\'t believe that was originally on SNES... insanely ahead of its time',
       imgsrc:'app/img/.png'}
@@ -187,7 +187,7 @@ riot.tag('pane-likes', '<div class="pane-likes pane {hidden: !this.isActive()}">
 
   this.dislikedThings = [
     { name        :'Mixed Tabs',
-      description :'<monospace>》》》••》》•••¶</monospace>',
+      description :'<monospace>»»»••••»»••••••••¶</monospace>',
       imgsrc:'app/img/.png'},
     { name        :'',
       description :'',
@@ -211,7 +211,7 @@ riot.tag('pane-likes', '<div class="pane-likes pane {hidden: !this.isActive()}">
 
 });
 
-riot.tag('r-thing', '<img riot-src="{opts.imgsrc}"></img> <div class="floating-text"> <h3 class="name">{opts.name}</h3> <hr></hr> <span class="description"><r-raw content="{opts.description}"></r-raw></span> </div>', function(opts) {
+riot.tag('r-thing', '<div class="img-container"> <img riot-src="{opts.imgsrc}"></img> </div> <div class="floating-text"> <h3 class="name">{opts.name}</h3> <hr></hr> <span class="description"><r-raw content="{opts.description}"></r-raw></span> </div>', function(opts) {
 
 });
 
