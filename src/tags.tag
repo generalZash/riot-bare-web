@@ -1,4 +1,4 @@
-// super simple router function to handle hash URL changes
+// simple router function to handle hash URL changes
 function Router () {
   //TODO: Enhancement: maybe use html history API, maybe overkill
   this.registry = {};
@@ -9,6 +9,14 @@ function Router () {
     return this;
   };
 
+  /**
+   * Register `ActivatableMixin`s to be notified when there's a change to URL hash
+   * @param {String}   path       - the hash path to register with. #/<path>
+   * @param {Object}   context    - activation/deactivation's execution context used to fire the 
+   *                     `activate()` and `deactivate()` functions
+   * @param {Function} activate   - function to call the for pane that matches the hash URL
+   * @param {Function} deactivate - function to call for panes that do not match the hash URL
+   */
   this.register = function (path, context, activate, deactivate) {
     this.registry[path] = {
       contex    : context,
@@ -18,9 +26,7 @@ function Router () {
   };
 
   this.onChange = function (event) {
-    //console.log(event.oldURL, event.newURL, event);
     //TODO: 404
-    //TODO: if already active don't do shit
     var newPath = event.newURL.split('#/');
     newPath = (newPath.length === 2) ? newPath[1] : undef;
     if (this.registry[newPath]) {
@@ -139,9 +145,6 @@ var ActivatableMixin = {
         <li>Javascript MVC - currently Riot.js; I feel this will be replaced with React.js soon...</li>
         <li>Rubik's cube - 3x3 Best avg of 5: 24.32s</li>
       </ul>
-
-      <p>{this.screen()}</p>
-      <p>{this.viewport()}</p>
     </div>
     <div class='side-image'>
       <img src='app/img/gake_new_lg.png'></img>
@@ -151,15 +154,6 @@ var ActivatableMixin = {
   this.paneLink = 'about';
   this.active = true;
   this.mixin(ActivatableMixin);
-
-
-  screen() {
-    return window.screen.width + ', ' + window.screen.height;
-  }
-
-  viewport() {
-    return document.documentElement.clientWidth + ', ' + document.documentElement.clientHeight;
-  }
 </pane-home>
 
 <pane-skills>

@@ -1,4 +1,4 @@
-// super simple router function to handle hash URL changes
+// simple router function to handle hash URL changes
 function Router () {
   //TODO: Enhancement: maybe use html history API, maybe overkill
   this.registry = {};
@@ -9,6 +9,14 @@ function Router () {
     return this;
   };
 
+  /**
+   * Register `ActivatableMixin`s to be notified when there's a change to URL hash
+   * @param {String}   path       - the hash path to register with. #/<path>
+   * @param {Object}   context    - activation/deactivation's execution context used to fire the 
+   *                     `activate()` and `deactivate()` functions
+   * @param {Function} activate   - function to call the for pane that matches the hash URL
+   * @param {Function} deactivate - function to call for panes that do not match the hash URL
+   */
   this.register = function (path, context, activate, deactivate) {
     this.registry[path] = {
       contex    : context,
@@ -18,9 +26,7 @@ function Router () {
   };
 
   this.onChange = function (event) {
-    //console.log(event.oldURL, event.newURL, event);
     //TODO: 404
-    //TODO: if already active don't do shit
     var newPath = event.newURL.split('#/');
     newPath = (newPath.length === 2) ? newPath[1] : undef;
     if (this.registry[newPath]) {
@@ -111,20 +117,11 @@ riot.tag('r-main', '<section class="container"> <pane-home></pane-home> <pane-sk
 
 });
 
-riot.tag('pane-home', '<div class="pane-home pane {hidden: !this.isActive()}"> <div class="content"> <h1>Hi, I\'m Gen</h1> <p>I\'m a coder at heart who thrives in terminal windows that fell into a fron-end dev position (and I\'m loving it). My day to day work involves lots of Javascript, HTML5, CSS3, and some Java for running Selenium. I love solving problems by thinking out loud (around other people).</p> <p>I\'m a perpetual hobby collecter, that is, I collect new hobbies. My current obsessions include:</p> <ul> <li>Aeropress - the best damn coffee</li> <li>Javascript MVC - currently Riot.js; I feel this will be replaced with React.js soon...</li> <li>Rubik\'s cube - 3x3 Best avg of 5: 24.32s</li> </ul> <p>{this.screen()}</p> <p>{this.viewport()}</p> </div> <div class="side-image"> <img src="app/img/gake_new_lg.png"></img> </div> </section>', function(opts) {
+riot.tag('pane-home', '<div class="pane-home pane {hidden: !this.isActive()}"> <div class="content"> <h1>Hi, I\'m Gen</h1> <p>I\'m a coder at heart who thrives in terminal windows that fell into a fron-end dev position (and I\'m loving it). My day to day work involves lots of Javascript, HTML5, CSS3, and some Java for running Selenium. I love solving problems by thinking out loud (around other people).</p> <p>I\'m a perpetual hobby collecter, that is, I collect new hobbies. My current obsessions include:</p> <ul> <li>Aeropress - the best damn coffee</li> <li>Javascript MVC - currently Riot.js; I feel this will be replaced with React.js soon...</li> <li>Rubik\'s cube - 3x3 Best avg of 5: 24.32s</li> </ul> </div> <div class="side-image"> <img src="app/img/gake_new_lg.png"></img> </div> </section>', function(opts) {
 
   this.paneLink = 'about';
   this.active = true;
   this.mixin(ActivatableMixin);
-
-
-  this.screen = function() {
-    return window.screen.width + ', ' + window.screen.height;
-  }.bind(this);
-
-  this.viewport = function() {
-    return document.documentElement.clientWidth + ', ' + document.documentElement.clientHeight;
-  }.bind(this);
 
 });
 

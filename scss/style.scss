@@ -1,4 +1,8 @@
 //using scss
+$short-header-height: 45px;
+$header-height: 75px;
+//TODO: add transition for height changing? maybe overkill
+
 html{
 /*********************************************************/
   //default font styling declared in index.html
@@ -52,7 +56,7 @@ body {
   position: fixed;
   left: 0;
   top: 0;
-  height: 75px;
+  height: $short-header-height;
   background-color: #fff;
   box-shadow: 0 1px 3px rgba(0,0,0,0.25);
   z-index: 1000;
@@ -71,8 +75,8 @@ body {
     align-items: center;
 
     min-width: 310px;
-    height: 75px;//## may make smaller
-    line-height: 75px;//##may make smaller
+    height: $short-header-height;//## may make smaller
+    line-height: $short-header-height;//##may make smaller
     //background: #4D4A50;
     position: relative;
     top: 0px;
@@ -129,9 +133,17 @@ body {
     }
 
     .header {
-      height: 75px;
-      line-height: 75px;
       width: 80%;
+    }
+  }
+
+  @media (min-height: 600px) {
+    & {
+      height: $header-height;
+    }
+    .header {
+      height: $header-height;
+      line-height: $header-height;
     }
   }
 }
@@ -149,7 +161,7 @@ body {
 }
 
 r-main {
-  margin-top: 75px;
+  margin-top: $short-header-height;
   padding: 7%;
   display: flex;
   min-height: 50%;
@@ -222,6 +234,7 @@ r-main {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
+      width: 100%;//for IE
     }
 
   //TODO: I really don't like how deeply nested these css rules are, need to flatten
@@ -345,6 +358,12 @@ r-main {
   @media (min-width: 1400px) {
     .container {
       width: 1300px;
+    }
+  }
+
+  @media (min-height: 600px) {
+    r-main {
+      margin-top: $header-height;
     }
   }
 }
