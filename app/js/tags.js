@@ -1,24 +1,70 @@
+// super simple router function to handle hash URL changes
+function Router () {
+  //TODO: Enhancement: maybe use html history API, maybe overkill
+  this.registry = {};
+
+  this.init = function () {
+    window.addEventListener('hashchange', this.onChange);
+    // return `this` to allow chaining .init
+    return this;
+  };
+
+  this.register = function (path, context, activate, deactivate) {
+    this.registry[path] = {
+      contex    : context,
+      activate  : activate,
+      deactivate: deactivate
+    }
+  };
+
+  this.onChange = function (event) {
+    //console.log(event.oldURL, event.newURL, event);
+    //TODO: 404
+    //TODO: if already active don't do shit
+    var newPath = event.newURL.split('#/');
+    newPath = (newPath.length === 2) ? newPath[1] : undef;
+    if (this.registry[newPath]) {
+      for (var path in this.registry) {
+        var pathObj = this.registry[path];
+        if (path == newPath)
+          pathObj.activate.call(pathObj.context);
+        else
+          pathObj.deactivate.call(pathObj.context);
+      }
+    }
+  }.bind(this);
+}
+
+var router = new Router().init();
+
 /**
  * Mixins
  */
 var ActivatableMixin = {
   init: function() {
-    riot.route(function(pane) {
-      if (pane === this.paneId)
+    router.register(this.paneLink, this, this.activate, this.deactivate);
+    // for initial activation/deactivation
+    var path = window.location.href.split('#/');
+    if (path.length && path.length > 1) {
+      if (path[1] === this.paneLink)
         this.activate();
       else
         this.deactivate();
-    }.bind(this))
+    }
   },
 
   activate: function() {
-    this.active = true;
-    this.update();
+    if (!this.active) {
+      this.active = true;
+      this.update();
+    }
   },
 
   deactivate: function() {
-    this.active = false;
-    this.update();
+    if (this.active) {
+      this.active = false;
+      this.update();
+    }
   },
 
   isActive: function() {
@@ -29,14 +75,14 @@ var ActivatableMixin = {
 riot.tag('r-header', '<div class="container"> <div class="header { sticky: this.isSticky()}"> <div class="whatsMahName">Gen Edwards</div> <ul class="header-right"> <li each="{link, i in links}" class="section-link { active: parent.isActive(link.id)}"> <a href="{link.linkAddr}">{link.title}</a> </li> </ul> </div> </div>', 'class=\'r-header\'', function(opts) {
 
   this.links = [
-    { title:'about',   class:'about',   id:'about',   linkAddr:'#about'  },
-    { title:'skills',  class:'skills',  id:'skills',  linkAddr:'#skills' },
-    { title:'likes',   class:'likes',   id:'likes',   linkAddr:'#likes'  },
-    { title:'contact', class:'contact', id:'contact', linkAddr:'#contact'}
+    { title:'about',   class:'about',   linkAddr:'#/about'  },
+    { title:'skills',  class:'skills',  linkAddr:'#/skills' },
+    { title:'likes',   class:'likes',   linkAddr:'#/likes'  },
+    { title:'contact', class:'contact', linkAddr:'#/contact'}
   ];
 
-  this.isActive = function(id) {
-    return this.activeLinkId === id;
+  this.isActive = function(link) {
+    return this.activeLinklink === link;
   }.bind(this);
 
   this.sticky = false;
@@ -65,12 +111,12 @@ riot.tag('r-main', '<section class="container"> <pane-home></pane-home> <pane-sk
 
 });
 
-riot.tag('pane-home', '<div id="pane-home" class="pane-home pane {hidden: !this.isActive()}"> <div class="content"> <h1>Hi, I\'m Gen</h1> <p>I\'m a coder at heart who thrives in terminal windows that fell into a fron-end dev position (and I\'m loving it). My day to day work involves lots of Javascript, HTML5, CSS3, and some Java for running Selenium. I love solving problems by thinking out loud (around other people).</p> <p>I\'m a perpetual hobby collecter, that is, I collect new hobbies. My current obsessions include:</p> <ul> <li>Aeropress - the best damn coffee</li> <li>Javascript MVC - currently Riot.js; I feel this will be replaced with React.js soon...</li> <li>Rubik\'s cube - 3x3 Best avg of 5: 24.32s</li> </ul> <p>{this.screen()}</p> <p>{this.viewport()}</p> </div> <div class="side-image"> <img src="app/img/gake_new_lg.png"></img> </div> </section>', function(opts) {
+riot.tag('pane-home', '<div class="pane-home pane {hidden: !this.isActive()}"> <div class="content"> <h1>Hi, I\'m Gen</h1> <p>I\'m a coder at heart who thrives in terminal windows that fell into a fron-end dev position (and I\'m loving it). My day to day work involves lots of Javascript, HTML5, CSS3, and some Java for running Selenium. I love solving problems by thinking out loud (around other people).</p> <p>I\'m a perpetual hobby collecter, that is, I collect new hobbies. My current obsessions include:</p> <ul> <li>Aeropress - the best damn coffee</li> <li>Javascript MVC - currently Riot.js; I feel this will be replaced with React.js soon...</li> <li>Rubik\'s cube - 3x3 Best avg of 5: 24.32s</li> </ul> <p>{this.screen()}</p> <p>{this.viewport()}</p> </div> <div class="side-image"> <img src="app/img/gake_new_lg.png"></img> </div> </section>', function(opts) {
 
-  this.mixin(ActivatableMixin);
-  this.paneId = 'about';
-  
+  this.paneLink = 'about';
   this.active = true;
+  this.mixin(ActivatableMixin);
+
 
   this.screen = function() {
     return window.screen.width + ', ' + window.screen.height;
@@ -84,9 +130,9 @@ riot.tag('pane-home', '<div id="pane-home" class="pane-home pane {hidden: !this.
 
 riot.tag('pane-skills', '<div class="pane-skills pane {hidden: !this.isActive()}"> <div class="content"> <h2>Things I can do (that matter for work)</h1> <p>Assessment standards:</p> <ul> <li><icon class="icon-emo-displeased"></icon><span>: Meh - I know what it is</span></li> <li><icon class="icon-emo-happy"></icon><span>: I\'m alright - I\'ve used this</span></li> <li><icon class="icon-emo-grin"></icon><span>: I know my way around it</span></li> <li><icon class="icon-emo-thumbsup"></icon><span>: Other people ask me questions about it</span></li> <li><icon class="icon-emo-sunglasses"></icon><span>: Master (please slap me if I ever claim to have "Mastered" a skill)</span></li> </ul> <div class="nb">*NB: It\'s sad that I have to state this: I\'m honest about my skills. For example, I built this responsive website from scratch so I seem to know what I\'m doing but I rate myself 3/5 for HTML5/CSS3. I would never be able to claim "100% Mastah!" of any reasonable programming language.</div> <section class="skill-list"> <r-skill each="{skill, i in skills}" name =\'{skill.name}\' level =\'{skill.level}\' skillicon="{skill.skillIcon}"></r-skill> </section> </div> </div>', function(opts) {
 
-  this.mixin(ActivatableMixin);
-  this.paneId = 'skills';
+  this.paneLink = 'skills';
   this.active = false;
+  this.mixin(ActivatableMixin);
 
   this.skills = [
     { name:'Javascript',              level:4, skillIcon:''},
@@ -116,9 +162,9 @@ riot.tag('r-skill', '<div class="skill-name"> <icon class="{opts.skillicon}"> </
 });
 
 riot.tag('pane-likes', '<div class="pane-likes pane {hidden: !this.isActive()}"> <h2>Things I like in no particular order.</h2> <div class="grid-container"> <r-thing each="{thing, i in likedThings}" class = \'{thing.class}\' imgsrc = \'{thing.imgsrc}\' name = \'{thing.name}\' description = \'{thing.description}\'></r-thing> </div> <h2>Things I dislike in no particular order.</h2> <div class="grid-container"> <r-thing each="{thing, i in dislikedThings}" class = \'{thing.class}\' imgsrc = \'{thing.imgsrc}\' name = \'{thing.name}\' description = \'{thing.description}\'></r-thing> </div> </div>', function(opts) {
-  this.mixin(ActivatableMixin);
-  this.paneId = 'likes';
+  this.paneLink = 'likes';
   this.active = false;
+  this.mixin(ActivatableMixin);
 
 
 
@@ -161,7 +207,7 @@ riot.tag('pane-likes', '<div class="pane-likes pane {hidden: !this.isActive()}">
       imgsrc:'app/img/empty.png'},
     { name        :'Flexbox',
       description :'What a life saver',
-      imgsrc:'app/img/dot.png'},
+      imgsrc:'app/img/empty.png'},
     { name        :'Chrome Devtools',
       description :'As legend has it, the original source code was passed down from Merlin [citation needed]. Can\'t imagine writing Javascript without it',
       imgsrc:'app/img/empty.png'},
@@ -204,9 +250,9 @@ riot.tag('r-raw', '', function(opts) {
 
 riot.tag('pane-contact', '<div class="pane-contact pane {hidden: !this.isActive()}"> <div class="content"> <h1>Wanna connect?</h1> <p> Shoot me an email: thedude(at)generalzash(dot)com </br></br> Connect via <a href="https://www.linkedin.com/in/genedwards">LinkedIn</a> </p> </div> <div class="side-image"> <img class="self" src="app/img/all_your_low_polys_are_belong_to_mine.png"></img> </div> </div>', function(opts) {
 
-  this.mixin(ActivatableMixin);
-  this.paneId = 'contact';
+  this.paneLink = 'contact';
   this.active = false;
+  this.mixin(ActivatableMixin);
 
 });
 

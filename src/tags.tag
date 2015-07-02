@@ -1,24 +1,70 @@
+// super simple router function to handle hash URL changes
+function Router () {
+  //TODO: Enhancement: maybe use html history API, maybe overkill
+  this.registry = {};
+
+  this.init = function () {
+    window.addEventListener('hashchange', this.onChange);
+    // return `this` to allow chaining .init
+    return this;
+  };
+
+  this.register = function (path, context, activate, deactivate) {
+    this.registry[path] = {
+      contex    : context,
+      activate  : activate,
+      deactivate: deactivate
+    }
+  };
+
+  this.onChange = function (event) {
+    //console.log(event.oldURL, event.newURL, event);
+    //TODO: 404
+    //TODO: if already active don't do shit
+    var newPath = event.newURL.split('#/');
+    newPath = (newPath.length === 2) ? newPath[1] : undef;
+    if (this.registry[newPath]) {
+      for (var path in this.registry) {
+        var pathObj = this.registry[path];
+        if (path == newPath)
+          pathObj.activate.call(pathObj.context);
+        else
+          pathObj.deactivate.call(pathObj.context);
+      }
+    }
+  }.bind(this);
+}
+
+var router = new Router().init();
+
 /**
  * Mixins
  */
 var ActivatableMixin = {
   init: function() {
-    riot.route(function(pane) {
-      if (pane === this.paneId)
+    router.register(this.paneLink, this, this.activate, this.deactivate);
+    // for initial activation/deactivation
+    var path = window.location.href.split('#/');
+    if (path.length && path.length > 1) {
+      if (path[1] === this.paneLink)
         this.activate();
       else
         this.deactivate();
-    }.bind(this))
+    }
   },
 
   activate: function() {
-    this.active = true;
-    this.update();
+    if (!this.active) {
+      this.active = true;
+      this.update();
+    }
   },
 
   deactivate: function() {
-    this.active = false;
-    this.update();
+    if (this.active) {
+      this.active = false;
+      this.update();
+    }
   },
 
   isActive: function() {
@@ -39,14 +85,14 @@ var ActivatableMixin = {
   </div>
 
   this.links = [
-    { title:'about',   class:'about',   id:'about',   linkAddr:'#about'  },
-    { title:'skills',  class:'skills',  id:'skills',  linkAddr:'#skills' },
-    { title:'likes',   class:'likes',   id:'likes',   linkAddr:'#likes'  },
-    { title:'contact', class:'contact', id:'contact', linkAddr:'#contact'}
+    { title:'about',   class:'about',   linkAddr:'#/about'  },
+    { title:'skills',  class:'skills',  linkAddr:'#/skills' },
+    { title:'likes',   class:'likes',   linkAddr:'#/likes'  },
+    { title:'contact', class:'contact', linkAddr:'#/contact'}
   ];
 
-  isActive(id) {
-    return this.activeLinkId === id;
+  isActive(link) {
+    return this.activeLinklink === link;
   }
 
   this.sticky = false;
@@ -79,7 +125,7 @@ var ActivatableMixin = {
 </r-main>
 
 <pane-home>
-  <div id='pane-home' class='pane-home pane {hidden: !this.isActive()}'>
+  <div class='pane-home pane {hidden: !this.isActive()}'>
     <div class='content'>
       <h1>Hi, I'm Gen</h1>
       <p>I'm a coder at heart who thrives in terminal windows that fell into a fron-end dev 
@@ -102,10 +148,10 @@ var ActivatableMixin = {
     </div>
   </section>
 
-  this.mixin(ActivatableMixin);
-  this.paneId = 'about';
-  
+  this.paneLink = 'about';
   this.active = true;
+  this.mixin(ActivatableMixin);
+
 
   screen() {
     return window.screen.width + ', ' + window.screen.height;
@@ -143,9 +189,9 @@ var ActivatableMixin = {
     </div>
   </div>
 
-  this.mixin(ActivatableMixin);
-  this.paneId = 'skills';
+  this.paneLink = 'skills';
   this.active = false;
+  this.mixin(ActivatableMixin);
 
   this.skills = [
     { name:'Javascript',              level:4, skillIcon:''},
@@ -203,9 +249,9 @@ var ActivatableMixin = {
   </div>
 
   // mixin and mixed in properties
-  this.mixin(ActivatableMixin);
-  this.paneId = 'likes';
+  this.paneLink = 'likes';
   this.active = false;
+  this.mixin(ActivatableMixin);
 
   //todo: 
   // icon
@@ -250,7 +296,7 @@ var ActivatableMixin = {
       imgsrc:'app/img/empty.png'},
     { name        :'Flexbox',
       description :'What a life saver',
-      imgsrc:'app/img/dot.png'},
+      imgsrc:'app/img/empty.png'},
     { name        :'Chrome Devtools',
       description :'As legend has it, the original source code was passed down from Merlin [citation needed]. Can\'t imagine writing Javascript without it',
       imgsrc:'app/img/empty.png'},
@@ -313,9 +359,9 @@ var ActivatableMixin = {
     </div>
   </div>
 
-  this.mixin(ActivatableMixin);
-  this.paneId = 'contact';
+  this.paneLink = 'contact';
   this.active = false;
+  this.mixin(ActivatableMixin);
 </pane-contact>
 
 <r-footer class='footer'>
