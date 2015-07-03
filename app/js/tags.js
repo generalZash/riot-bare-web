@@ -195,7 +195,7 @@ riot.tag('pane-likes', '<div class="pane-likes pane {hidden: !this.isActive()}">
       imgsrc:'app/img/empty.png'},
     { name        :'Linux',
       description :'sudo !!',
-      imgsrc:'app/img/empty.png'},
+      imgsrc:'app/img/linux.png'},
     { name        :'Mechanical Keyboards',
       description :'Hardware programmable Vortex 61 key keyboard with blank keycaps (Cherry Brown)',
       imgsrc:'app/img/empty.png'},

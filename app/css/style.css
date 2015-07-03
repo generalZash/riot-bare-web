@@ -220,7 +220,7 @@ r-main {
       position: relative;
       width: 200px;
       height: 180px;
-      padding: 15px;
+      padding: 25px 15px;
       -webkit-transition: all linear 0.2s;
               transition: all linear 0.2s; }
       r-main .pane-likes r-thing .img-container {
