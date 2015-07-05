@@ -214,9 +214,9 @@ riot.tag('pane-likes', '<div class="pane-likes pane {hidden: !this.isActive()}">
   this.dislikedThings = [
     { name        :'Mixed Tabs and Spaces',
       description :'<monospace>'
-                   + '••••if•(done)•{<br>'
-                   + '»»»this.run();<br>'
-                   + '»•••••}••••<br>'
+                   + '&#8226;&#8226;&#8226;&#8226;if&#8226;(done)&#8226;{<br>'
+                   + '&#187;&#187;&#187;this.run();<br>'
+                   + '&#187;&#8226;&#8226;&#8226;&#8226;&#8226;}&#8226;&#8226;&#8226;&#8226;<br>'
                    + '</monospace>',
       imgsrc:'app/img/empty.png'},
     { name        :'Caps Lock',
