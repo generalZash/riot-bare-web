@@ -191,7 +191,7 @@ riot.tag('pane-likes', '<div class="pane-likes pane {hidden: !this.isActive()}">
       description :'Like, seriously, the BEST RPG EVAH! (subject to subjective opinion)',
       imgsrc      :'app/img/ff7.png'},
     { name        :'My Dog',
-      description :'My embarrassingly cute (and often unfriendly) dog: part-time floor cleaner',
+      description :'My embarrassingly cute dog: part-time floor cleaner',
       imgsrc:'app/img/empty.png'},
     { name        :'Linux',
       description :'sudo !!',
