@@ -220,7 +220,7 @@ riot.tag('pane-likes', '<div class="pane-likes pane {hidden: !this.isActive()}">
                    + '</monospace>',
       imgsrc:'app/img/tab-space.png'},
     { name        :'Caps Lock',
-      description :'THERE IS NO NEED FOR THE CAPSLOCK KEY. KEYBOARDS SHOULDN\'T HAVE A DEDICATED KEY TO YELL AT PEOPLE!',
+      description :'KEYBOARDS SHOULDN\'T HAVE A DEDICATED KEY TO YELL AT PEOPLE!',
       imgsrc:'app/img/capslock.png'},
   ];
 
