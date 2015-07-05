@@ -317,10 +317,10 @@ var ActivatableMixin = {
     { name        :'Mixed Tabs and Spaces',
       description :'<monospace>'
                    + '&#8226;&#8226;&#8226;&#8226;if&#8226;(done)&#8226;{<br>'
-                   + '&#187;&#187;&#187;this.run();<br>'
+                   + '&#187;&#187;this.run();<br>'
                    + '&#187;&#8226;&#8226;&#8226;&#8226;&#8226;}&#8226;&#8226;&#8226;&#8226;<br>'
                    + '</monospace>',
-      imgsrc:'app/img/empty.png'},
+      imgsrc:'app/img/tab-space.png'},
     { name        :'Caps Lock',
       description :'THERE IS NO NEED FOR THE CAPSLOCK KEY. KEYBOARDS SHOULDN\'T HAVE A DEDICATED KEY TO YELL AT PEOPLE!',
       imgsrc:'app/img/capslock.png'},/*,
