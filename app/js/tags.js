@@ -194,7 +194,7 @@ riot.tag('pane-likes', '<div class="pane-likes pane {hidden: !this.isActive()}">
       description :'Doubles as work outfit (on days you telecommute)',
       imgsrc      :'app/img/pajama.png'},
     { name        :'Mechanical Keyboards',
-      description :'Vortex Poker II, 61 key Hardware programmable keyboard with blank keycaps (Cherry MX Brown)',
+      description :'Vortex Poker II, 61 key Hardware programmable keyboard - Cherry MX Brown switches with blank keycaps',
       imgsrc      :'app/img/keyboard.png'},
     { name        :'Rubik\'s Cube',
       description :'best Avg of 5: 24.32s (Moyu Weilong v2)',

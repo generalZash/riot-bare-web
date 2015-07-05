@@ -134,10 +134,9 @@ var ActivatableMixin = {
   <div class='pane-home pane {hidden: !this.isActive()}'>
     <div class='content'>
       <h1>Hi, I'm Gen</h1>
-      <p>I'm a coder at heart who thrives in terminal windows that fell into a fron-end dev 
-        position (and I'm loving it). My day to day work involves lots of Javascript, HTML5, CSS3, 
-        and some Java for running Selenium. I love solving problems by thinking out loud (around 
-        other people).</p>
+      <p>I'm a coder at heart that fell into a fron-end dev position (and I'm loving it). My day to 
+        day work involves lots of Javascript, HTML5, CSS3, and some Java for running Selenium. I 
+        love solving problems by thinking out loud (around other people).</p>
 
       <p>I'm a perpetual hobby collecter, that is, I collect new hobbies. My current obsessions include:</p>
       <ul>
@@ -280,7 +279,7 @@ var ActivatableMixin = {
       description :'Doubles as work outfit (on days you telecommute)',
       imgsrc      :'app/img/pajama.png'},
     { name        :'Mechanical Keyboards',
-      description :'Vortex Poker II, 61 key Hardware programmable keyboard with blank keycaps (Cherry MX Brown)',
+      description :'Vortex Poker II, 61 key Hardware programmable keyboard - Cherry MX Brown switches with blank keycaps',
       imgsrc      :'app/img/keyboard.png'},
     { name        :'Rubik\'s Cube',
       description :'best Avg of 5: 24.32s (Moyu Weilong v2)',
