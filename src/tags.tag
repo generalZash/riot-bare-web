@@ -134,7 +134,7 @@ var ActivatableMixin = {
   <div class='pane-home pane {hidden: !this.isActive()}'>
     <div class='content'>
       <h1>Hi, I'm Gen</h1>
-      <p>I'm a coder at heart that fell into a fron-end dev position (and I'm loving it). My day to 
+      <p>I'm a coder at heart who thrives in terminal windows and fell into a fron-end dev position (and I'm loving it). My day to 
         day work involves lots of Javascript, HTML5, CSS3, and some Java for running Selenium. I 
         love solving problems by thinking out loud (around other people).</p>
 
