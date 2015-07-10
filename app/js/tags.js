@@ -117,7 +117,7 @@ riot.tag('r-main', '<section class="container"> <pane-home></pane-home> <pane-sk
 
 });
 
-riot.tag('pane-home', '<div class="pane-home pane {hidden: !this.isActive()}"> <div class="content"> <h1>Hi, I\'m Gen</h1> <p>I\'m a coder at heart who thrives in terminal windows that fell into a fron-end dev position (and I\'m loving it). My day to day work involves lots of Javascript, HTML5, CSS3, and some Java for running Selenium. I love solving problems by thinking out loud (around other people).</p> <p>I\'m a perpetual hobby collecter, that is, I collect new hobbies. My current obsessions include:</p> <ul> <li>Aeropress - the best damn coffee</li> <li>Javascript MVC - currently Riot.js; I feel this will be replaced with React.js soon...</li> <li>Rubik\'s cube - 3x3 Best avg of 5: 24.32s</li> </ul> </div> <div class="side-image"> <img src="app/img/gake_new_lg.png"></img> </div> </section>', function(opts) {
+riot.tag('pane-home', '<div class="pane-home pane {hidden: !this.isActive()}"> <div class="content"> <h1>Hi, I\'m Gen</h1> <p>I\'m a coder at heart who thrives in terminal windows and fell into a fron-end dev position (and I\'m loving it). My day to day work involves lots of Javascript, HTML5, CSS3, and some Java for running Selenium. I love solving problems by thinking out loud (around other people).</p> <p>I\'m a perpetual hobby collecter, that is, I collect new hobbies. My current obsessions include:</p> <ul> <li>Aeropress - the best damn coffee</li> <li>Javascript MVC - currently Riot.js; I feel this will be replaced with React.js soon...</li> <li>Rubik\'s cube - 3x3 Best avg of 5: 24.32s</li> </ul> </div> <div class="side-image"> <img src="app/img/gake_new_lg.png"></img> </div> </section>', function(opts) {
 
   this.paneLink = 'about';
   this.active = true;
@@ -125,7 +125,7 @@ riot.tag('pane-home', '<div class="pane-home pane {hidden: !this.isActive()}"> <
 
 });
 
-riot.tag('pane-skills', '<div class="pane-skills pane {hidden: !this.isActive()}"> <div class="content"> <h2>Things I can do (that matter for work)</h1> <p>Assessment standards:</p> <ul> <li><icon class="icon-emo-displeased"></icon><span>: Meh - I know what it is</span></li> <li><icon class="icon-emo-happy"></icon><span>: I\'m alright - I\'ve used this</span></li> <li><icon class="icon-emo-grin"></icon><span>: I know my way around it</span></li> <li><icon class="icon-emo-thumbsup"></icon><span>: Other people ask me questions about it</span></li> <li><icon class="icon-emo-sunglasses"></icon><span>: Master (please slap me if I ever claim to have "Mastered" a skill)</span></li> </ul> <div class="nb">*NB: It\'s sad that I have to state this: I\'m honest about my skills. For example, I built this responsive website from scratch so I seem to know what I\'m doing but I rate myself 3/5 for HTML5/CSS3. I would never be able to claim "100% Mastah!" of any reasonable programming language.</div> <section class="skill-list"> <r-skill each="{skill, i in skills}" name =\'{skill.name}\' level =\'{skill.level}\' skillicon="{skill.skillIcon}"></r-skill> </section> </div> </div>', function(opts) {
+riot.tag('pane-skills', '<div class="pane-skills pane {hidden: !this.isActive()}"> <div class="content"> <h2>Things I can do (that matter for work)</h1> <p>Assessment standards:</p> <ul> <li><icon class="icon-emo-displeased"></icon><span>: Meh - I know what it is</span></li> <li><icon class="icon-emo-happy"></icon><span>: I\'m alright - I\'ve used this</span></li> <li><icon class="icon-emo-grin"></icon><span>: I know my way around it</span></li> <li><icon class="icon-emo-thumbsup"></icon><span>: Other people ask me questions about it</span></li> <li><icon class="icon-emo-sunglasses"></icon><span>: Master (please slap me if I ever claim to have "Mastered" a skill)</span></li> </ul> <div class="nb">*NB: It\'s sad that I have to state this: I\'m honest about my skills. For example, I built this mobile-friendly responsive website from scratch so I seem to know what I\'m doing but I rate myself 3/5 for HTML5/CSS3. I would never be able to claim "100% Mastah!" of any reasonable programming language.</div> <section class="skill-list"> <r-skill each="{skill, i in skills}" name =\'{skill.name}\' level =\'{skill.level}\' skillicon="{skill.skillIcon}"></r-skill> </section> </div> </div>', function(opts) {
 
   this.paneLink = 'skills';
   this.active = false;
@@ -140,7 +140,8 @@ riot.tag('pane-skills', '<div class="pane-skills pane {hidden: !this.isActive()}
     { name:'Python',                  level:3, skillIcon:''},
     { name:'Linux',                   level:4, skillIcon:'icon-linux'},
     { name:'git',                     level:3, skillIcon:'icon-git-squared'},
-    { name:'Databases',               level:1, skillIcon:''}
+    { name:'Databases',               level:1, skillIcon:''},
+    { name:'Gimp',                    level:1, skillIcon:''}
   ];
 
 });
