@@ -169,8 +169,8 @@ var ActivatableMixin = {
         <li><icon class='icon-emo-sunglasses'></icon><span>: Master (please slap me if I ever claim to have "Mastered" a skill)</span></li>
       </ul>
       <div class='nb'>*NB: It's sad that I have to state this: I'm honest about my skills. For 
-        example, I built this responsive website from scratch so I seem to know what I'm doing but 
-        I rate myself 3/5 for HTML5/CSS3. I would never be able to claim "100% Mastah!" of any 
+        example, I built this mobile-friendly responsive website from scratch so I seem to know 
+        what I'm doing but I rate myself 3/5 for HTML5/CSS3. I would never be able to claim "100% Mastah!" of any 
         reasonable programming language.</div>
       
       <section class='skill-list'>
@@ -195,7 +195,8 @@ var ActivatableMixin = {
     { name:'Python',                  level:3, skillIcon:''},
     { name:'Linux',                   level:4, skillIcon:'icon-linux'},
     { name:'git',                     level:3, skillIcon:'icon-git-squared'},
-    { name:'Databases',               level:1, skillIcon:''}
+    { name:'Databases',               level:1, skillIcon:''},
+    { name:'Gimp',                    level:1, skillIcon:''}
   ];
 </pane-skills>
 
