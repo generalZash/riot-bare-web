@@ -224,6 +224,10 @@ var ActivatableMixin = {
 <pane-likes>
   <div class='pane-likes pane {hidden: !this.isActive()}'>
     <h2>Things I like in no particular order.</h2>
+    <div class='hover-hint'>
+      <icon class='icon-down-hand poke'></icon>
+      Hover over the images! (or Tap on mobile devices)
+    </div>
     <div class='grid-container'>
       <r-thing each='{thing, i in likedThings}'
         class       = '{thing.class}' 
@@ -248,9 +252,6 @@ var ActivatableMixin = {
   this.mixin(ActivatableMixin);
 
   //todo: 
-  // icon
-  // description
-
   // maybe stagger loading of images, watch something until the pane-likes.active==true
   // then, mount domNodes
 

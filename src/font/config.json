@@ -79,6 +79,18 @@
       "src": "fontawesome"
     },
     {
+      "uid": "034e645aa3bad56ce68389a816547c87",
+      "css": "up-hand",
+      "code": 59426,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "beb43b8df442eac4b8d35f528d5ed5af",
+      "css": "down-hand",
+      "code": 59427,
+      "src": "fontawesome"
+    },
+    {
       "uid": "500fc1f109021e4b1de4deda2f7ed399",
       "css": "laptop",
       "code": 59410,

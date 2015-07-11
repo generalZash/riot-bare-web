@@ -230,6 +230,36 @@ r-main {
     width: 100%;
     align-items: center;
 
+    .hover-hint {
+      height: 40px;
+    }
+    //TODO: maybe use translate3d instead
+    .poke {
+      position: relative;
+      animation: poke 6s linear 2;
+    }
+
+    @keyframes poke {
+      /*0%   {top: 0px;}
+      10%  {top: 0px;}
+      40%  {top: 10px;}
+      60%  {top: 10px;}
+      90%  {top: 0px;}
+      100% {top: 0px;}*/
+      0%   {top: 0px;}
+      40%  {top: 0px;}
+      45%  {top: 8px;}
+      50%  {top: 0px;}
+      55%  {top: 8px;}
+      60%  {top: 0px;}
+      70%  {top: 0px;}
+      75%  {top: 8px;}
+      80%  {top: 0px;}
+      85%  {top: 8px;}
+      90%  {top: 0px;}
+      100% {top: 0px;}
+    }
+
     .grid-container {
       display: flex;
       flex-wrap: wrap;
