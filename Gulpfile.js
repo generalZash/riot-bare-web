@@ -78,4 +78,4 @@ gulp.task('imagemin', function() {
     .pipe(gulp.dest('app/img/'))
 });
 
-gulp.task('default', ['riot', 'serve']);
+gulp.task('default', ['riot', 'sass', 'serve']);
