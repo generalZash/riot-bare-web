@@ -27,7 +27,8 @@ function Router () {
 
   this.onChange = function (event) {
     //TODO: 404
-    var newPath = event.newURL.split('#/');
+    //event.newURL and event.oldURL is not supported by IE11, use location.hash
+    var newPath = location.hash.split('#/');
     newPath = (newPath.length === 2) ? newPath[1] : undef;
     if (this.registry[newPath]) {
       for (var path in this.registry) {
@@ -250,6 +251,16 @@ riot.tag('r-footer', '<span>&copy; Gen Edwards 2015</span>', 'class=\'footer\'',
 });
 
 window.onload = function () {
+  
+  function printHello() {
+    var userAgent = navigator.userAgent.toLowerCase();
+
+    if(userAgent.indexOf('chrome') > -1 || userAgent.indexOf('firefox') > -1)
+      console.log("%c  %c  %c Well, hello there! %c  %c  ", "background-color: #dba8e6; font-size:12px;", "background-color: #d27be3; font-size:14px;", "background-color: #882299; color:white; font-size:16px;", "background-color: #d27be3; font-size:14px;", "background-color: #dba8e6; font-size:12px;");
+    else
+      console.log("Well, hello there!");
+  };
+
   console.log("\n" + 
               " _____            _____   _                 _     " + "\n" + 
               "|   __|___ ___   |   __|_| |_ _ _ ___ ___ _| |___ " + "\n" + 
@@ -257,7 +268,7 @@ window.onload = function () {
               "|_____|___|_|_|  |_____|___|_____|__,|_| |___|___|" + "\n" + 
               "                                                  " + "\n" +
               "");
-  console.log("%c  %c  %c Well, hello there! %c  %c  ", "background-color: #dba8e6; font-size:12px;", "background-color: #d27be3; font-size:14px;", "background-color: #882299; color:white; font-size:16px;", "background-color: #d27be3; font-size:14px;", "background-color: #dba8e6; font-size:12px;");
+  printHello();
   console.log("I purposefully did not minify this website so people can take a look at what I did." + "\n"
               + "I’d love to hear what you think! http://generalZash.com/#/contact");
 };
