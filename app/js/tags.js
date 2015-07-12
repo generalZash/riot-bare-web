@@ -248,3 +248,16 @@ riot.tag('pane-contact', '<div class="pane-contact pane {hidden: !this.isActive(
 riot.tag('r-footer', '<span>&copy; Gen Edwards 2015</span>', 'class=\'footer\'', function(opts) {
 
 });
+
+window.onload = function () {
+  console.log("\n" + 
+              " _____            _____   _                 _     " + "\n" + 
+              "|   __|___ ___   |   __|_| |_ _ _ ___ ___ _| |___ " + "\n" + 
+              "|  |  | -_|   |  |   __| . | | | | .'|  _| . |_ -|" + "\n" + 
+              "|_____|___|_|_|  |_____|___|_____|__,|_| |___|___|" + "\n" + 
+              "                                                  " + "\n" +
+              "");
+  console.log("%c  %c  %c Well, hello there! %c  %c  ", "background-color: #dba8e6; font-size:12px;", "background-color: #d27be3; font-size:14px;", "background-color: #882299; color:white; font-size:16px;", "background-color: #d27be3; font-size:14px;", "background-color: #dba8e6; font-size:12px;");
+  console.log("I purposefully did not minify this website so people can take a look at what I did." + "\n"
+              + "I’d love to hear what you think! http://generalZash.com/#/contact");
+};
