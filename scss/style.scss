@@ -236,28 +236,23 @@ r-main {
     //TODO: maybe use translate3d instead
     .poke {
       position: relative;
-      animation: poke 6s linear 2;
+      animation: poke 5s linear 2;
+      font-size: 22px;
     }
 
     @keyframes poke {
-      /*0%   {top: 0px;}
-      10%  {top: 0px;}
-      40%  {top: 10px;}
-      60%  {top: 10px;}
-      90%  {top: 0px;}
-      100% {top: 0px;}*/
-      0%   {top: 0px;}
-      40%  {top: 0px;}
-      45%  {top: 8px;}
-      50%  {top: 0px;}
-      55%  {top: 8px;}
-      60%  {top: 0px;}
-      70%  {top: 0px;}
+      0%   {top: -5px;}
+      25%  {top: -5px;}
+      30%  {top: 8px;}
+      35%  {top: -5px;}
+      40%  {top: 8px;}
+      45%  {top: -5px;}
+      60%  {top: -5px;}
+      65%  {top: 8px;}
+      70%  {top: -5px;}
       75%  {top: 8px;}
-      80%  {top: 0px;}
-      85%  {top: 8px;}
-      90%  {top: 0px;}
-      100% {top: 0px;}
+      80%  {top: -5px;}
+      100% {top: -5px;}
     }
 
     .grid-container {
@@ -318,6 +313,7 @@ r-main {
       hr {
         border-style: solid;
         border-width: 1px;
+        border-color: #FFF; //for FF compatibility
         width: 90%;
         margin: 0 auto;
         transform: scale(0,1);

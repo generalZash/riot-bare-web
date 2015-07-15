@@ -267,7 +267,7 @@ var ActivatableMixin = {
       description :'<monospace>Array(16).join("wat"-1) + " Batman!"</monospace>',
       imgsrc      :'app/img/javascript-logo.png'},
     { name        :'Aeropress',
-      description :'Best damn drip-style coffee!<br> "So, guys, here\'s an idea. Let\'s make frisbees and coffee dispensers.',
+      description :'Best damn drip-style coffee!<br> "So, guys, here\'s an idea. Let\'s make frisbees and coffee dispensers."',
       imgsrc      :'app/img/aeropress.png'},
     { name        :'Portal',
       description :'The cake is a lie!',
@@ -355,7 +355,11 @@ var ActivatableMixin = {
     <div class='content'>
       <h1>Wanna connect?</h1>
       <p>
-        Shoot me an email: thedude(at)generalzash(dot)com </br></br>
+        Shoot me an email: thedude(at)generalzash(dot)com<br>
+        <br>
+        (or a "less unprofessional" looking email address): gen(at)generalzash(dot)com
+      </p>
+      <p>
         Connect via <a href='https://www.linkedin.com/in/genedwards'>LinkedIn</a>
       </p>
     </div>

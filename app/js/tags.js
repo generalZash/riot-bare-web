@@ -179,7 +179,7 @@ riot.tag('pane-likes', '<div class="pane-likes pane {hidden: !this.isActive()}">
       description :'<monospace>Array(16).join("wat"-1) + " Batman!"</monospace>',
       imgsrc      :'app/img/javascript-logo.png'},
     { name        :'Aeropress',
-      description :'Best damn drip-style coffee!<br> "So, guys, here\'s an idea. Let\'s make frisbees and coffee dispensers.',
+      description :'Best damn drip-style coffee!<br> "So, guys, here\'s an idea. Let\'s make frisbees and coffee dispensers."',
       imgsrc      :'app/img/aeropress.png'},
     { name        :'Portal',
       description :'The cake is a lie!',
@@ -238,7 +238,7 @@ riot.tag('r-raw', '', function(opts) {
 
 });
 
-riot.tag('pane-contact', '<div class="pane-contact pane {hidden: !this.isActive()}"> <div class="content"> <h1>Wanna connect?</h1> <p> Shoot me an email: thedude(at)generalzash(dot)com </br></br> Connect via <a href="https://www.linkedin.com/in/genedwards">LinkedIn</a> </p> </div> <div class="side-image"> <img class="self" src="app/img/all_your_low_polys_are_belong_to_mine.png"></img> </div> </div>', function(opts) {
+riot.tag('pane-contact', '<div class="pane-contact pane {hidden: !this.isActive()}"> <div class="content"> <h1>Wanna connect?</h1> <p> Shoot me an email: thedude(at)generalzash(dot)com<br> <br> (or a "less unprofessional" looking email address): gen(at)generalzash(dot)com </p> <p> Connect via <a href="https://www.linkedin.com/in/genedwards">LinkedIn</a> </p> </div> <div class="side-image"> <img class="self" src="app/img/all_your_low_polys_are_belong_to_mine.png"></img> </div> </div>', function(opts) {
 
   this.paneLink = 'contact';
   this.active = false;

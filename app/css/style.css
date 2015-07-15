@@ -196,72 +196,61 @@ r-main {
       height: 40px; }
     r-main .pane-likes .poke {
       position: relative;
-      -webkit-animation: poke 6s linear 2;
-              animation: poke 6s linear 2; }
+      -webkit-animation: poke 5s linear 2;
+              animation: poke 5s linear 2;
+      font-size: 22px; }
 
 @-webkit-keyframes poke {
-  /*0%   {top: 0px;}
-      10%  {top: 0px;}
-      40%  {top: 10px;}
-      60%  {top: 10px;}
-      90%  {top: 0px;}
-      100% {top: 0px;}*/
   0% {
-    top: 0px; }
+    top: -5px; }
+  25% {
+    top: -5px; }
+  30% {
+    top: 8px; }
+  35% {
+    top: -5px; }
   40% {
-    top: 0px; }
+    top: 8px; }
   45% {
-    top: 8px; }
-  50% {
-    top: 0px; }
-  55% {
-    top: 8px; }
+    top: -5px; }
   60% {
-    top: 0px; }
+    top: -5px; }
+  65% {
+    top: 8px; }
   70% {
-    top: 0px; }
+    top: -5px; }
   75% {
     top: 8px; }
   80% {
-    top: 0px; }
-  85% {
-    top: 8px; }
-  90% {
-    top: 0px; }
+    top: -5px; }
   100% {
-    top: 0px; } }
+    top: -5px; } }
 
 @keyframes poke {
-  /*0%   {top: 0px;}
-      10%  {top: 0px;}
-      40%  {top: 10px;}
-      60%  {top: 10px;}
-      90%  {top: 0px;}
-      100% {top: 0px;}*/
   0% {
-    top: 0px; }
+    top: -5px; }
+  25% {
+    top: -5px; }
+  30% {
+    top: 8px; }
+  35% {
+    top: -5px; }
   40% {
-    top: 0px; }
+    top: 8px; }
   45% {
-    top: 8px; }
-  50% {
-    top: 0px; }
-  55% {
-    top: 8px; }
+    top: -5px; }
   60% {
-    top: 0px; }
+    top: -5px; }
+  65% {
+    top: 8px; }
   70% {
-    top: 0px; }
+    top: -5px; }
   75% {
     top: 8px; }
   80% {
-    top: 0px; }
-  85% {
-    top: 8px; }
-  90% {
-    top: 0px; }
+    top: -5px; }
   100% {
-    top: 0px; } }
+    top: -5px; } }
     r-main .pane-likes .grid-container {
       display: -webkit-box;
       display: -webkit-flex;
@@ -334,6 +323,7 @@ r-main {
       r-main .pane-likes r-thing hr {
         border-style: solid;
         border-width: 1px;
+        border-color: #FFF;
         width: 90%;
         margin: 0 auto;
         -webkit-transform: scale(0, 1);
