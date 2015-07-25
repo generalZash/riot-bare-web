@@ -142,7 +142,7 @@ var ActivatableMixin = {
       <p>I'm a perpetual hobby collecter, that is, I collect new hobbies. My current obsessions include:</p>
       <ul>
         <li>Aeropress - the best damn coffee</li>
-        <li>Javascript MVC - currently Riot.js; I feel this will be replaced with React.js soon...</li>
+        <li>Javascript MVC - currently Riot.js; I feel this may be replaced with React.js soon...</li>
         <li>Rubik's cube - 3x3 Best avg of 5: 24.32s</li>
       </ul>
     </div>
@@ -194,7 +194,7 @@ var ActivatableMixin = {
     { name:'Selenium',                level:3, skillIcon:''},
     { name:'Jenkins',                 level:2, skillIcon:''},
     { name:'Python',                  level:3, skillIcon:''},
-    { name:'Linux',                   level:4, skillIcon:'icon-linux'},
+    { name:'Linux',                   level:3, skillIcon:'icon-linux'},
     { name:'git',                     level:3, skillIcon:'icon-git-squared'},
     { name:'Databases',               level:1, skillIcon:''},
     { name:'Gimp',                    level:1, skillIcon:''}
