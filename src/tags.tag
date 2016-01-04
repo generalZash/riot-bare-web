@@ -386,15 +386,18 @@ window.onload = function () {
       console.log("Well, hello there!");
   };
 
-  console.log("\n" + 
-              " _____            _____   _                 _     " + "\n" + 
-              "|   __|___ ___   |   __|_| |_ _ _ ___ ___ _| |___ " + "\n" + 
-              "|  |  | -_|   |  |   __| . | | | | .'|  _| . |_ -|" + "\n" + 
-              "|_____|___|_|_|  |_____|___|_____|__,|_| |___|___|" + "\n" + 
-              "                                                  " + "\n" +
-              "");
+  console.log("\n" + "\n"
+   + "            \(⌒\)\(⌒\)                                                  " + "\n"
+   + "            Ｙ ･ ･ |                                                     " + "\n"
+   + "            |  >＿ノ                                                     " + "\n"
+   + "            |  |       _____            _____   _                 _     " + "\n"
+   + "      ____  |  |      |   __|___ ___   |   __|_| |_ _ _ ___ ___ _| |___ " + "\n"
+   + "     /         |      |  |  | -_|   |  |   __| . | | | | .'|  _| . |_ -|" + "\n"
+   + "    |  //| ||| |      |_____|___|_|_|  |_____|___|_____|__,|_| |___|___|" + "\n"
+   + "    |_|| | |||_|                                                        " + "\n"); 
   printHello();
   console.log("I purposefully did not minify this website so people can take a look at what I did." + "\n"
               + "The only library I used is Riot.js (and Font Awesome)." + "\n"
               + "I’d love to hear what you think! http://fakepanda.com/#/contact");
+
 };
