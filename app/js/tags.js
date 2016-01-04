@@ -118,7 +118,7 @@ riot.tag('r-main', '<section class="container"> <pane-home></pane-home> <pane-sk
 
 });
 
-riot.tag('pane-home', '<div class="pane-home pane {hidden: !this.isActive()}"> <div class="content"> <h1>Hi, I\'m Gen</h1> <p>I\'m a coder at heart who thrives in terminal windows and fell into a fron-end dev position (and I\'m loving it). My day to day work involves lots of Javascript, HTML5, CSS3, and some Java for running Selenium. I love solving problems by thinking out loud (around other people).</p> <p>I\'m a perpetual hobby collecter, that is, I collect new hobbies. My current obsessions include:</p> <ul> <li>Aeropress - the best damn coffee</li> <li>Javascript MVC - currently Riot.js; I feel this may be replaced with React.js soon...</li> <li>Rubik\'s cube - 3x3 Best avg of 5: 24.32s</li> </ul> </div> <div class="side-image"> <img src="app/img/gake_new_lg.png"></img> </div> </section>', function(opts) {
+riot.tag('pane-home', '<div class="pane-home pane {hidden: !this.isActive()}"> <div class="content"> <h1>Hi, I\'m Gen</h1> <p>I\'m a coder at heart who thrives in terminal windows and fell into a fron-end dev position (and I\'m loving it). My day to day work involves lots of Javascript, HTML5, CSS3, and some Java for running Selenium. I love solving problems by thinking out loud (around other people).</p> <p>I\'m a perpetual hobby collecter, that is, I collect new hobbies. My current obsessions include:</p> <ul> <li>Aeropress - the best damn coffee</li> <li>Javascript - currently playing with React.js and webpack</li> <li>Rubik\'s cube - 3x3 Best avg of 5: 24.32s</li> </ul> </div> <div class="side-image"> <img src="app/img/gake_new_lg.png"></img> </div> </section>', function(opts) {
 
   this.paneLink = 'about';
   this.active = true;
@@ -238,7 +238,7 @@ riot.tag('r-raw', '', function(opts) {
 
 });
 
-riot.tag('pane-contact', '<div class="pane-contact pane {hidden: !this.isActive()}"> <div class="content"> <h1>Wanna connect?</h1> <p> Shoot me an email: thedude(at)generalzash(dot)com<br> <br> (or a "less unprofessional" looking email address): gen(at)generalzash(dot)com </p> <p> Connect via <a href="https://www.linkedin.com/in/genedwards">LinkedIn</a> </p> </div> <div class="side-image"> <img class="self" src="app/img/all_your_low_polys_are_belong_to_mine.png"></img> </div> </div>', function(opts) {
+riot.tag('pane-contact', '<div class="pane-contact pane {hidden: !this.isActive()}"> <div class="content"> <h1>Wanna connect?</h1> <p> Shoot me an email: gen(at)fakepanda(dot)com<br> </p> <p> Connect via <a href="https://www.linkedin.com/in/genedwards">LinkedIn</a> </p> </div> <div class="side-image"> <img class="self" src="app/img/all_your_low_polys_are_belong_to_mine.png"></img> </div> </div>', function(opts) {
 
   this.paneLink = 'contact';
   this.active = false;
@@ -270,5 +270,6 @@ window.onload = function () {
               "");
   printHello();
   console.log("I purposefully did not minify this website so people can take a look at what I did." + "\n"
-              + "I’d love to hear what you think! http://generalZash.com/#/contact");
+              + "The only library I used is Riot.js (and Font Awesome)." + "\n"
+              + "I’d love to hear what you think! http://fakepanda.com/#/contact");
 };

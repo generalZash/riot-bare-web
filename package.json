@@ -7,13 +7,9 @@
     "watch:riot": "riot -w src/ js/",
     "build": "riot src/ js/"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/generalZash/riot-bare-web.git"
-  },
   "author": {
     "name": "Gen Edwards",
-    "email": "thedude@generalZash.com"
+    "email": "gen@fakepanda.com"
   },
   "license": "MIT",
   "dependencies": {

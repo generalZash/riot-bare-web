@@ -142,7 +142,7 @@ var ActivatableMixin = {
       <p>I'm a perpetual hobby collecter, that is, I collect new hobbies. My current obsessions include:</p>
       <ul>
         <li>Aeropress - the best damn coffee</li>
-        <li>Javascript MVC - currently Riot.js; I feel this may be replaced with React.js soon...</li>
+        <li>Javascript - currently playing with React.js and webpack</li>
         <li>Rubik's cube - 3x3 Best avg of 5: 24.32s</li>
       </ul>
     </div>
@@ -355,9 +355,7 @@ var ActivatableMixin = {
     <div class='content'>
       <h1>Wanna connect?</h1>
       <p>
-        Shoot me an email: thedude(at)generalzash(dot)com<br>
-        <br>
-        (or a "less unprofessional" looking email address): gen(at)generalzash(dot)com
+        Shoot me an email: gen(at)fakepanda(dot)com<br>
       </p>
       <p>
         Connect via <a href='https://www.linkedin.com/in/genedwards'>LinkedIn</a>
@@ -397,5 +395,6 @@ window.onload = function () {
               "");
   printHello();
   console.log("I purposefully did not minify this website so people can take a look at what I did." + "\n"
-              + "I’d love to hear what you think! http://generalZash.com/#/contact");
+              + "The only library I used is Riot.js (and Font Awesome)." + "\n"
+              + "I’d love to hear what you think! http://fakepanda.com/#/contact");
 };
